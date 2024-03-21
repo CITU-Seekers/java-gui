@@ -17,7 +17,7 @@ public class MakingAFrame extends Frame {
         this.setSize(500,400);
     }
 
-    public static void MakingAFrame(String args[]) {
+    public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new MakingAFrame().setVisible(true);
