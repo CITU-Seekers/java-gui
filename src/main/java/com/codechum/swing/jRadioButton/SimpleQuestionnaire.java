@@ -1,11 +1,11 @@
-package com.codechum.swing.JComboBox;
+package com.codechum.swing.jRadioButton;
 
-public class SecurityQuestion1 extends javax.swing.JFrame {
+public class SimpleQuestionnaire extends javax.swing.JFrame {
 
     /**
      * Creates new form JComboBox
      */
-    public SecurityQuestion1() {
+    public SimpleQuestionnaire() {
         initComponents();
         setTitle("My Pet");
     }
@@ -119,13 +119,13 @@ public class SecurityQuestion1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SecurityQuestion1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SimpleQuestionnaire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SecurityQuestion1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SimpleQuestionnaire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SecurityQuestion1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SimpleQuestionnaire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SecurityQuestion1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SimpleQuestionnaire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -135,7 +135,7 @@ public class SecurityQuestion1 extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SecurityQuestion1().setVisible(true);
+                new SimpleQuestionnaire().setVisible(true);
             }
         });
     }

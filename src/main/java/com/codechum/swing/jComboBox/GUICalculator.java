@@ -1,4 +1,4 @@
-package com.codechum.swing.JComboBox;
+package com.codechum.swing.jComboBox;
 
 public class GUICalculator extends javax.swing.JFrame {
 

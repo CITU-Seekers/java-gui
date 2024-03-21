@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.codechum.swing.JList;
+package com.codechum.swing.jList;
 
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;

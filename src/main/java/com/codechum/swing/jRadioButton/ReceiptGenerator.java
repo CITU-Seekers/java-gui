@@ -1,4 +1,4 @@
-package com.codechum.swing.JRadioButton;
+package com.codechum.swing.jRadioButton;
 
 import java.util.ArrayList;
 import java.util.List;
