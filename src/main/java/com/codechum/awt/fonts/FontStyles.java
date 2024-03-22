@@ -1,15 +1,15 @@
-package com.codechum.awt.ColorClass; 
+package com.codechum.awt.fonts; 
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
-public class ColoredShapesAndWords extends java.awt.Frame {
+public class FontStyles extends java.awt.Frame {
 
     /**
      * Creates new form AWTGraphics1
      */
-    public ColoredShapesAndWords() {
+    public FontStyles() {
         initComponents();
         setSize(200, 400);
         setTitle("Graphics");
@@ -17,15 +17,19 @@ public class ColoredShapesAndWords extends java.awt.Frame {
     
     @Override
     public void paint(Graphics g){
-        Font font = new Font ("TimesRoman", Font.BOLD | Font.ITALIC, 20);
-        g.setFont(font);
-        
         g.setColor(Color.GRAY);
-        g.fillRect(100, 100, 150, 100);
-        g.setColor(Color.yellow);
-        g.drawOval(105, 105, 140, 90);
-        g.setColor(Color.RED);
-        g.drawString("Sample", 140, 160);
+        
+        Font font = new Font ("Default", Font.BOLD, 20);
+        g.setFont(font);
+        g.drawString("Bold Text", 140, 70);
+        
+        font = new Font ("Default", Font.ITALIC, 20);
+        g.setFont(font);
+        g.drawString("Italic Text", 140,100);
+        
+        font = new Font ("Default", Font.BOLD | Font.ITALIC, 20);
+        g.setFont(font);
+        g.drawString("Bold Italic Text", 140, 130);
     }
 
     /**
@@ -58,7 +62,7 @@ public class ColoredShapesAndWords extends java.awt.Frame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ColoredShapesAndWords().setVisible(true);
+                new FontStyles().setVisible(true);
             }
         });
     }

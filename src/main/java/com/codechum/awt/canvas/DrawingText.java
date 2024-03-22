@@ -1,14 +1,14 @@
-package com.codechum.awt.Canvas; 
+package com.codechum.awt.canvas;        
 
 import java.awt.*;
 import javax.swing.*;
 
-public class DrawingAnOval extends JFrame {
-    public DrawingAnOval() {    
+public class DrawingText extends JFrame {
+    public DrawingText() {    
         setTitle("Text");
 
         // creating the canvas
-        Canvas cnvMain = new DrawingAnOvalMyCanvas();
+        Canvas cnvMain = new DrawingTextMyCanvas();
         cnvMain.setName("mainCanvas");
 
         // adding canvas to frame   
@@ -21,6 +21,6 @@ public class DrawingAnOval extends JFrame {
   
     // main method  
     public static void main(String args[]) {    
-        new DrawingAnOval();    
+        new DrawingText();    
     }    
 }

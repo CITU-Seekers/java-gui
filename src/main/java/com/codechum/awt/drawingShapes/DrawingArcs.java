@@ -1,4 +1,4 @@
-package com.codechum.awt.DrawingShapes;
+package com.codechum.awt.drawingShapes;
 
 import java.awt.*;
 

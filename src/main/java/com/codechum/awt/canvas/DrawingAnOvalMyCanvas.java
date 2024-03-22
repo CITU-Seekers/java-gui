@@ -1,4 +1,4 @@
-package com.codechum.awt.Canvas;
+package com.codechum.awt.canvas;
 
  
 

@@ -1,31 +1,38 @@
-package com.codechum.awt.ColorClass;   
+package com.codechum.awt.fonts; 
 
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
 
-public class ColoredTexts extends java.awt.Frame {
+public class Fonts extends java.awt.Frame {
 
     /**
      * Creates new form AWTGraphics1
      */
-    public ColoredTexts() {
+    public Fonts() {
         initComponents();
-        setSize(200, 400);
+        setSize(600, 200);
         setTitle("Graphics");
     }
     
     @Override
     public void paint(Graphics g){
-        Font font = new Font("Serif", Font.PLAIN, 24);
-        g.setFont(font);
+        g.setColor(Color.GRAY);
         
-        g.setColor(Color.RED);
-        g.drawString("Red", 100, 100);
-        g.setColor(Color.green);
-        g.drawString("Green", 160, 100); 
-        g.setColor(Color.blue);
-        g.drawString("Blue", 240, 100); 
+        g.setFont(new Font ("Courier", Font.BOLD, 20));
+        g.drawString("There's", 100, 70);
+        
+        g.setFont(new Font ("Default", Font.ITALIC, 20));
+        g.drawString("nothing", 190,70);
+        
+        g.setFont(new Font ("Monospaced", Font.BOLD | Font.ITALIC, 24));
+        g.drawString("stronger",260, 70);
+        
+        g.setFont(new Font ("Serif", Font.BOLD, 20));
+        g.drawString("than", 170, 100);
+        
+        g.setFont(new Font ("Monospaced", Font.BOLD | Font.ITALIC, 24));
+        g.drawString("FAMILY", 216, 100);
     }
 
     /**
@@ -58,7 +65,7 @@ public class ColoredTexts extends java.awt.Frame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ColoredTexts().setVisible(true);
+                new Fonts().setVisible(true);
             }
         });
     }
