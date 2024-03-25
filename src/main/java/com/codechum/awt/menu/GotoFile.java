@@ -4,12 +4,12 @@ import java.awt.MenuItem;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class GotoFile extends java.awt.Frame implements ActionListener {
+public class GoToFile extends java.awt.Frame implements ActionListener {
 
     /**
      * Creates new form CODECHUMACTIVITY
      */
-    public GotoFile() {
+    public GoToFile() {
         initComponents();
         MenuItem mnuNew = new MenuItem("New");
         MenuItem mnuOpen = new MenuItem("Open"); 
@@ -96,7 +96,7 @@ public class GotoFile extends java.awt.Frame implements ActionListener {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GotoFile().setVisible(true);
+                new GoToFile().setVisible(true);
             }
         });
     }

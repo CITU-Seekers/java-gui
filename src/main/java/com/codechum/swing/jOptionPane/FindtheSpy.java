@@ -5,12 +5,12 @@ import java.awt.event.*;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
-public class FindtheSpy extends javax.swing.JFrame implements ActionListener {
+public class FindTheSpy extends javax.swing.JFrame implements ActionListener {
 
     /**
      * Creates new form CODECHUMACTIVITY
      */
-    public FindtheSpy() {
+    public FindTheSpy() {
         initComponents();
         button1.addActionListener(this);
         button10.addActionListener(this);
@@ -140,21 +140,23 @@ public class FindtheSpy extends javax.swing.JFrame implements ActionListener {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FindtheSpy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FindTheSpy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FindtheSpy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FindTheSpy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FindtheSpy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FindTheSpy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FindtheSpy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FindTheSpy.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FindtheSpy().setVisible(true);
+                new FindTheSpy().setVisible(true);
             }
         });
     }
