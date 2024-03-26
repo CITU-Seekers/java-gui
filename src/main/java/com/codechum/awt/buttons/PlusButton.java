@@ -18,9 +18,6 @@ public class PlusButton extends java.awt.Frame {
      */
     public PlusButton() {
         initComponents();
-        label1.setText("0");
-        label1.setName("lblCounter");
-        button1.setName("btnAddCount");
     }
 
     /**
@@ -42,10 +39,11 @@ public class PlusButton extends java.awt.Frame {
 
         label1.setAlignment(java.awt.Label.CENTER);
         label1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        label1.setName("counterLabel"); // NOI18N
         label1.setText("label1");
 
         button1.setLabel("Click");
-        button1.setName(""); // NOI18N
+        button1.setName("incrementButton"); // NOI18N
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);

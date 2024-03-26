@@ -1,9 +1,14 @@
 package com.codechum;
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.text.JTextComponent;
+
 import java.lang.reflect.Field;
 import org.assertj.swing.core.*;
-
+import org.netbeans.jemmy.ComponentChooser;
+import org.netbeans.jemmy.operators.ContainerOperator;
+import org.netbeans.jemmy.operators.JButtonOperator;
+import org.netbeans.jemmy.operators.JDialogOperator;
 
 public class TestUtils {
   static int counter;
@@ -128,7 +133,97 @@ public class TestUtils {
   }
   
   public static Component findComponent(String componentName, boolean isChildIncluded) {
-      ComponentFinder finder = BasicComponentFinder.finderWithCurrentAwtHierarchy();
+    ComponentFinder finder = BasicComponentFinder.finderWithCurrentAwtHierarchy();
+
+    try {
       return finder.findByName(componentName, isChildIncluded);
+    } catch(Exception e) {
+      return null;
+    }
+  }
+
+  private static String findMessageInContainer(ContainerOperator containerOperator) {
+    Component[] components = containerOperator.getComponents();
+    for (Component component : components) {
+        if (component instanceof JLabel) {
+            return ((JLabel) component).getText();
+        } else if (component instanceof JTextComponent) {
+            return ((JTextComponent) component).getText();
+        } else if (component instanceof Container) {
+            // If the component is a container, recursively search within it
+            ContainerOperator nestedContainerOperator = new ContainerOperator((Container) component);
+            String nestedMessage = findMessageInContainer(nestedContainerOperator);
+            if (nestedMessage != null) {
+                return nestedMessage;
+            }
+        }
+    }
+    return null; // Return null if no message component is found
+  }
+
+  public static String getJOptionPaneMessage() {
+    boolean isFound = false;
+  
+    try {
+        Window[] windows = Window.getWindows();
+
+        for (Window window : windows) {
+          if (window instanceof JDialog) {
+              JDialog dialog = (JDialog) window;
+              isFound = dialog.isShowing();
+          }
+        }
+    } catch (Exception e) {
+        System.out.print(e);
+    }
+
+    if (isFound) {
+      ComponentChooser chooser = new ComponentChooser() {
+        @Override
+        public boolean checkComponent(Component comp) {
+            if (comp instanceof JDialog) {
+                JDialog dialog = (JDialog) comp;
+                return dialog.isShowing();
+            }
+            return false;
+        }
+  
+        @Override
+        public String getDescription() {
+          return "JDialog opened";
+        }
+      };
+  
+      JDialogOperator dialogOperator = new JDialogOperator(chooser);
+      ContainerOperator containerOperator = new ContainerOperator(dialogOperator);
+
+      return findMessageInContainer(containerOperator);
+    } else {
+      return null;
+    }
+  }
+
+  public static void clickOKButtonInDialog() {
+    ComponentChooser chooser = new ComponentChooser() {
+      @Override
+      public boolean checkComponent(Component comp) {
+          if (comp instanceof JDialog) {
+              JDialog dialog = (JDialog) comp;
+              return "Message".equals(dialog.getTitle()) && dialog.isShowing();
+          }
+          return false;
+      }
+
+      @Override
+      public String getDescription() {
+          return "JOptionPane Dialog";
+      }
+    };
+
+    JDialogOperator dialogOperator = new JDialogOperator(chooser);
+
+    // Click on the "OK" button
+    JButtonOperator okButtonOperator = new JButtonOperator(dialogOperator, "OK");
+    okButtonOperator.push();
   }
 }

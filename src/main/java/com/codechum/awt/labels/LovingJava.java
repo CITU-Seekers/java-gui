@@ -32,21 +32,25 @@ public class LovingJava extends java.awt.Frame {
         setLayout(null);
 
         label1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        label1.setName("label1"); // NOI18N
         label1.setText("Hello World!");
         add(label1);
         label1.setBounds(140, 60, 120, 30);
 
         label2.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        label2.setName("label2"); // NOI18N
         label2.setText("I love programming");
         add(label2);
         label2.setBounds(120, 100, 170, 30);
 
         label3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        label3.setName("label3"); // NOI18N
         label3.setText("I love CodeChum");
         add(label3);
         label3.setBounds(130, 140, 170, 30);
 
         label4.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        label4.setName("label4"); // NOI18N
         label4.setText("I love Java");
         add(label4);
         label4.setBounds(150, 180, 170, 30);

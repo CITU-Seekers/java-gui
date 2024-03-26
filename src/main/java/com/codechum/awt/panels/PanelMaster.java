@@ -14,14 +14,15 @@ public class PanelMaster extends Frame {
     public PanelMaster() {
         this.setTitle("Panel Master");
         this.setSize(600, 500);
+        
 
         Panel panel1 = new BorderedPanel2();
         Panel panel2 = new BorderedPanel2();
         Panel panel3 = new BorderedPanel2();
 
-        panel1.setName("panel1");
-        panel2.setName("panel2");
-        panel3.setName("panel3");
+        panel1.setName("panelA");
+        panel2.setName("panelB");
+        panel3.setName("panelC");
 
         panel1.setForeground(Color.blue);
         panel1.setSize(50,50);

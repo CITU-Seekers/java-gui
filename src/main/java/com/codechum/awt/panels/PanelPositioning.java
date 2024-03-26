@@ -14,7 +14,7 @@ public class PanelPositioning extends Frame {
     public PanelPositioning() {
         this.setTitle("Panel Positioning");
         this.setSize(600, 500);
-
+        this.setLayout(null);
         // Using BorderedPanel is optional since adding borders/backgrounds is not required.
 
         Panel panelA = new BorderedPanel4();
@@ -25,15 +25,12 @@ public class PanelPositioning extends Frame {
 
         panelA.setForeground(Color.blue);
         panelB.setForeground(Color.red);
-
-        panelA.setPreferredSize(new Dimension(100, 100));
-        panelB.setPreferredSize(new Dimension(100, 100));
         
         panelA.setLocation(155, 55);
         panelB.setLocation(200, 35);
         
-        this.add(panelA, BorderLayout.NORTH);
-        this.add(panelB, BorderLayout.SOUTH);
+        this.add(panelA);
+        this.add(panelB);
     }
 
     public static void main(String args[]) {
