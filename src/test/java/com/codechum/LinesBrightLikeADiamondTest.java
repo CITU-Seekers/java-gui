@@ -1,13 +1,50 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.codechum;
 
-/**
- *
- * @author Jhonray Acojedo
- */
+import com.codechum.awt.canvas.LinesBrightLikeADiamond;
+import com.codechum.awt.canvas.LinesBrightLikeADiamondMyCanvas;
+import static org.testng.Assert.*;
+
+import java.awt.*;
+import org.testng.annotations.*;
+
+import mockit.Tested;
+import mockit.Injectable;
+import mockit.Verifications;
+
 public class LinesBrightLikeADiamondTest {
-    
+    @Tested LinesBrightLikeADiamond codeChumActivity;
+    @Tested LinesBrightLikeADiamondMyCanvas canvas;
+    @Injectable Graphics g;
+
+    @Test
+    public void shouldDrawDiamond() {
+        canvas.paint(g);
+
+        new Verifications() {
+            {
+                canvas.setBackground (Color.black);    
+                canvas.setSize(400, 400);
+                int width = 400;
+                int height = 400;
+
+                // Calculate the coordinates of the diamond based on the canvas size
+                int[] xPoints = {width / 2, width, width / 2, 0};
+                int[] yPoints = {0, height / 2, height, height / 2};
+
+                g.setColor(Color.YELLOW);
+
+                // Draw the diamond using lines
+                g.drawPolygon(xPoints, yPoints, 4);
+
+                // Fill the diamond with yellow color
+                g.fillPolygon(xPoints, yPoints, 4);
+            }
+        };
+    }
+
+    @Test
+    public void shouldHaveCanvas() {
+        Canvas cnvMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "canvasMain");
+        assertNotNull(cnvMain, "No canvasMain found");
+    }
 }

@@ -1,5 +1,5 @@
 package com.codechum;
-
+                
 import com.codechum.TestUtils;
 import com.codechum.awt.fonts.FontStyles2;
 import java.awt.*;
@@ -121,4 +121,4 @@ public class FontStyles2Test extends AssertJSwingTestngTestCase {
     }
 
 }
- 
+        

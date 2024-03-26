@@ -1,26 +1,26 @@
 package com.codechum;
 
 import com.codechum.TestUtils;
+import com.codechum.awt.eventAdapters.FocusAdapterActivity;
 import static org.testng.Assert.*;
 import static java.awt.event.KeyEvent.*;
 import java.awt.*;
-import java.awt.event.FocusAdapter;
 import org.assertj.swing.core.EmergencyAbortListener;
 import org.assertj.swing.testng.testcase.AssertJSwingTestngTestCase;
 import static org.assertj.swing.launcher.ApplicationLauncher.*;
 import org.testng.annotations.Test;
 
-public class FocusAdapterTest extends AssertJSwingTestngTestCase {
+public class FocusAdapterActivityTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
 
     List list1, list2;
     Label statusLabel;
     Button focusTestButton;
-
+    
     @Override
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
-        application(FocusAdapter.class).start();
+        application(FocusAdapterActivity.class).start();
     }
 
     @Test

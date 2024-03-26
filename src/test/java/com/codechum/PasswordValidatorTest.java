@@ -1,7 +1,7 @@
 package com.codechum;
     
     import com.codechum.TestUtils;
-import com.codechum.awt.eventListeners.PasswordValidator;
+    import com.codechum.awt.eventListeners.PasswordValidator;
     import static org.testng.Assert.*;
     import java.awt.*;
     import org.assertj.swing.core.EmergencyAbortListener;
