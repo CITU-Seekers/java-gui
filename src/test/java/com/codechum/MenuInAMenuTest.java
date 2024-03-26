@@ -148,17 +148,17 @@ public class MenuInAMenuTest extends AssertJSwingTestngTestCase {
     
     @Test
     public void shouldChangeFontColorOnRedClick() {
-        testMenuItemFontColorBehavior("menuItemRed", Color.RED);
+        testMenuItemFontColorBehavior("redColorMenuItem", Color.RED);
     }
     
     @Test
     public void shouldChangeFontColorOnGreenClick() {
-        testMenuItemFontColorBehavior("menuItemGreen", Color.GREEN);
+        testMenuItemFontColorBehavior("greenColorMenuItem", Color.GREEN);
     }
     
     @Test
     public void shouldChangeFontColorOnBlueClick() {
-        testMenuItemFontColorBehavior("menuItemBlue", Color.BLUE);
+        testMenuItemFontColorBehavior("blueColorMenuItem", Color.BLUE);
     }
     
     @Test

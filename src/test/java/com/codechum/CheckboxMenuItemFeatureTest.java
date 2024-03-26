@@ -1,6 +1,7 @@
 package com.codechum;
 
 import com.codechum.TestUtils;
+import com.codechum.awt.menu.CheckboxMenuItemFeature;
 import org.assertj.swing.testng.testcase.AssertJSwingTestngTestCase;
 
 import java.awt.*;
@@ -14,7 +15,7 @@ import org.testng.annotations.*;
 
 import static org.assertj.swing.launcher.ApplicationLauncher.*;
 
-public class CheckboxMenuItemTest extends AssertJSwingTestngTestCase{
+public class CheckboxMenuItemFeatureTest extends AssertJSwingTestngTestCase{
     EmergencyAbortListener listener;
     
     MenuBar menuBar;
@@ -28,7 +29,7 @@ public class CheckboxMenuItemTest extends AssertJSwingTestngTestCase{
     @Override
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
-        application(CheckboxMenuItem.class).start();
+        application(CheckboxMenuItemFeature.class).start();
         
         ComponentFinder finder = BasicComponentFinder.finderWithCurrentAwtHierarchy();
         mainFrame = (Frame) finder.findByType(Frame.class, true);
