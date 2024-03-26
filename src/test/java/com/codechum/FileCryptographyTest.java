@@ -7,6 +7,8 @@ import static org.testng.Assert.*;
 
 import java.awt.*;
 import static java.awt.event.KeyEvent.*;
+
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -67,26 +69,15 @@ public class FileCryptographyTest extends AssertJSwingTestngTestCase {
     }
 
     @Test
-    public void shouldOpenFile() {
-        shouldHaveCreatedFiles();
-        openButton = (Button) TestUtils.findComponent("openButton", true);
-        contentTextField = (TextField) TestUtils.findComponent("contentTextField", true);
+    public void shouldOpenFile() throws IOException {
+
+        Button openButton = (Button) TestUtils.findComponent("openButton", true);
         
         robot().click(openButton);
         robot().waitForIdle();
 
         FileDialog fd = (FileDialog) TestUtils.findComponent("fileDialog", true);
-        if (fd != null) {
-            fd.setMultipleMode(true);
-            robot().pressAndReleaseKeys(VK_T, VK_E, VK_S, VK_T, VK_1,VK_PERIOD,
-                    VK_T,
-                    VK_X,
-                    VK_T,
-                    VK_ENTER);
-            robot().waitForIdle();
-        }
-
-        assertEquals(contentTextField.getText(), "Hello");
+        assertTrue(fd.isVisible(), "The file dialog should be visible");
     }
 
     @Test

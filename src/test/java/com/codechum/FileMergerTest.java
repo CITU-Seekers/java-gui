@@ -35,7 +35,7 @@ public class FileMergerTest extends AssertJSwingTestngTestCase {
         File file2 = new File("test2.txt");
 
         String content1 = "Hello";
-        String content2 = " World";
+        String content2 = "World";
 
         writeFile("test1.txt", content1);
         writeFile("test2.txt", content2);
