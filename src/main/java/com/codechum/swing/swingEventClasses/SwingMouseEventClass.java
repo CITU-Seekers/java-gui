@@ -1,29 +1,27 @@
-package com.codechum.awt.eventClasses;
+package com.codechum.swing.swingEventClasses;
 
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.*;
 
-public class MouseEventClass extends java.awt.Frame  implements ActionListener {
+public class SwingMouseEventClass extends JFrame  implements ActionListener {
 
-    /**
-     * Creates new form CODECHUMACTIVITY
-     */
-    public MouseEventClass() {
+    public SwingMouseEventClass() {
         initComponents();
         
-        Button[] buttons = new Button[20];
+        JButton[] buttons = new JButton[20];
         
         panel1.setPreferredSize(new Dimension(300, 300));
         
         for (int i = 0; i < 20; i++) {
-            buttons[i] = new Button((i+1)+"");
+            buttons[i] = new JButton((i+1)+"");
             buttons[i].setName("button"+(i+1));
             buttons[i].addActionListener(this);
             buttons[i].setPreferredSize(new Dimension(200, 200));
         }
         
         panel1.setLayout(new GridLayout(4, 5));
-        for (Button btn: buttons) {
+        for (JButton btn: buttons) {
             panel1.add(btn);
         }
         
@@ -39,9 +37,9 @@ public class MouseEventClass extends java.awt.Frame  implements ActionListener {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel2 = new java.awt.Panel();
-        textLabel = new java.awt.Label();
-        panel1 = new java.awt.Panel();
+        panel2 = new javax.swing.JPanel();
+        textLabel = new javax.swing.JLabel();
+        panel1 = new javax.swing.JPanel();
 
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
@@ -71,22 +69,22 @@ public class MouseEventClass extends java.awt.Frame  implements ActionListener {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MouseEventClass().setVisible(true);
+                new SwingMouseEventClass().setVisible(true);
             }
         });
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Button btn = (Button) e.getSource();
+        JButton btn = (JButton) e.getSource();
         
-        textLabel.setText(btn.getLabel());
+        textLabel.setText(btn.getText());
     }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.Label textLabel;
-    private java.awt.Panel panel1;
-    private java.awt.Panel panel2;
+    private javax.swing.JLabel textLabel;
+    private javax.swing.JPanel panel1;
+    private javax.swing.JPanel panel2;
     // End of variables declaration//GEN-END:variables
 }

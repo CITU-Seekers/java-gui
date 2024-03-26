@@ -1,6 +1,6 @@
 package com.codechum;
 
-import com.codechum.swing.swingEventClasses.MouseEventClass;
+import com.codechum.swing.swingEventClasses.SwingMouseEventClass;
 import static org.testng.Assert.*;
 
 import javax.swing.*;
@@ -20,26 +20,26 @@ public class SwingMouseEventClassTest extends AssertJSwingTestngTestCase {
     @Override
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
-        application(MouseEventClass.class).start();
+        application(SwingMouseEventClass.class).start();
     }
 
     @Test
     public void shouldHaveAllComponents() {
-        lblText = (JLabel) TestUtils.findComponent("lblText", true);
-        assertNotNull(lblText, "No lblText found.");
+        lblText = (JLabel) TestUtils.findComponent("textLabel", true);
+        assertNotNull(lblText, "No textLabel found.");
         
         for (int i = 0; i < 20; i++) {
-            btn = (JButton) TestUtils.findComponent("btn" + (i+1), true);
-            assertNotNull(btn, "No btn" + (i+1) +" found.");
+            btn = (JButton) TestUtils.findComponent("button" + (i+1), true);
+            assertNotNull(btn, "No button" + (i+1) +" found.");
         }
     }
     
     @Test
     public void shouldDisplayTextCorrectly() {
-        lblText = (JLabel) TestUtils.findComponent("lblText", true);
+        lblText = (JLabel) TestUtils.findComponent("textLabel", true);
         
         for (int i = 0; i < 20; i++) {
-            btn = (JButton) TestUtils.findComponent("btn" + (i+1), true);
+            btn = (JButton) TestUtils.findComponent("button" + (i+1), true);
             
             robot().click(btn);
             robot().waitForIdle();

@@ -1,6 +1,6 @@
 package com.codechum;
 
-import com.codechum.awt.eventClasses.MouseEventClass;
+import com.codechum.awt.eventClasses.AWTMouseEventClass;
 import static org.testng.Assert.*;
 
 import java.awt.*;
@@ -20,7 +20,7 @@ public class MouseEventClassTest extends AssertJSwingTestngTestCase {
     @Override
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
-        application(MouseEventClass.class).start();
+        application(AWTMouseEventClass.class).start();
     }
 
     @Test
