@@ -1,7 +1,6 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
-import com.codechum.awt.panels.PanelMaster;
+import com.codechum.swing.jFrame.SwingFrameMaster;
 import static org.testng.Assert.*;
 
 import java.awt.*;
@@ -15,16 +14,14 @@ import org.assertj.swing.core.GenericTypeMatcher;
 import org.assertj.swing.testng.testcase.AssertJSwingTestngTestCase;
 import static org.assertj.swing.launcher.ApplicationLauncher.*;
 
-public class PanelMasterTest extends AssertJSwingTestngTestCase {
+public class SwingFrameMasterTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     Frame frame;
-
-    Panel panelA, panelB, panelC;
 
     @Override
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
-        application(PanelMaster .class).start();
+        application(SwingFrameMaster.class).start();
         
         robot().waitForIdle();
         
@@ -36,23 +33,29 @@ public class PanelMasterTest extends AssertJSwingTestngTestCase {
         });
     }
 
-
     @Test
-    public void shouldHavePanelAInFrame() {
-        panelA = (Panel) TestUtils.getChildNamed(frame, "panelA");
-        assertNotNull(panelA, "No panelA found.");
+    public void shouldDisplayCorrectTitle() {
+        assertEquals(frame.getTitle(), "Frame Master");
     }
 
     @Test
-    public void shouldHavePanelBInFrame() {
-        panelB = (Panel) TestUtils.getChildNamed(frame, "panelB");
-        assertNotNull(panelB, "No panelB found.");
+    public void shouldHaveCorrectWidth() {
+        assertEquals(frame.getSize().getWidth(), 700);
     }
 
     @Test
-    public void shouldHavePanelCInFrame() {
-        panelC = (Panel) TestUtils.getChildNamed(frame, "panelC");
-        assertNotNull(panelC, "No panelC found.");
+    public void shouldHaveCorrectHeight() {
+        assertEquals(frame.getSize().getHeight(), 500);
+    }
+
+    @Test
+    public void shouldHaveCorrectXPosition() {
+        assertEquals(frame.getLocation().getX(), 500);
+    }
+
+    @Test
+    public void shouldHaveCorrectYPosition() {
+        assertEquals(frame.getLocation().getY(), 300);
     }
 
     @AfterMethod

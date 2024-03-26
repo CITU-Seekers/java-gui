@@ -1,11 +1,11 @@
 package com.codechum.swing.jTextArea;
 
-public class WordandCharacterCounter extends javax.swing.JFrame {
+public class WordAndCharacterCounter extends javax.swing.JFrame {
 
     /**
      * Creates new form CODECHUMACTIVITY
      */
-    public WordandCharacterCounter() {
+    public WordAndCharacterCounter() {
         initComponents();
     }
 
@@ -99,7 +99,7 @@ public class WordandCharacterCounter extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new WordandCharacterCounter().setVisible(true);
+                new WordAndCharacterCounter().setVisible(true);
             }
         });
     }

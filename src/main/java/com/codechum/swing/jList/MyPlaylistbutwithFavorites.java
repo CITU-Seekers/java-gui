@@ -3,13 +3,13 @@ package com.codechum.swing.jList;
 import java.util.ArrayList;
 import javax.swing.*;
 
-public class MyPlaylistbutwithFavorites extends javax.swing.JFrame {
+public class MyPlaylistButWithFavorites extends javax.swing.JFrame {
     private ArrayList<String> musicArrayList;
     private ArrayList<String> favoritesArrayList;
     /**
      * Creates new form JListAct1
      */
-    public MyPlaylistbutwithFavorites() {
+    public MyPlaylistButWithFavorites() {
         initComponents();
         musicArrayList = new ArrayList<>();
         favoritesArrayList = new ArrayList<>();
@@ -218,14 +218,18 @@ public class MyPlaylistbutwithFavorites extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MyPlaylistbutwithFavorites.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyPlaylistButWithFavorites.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MyPlaylistbutwithFavorites.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyPlaylistButWithFavorites.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MyPlaylistbutwithFavorites.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyPlaylistButWithFavorites.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MyPlaylistbutwithFavorites.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MyPlaylistButWithFavorites.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -234,7 +238,7 @@ public class MyPlaylistbutwithFavorites extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MyPlaylistbutwithFavorites().setVisible(true);
+                new MyPlaylistButWithFavorites().setVisible(true);
             }
         });
     }

@@ -1,10 +1,11 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
-import com.codechum.awt.panels.PanelPositioning;
+import com.codechum.swing.jPanel.PanelPositioning;
 import static org.testng.Assert.*;
 
 import java.awt.*;
+import javax.swing.*;
+
 import org.assertj.swing.core.BasicComponentFinder;
 import org.assertj.swing.core.ComponentFinder;
 
@@ -15,10 +16,10 @@ import org.assertj.swing.core.GenericTypeMatcher;
 import org.assertj.swing.testng.testcase.AssertJSwingTestngTestCase;
 import static org.assertj.swing.launcher.ApplicationLauncher.*;
 
-public class PanelPositioningTest extends AssertJSwingTestngTestCase {
+public class SwingPanelPositioningTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     Frame frame;
-    Panel panelA, panelB;
+    JPanel panelA, panelB;
 
     @Override
     protected void onSetUp() {
@@ -37,37 +38,37 @@ public class PanelPositioningTest extends AssertJSwingTestngTestCase {
 
     @Test
     public void shouldHavePanelA() {
-        panelA = (Panel) TestUtils.getChildNamed(frame, "panelA");
+        panelA = (JPanel) TestUtils.getChildNamed(frame, "panelA");
         assertNotNull(panelA, "No panelA found.");
     }
 
     @Test
     public void shouldHavePanelB() {
-        panelB = (Panel) TestUtils.getChildNamed(frame, "panelB");
+        panelB = (JPanel) TestUtils.getChildNamed(frame, "panelB");
         assertNotNull(panelB, "No panelB found.");
     }
 
     @Test
     public void panelAShouldBeInCorrectXPosition() {
-        panelA = (Panel) TestUtils.getChildNamed(frame, "panelA");
+        panelA = (JPanel) TestUtils.getChildNamed(frame, "panelA");
         assertEquals(panelA.getLocation().getX(), 155);
     }
 
     @Test
     public void panelAShouldBeInCorrectYPosition() {
-        panelA = (Panel) TestUtils.getChildNamed(frame, "panelA");
+        panelA = (JPanel) TestUtils.getChildNamed(frame, "panelA");
         assertEquals(panelA.getLocation().getY(), 55);
     }
 
     @Test
     public void panelBShouldBeInCorrectXPosition() {
-        panelB = (Panel) TestUtils.getChildNamed(frame, "panelB");
+        panelB = (JPanel) TestUtils.getChildNamed(frame, "panelB");
         assertEquals(panelB.getLocation().getX(), 200);
     }
 
     @Test
     public void panelBShouldBeInCorrectYPosition() {
-        panelB = (Panel) TestUtils.getChildNamed(frame, "panelB");
+        panelB = (JPanel) TestUtils.getChildNamed(frame, "panelB");
         assertEquals(panelB.getLocation().getY(), 35);
     }
 
