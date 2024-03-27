@@ -30,17 +30,17 @@ public class CheckItOut extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         chkFirst.setLabel("First");
-        chkFirst.setName("checkBoxFirst");
+        chkFirst.setName("firstCheckBox");
 
         chkSecond.setLabel("Second");
-        chkSecond.setName("checkBoxSecond");
+        chkSecond.setName("secondCheckBox");
 
         chkThird.setLabel("Third");
-        chkThird.setName("checkBoxThird");
+        chkThird.setName("thirdCheckBox");
 
         btnDisplayText.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         btnDisplayText.setLabel("Display");
-        btnDisplayText.setName("buttonDisplaySelected");
+        btnDisplayText.setName("displaySelectedButton");
         btnDisplayText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDisplayTextActionPerformed(evt);
@@ -48,7 +48,7 @@ public class CheckItOut extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setName("labelCheckBoxes");
+        jLabel1.setName("checkBoxesLabel");
         jLabel1.setAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

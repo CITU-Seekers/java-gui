@@ -38,6 +38,7 @@ public class ReceiptGeneratorTest extends AssertJSwingTestngTestCase {
         robot().enterText(name);
     }
     
+    // Description: Should have all checkboxes `shoesCheckBox`, `pantsCheckBox`, `shirtCheckBox`, `defaultCheckBox`, and `specialCheckBox`.
     @Test
     public void shouldHaveAllCheckboxes() {
         String[] checkboxes = {"shoesCheckBox", "pantsCheckBox", "shirtCheckBox", "defaultCheckBox", "specialCheckBox"};
@@ -48,6 +49,7 @@ public class ReceiptGeneratorTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should have all other components `generateButton`, `receiptTextArea`, `nameTextField`, and `paymentMethodChoice`.
     @Test
     public void shouldHaveAllOtherComponents() {
         generateButton = (Button) TestUtils.findComponent("generateButton", true);
@@ -61,6 +63,7 @@ public class ReceiptGeneratorTest extends AssertJSwingTestngTestCase {
         assertNotNull(paymentMethodChoice, "No paymentMethodChoice found.");
     }
     
+    // Description: Should only select one checkbox at a time.
     @Test
     public void shouldOnlySelectOneRadioButton(){
         defaultCheckBox = (Checkbox) TestUtils.findComponent("defaultCheckBox", true);
@@ -79,6 +82,7 @@ public class ReceiptGeneratorTest extends AssertJSwingTestngTestCase {
         assertFalse(defaultCheckBox.getState(), "The defaultCheckBox should be unselected when another check box is clicked.");
     }
     
+    // Description: Should display receipt with name, items, payment method, and total cost for default promo that exceeds 300 cost in `receiptTextArea` when `generateButton` is clicked.
     @Test
     public void shouldDisplayReceiptForDefaultPromoCostExceed300() {
         nameTextField = (TextField) TestUtils.findComponent("nameTextField", true);
@@ -99,6 +103,7 @@ public class ReceiptGeneratorTest extends AssertJSwingTestngTestCase {
         assertEquals(receiptTextArea.getText(), expectedReceipt);
     }
 
+    // Description: Should display receipt with name, items, payment method, and total cost for default promo that is less than 300 cost in `receiptTextArea` when `generateButton` is clicked.
     @Test
     public void shouldDisplayReceiptForDefaultPromoCostLessThan300() {
         nameTextField = (TextField) TestUtils.findComponent("nameTextField", true);
@@ -118,6 +123,7 @@ public class ReceiptGeneratorTest extends AssertJSwingTestngTestCase {
         assertEquals(receiptTextArea.getText(), expectedReceipt);
     }
 
+    // Description: Should display receipt with name, items, payment method, and total cost for special promo in `receiptTextArea` when `generateButton` is clicked.
     @Test
     public void shouldDisplayReceiptForSpecialPromo() {
         nameTextField = (TextField) TestUtils.findComponent("nameTextField", true);

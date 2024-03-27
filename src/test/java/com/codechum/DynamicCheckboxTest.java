@@ -17,7 +17,7 @@ public class DynamicCheckboxTest extends AssertJSwingTestngTestCase {
     FrameFixture frame;
     EmergencyAbortListener listener;
     
-    Checkbox checkbox1, checkbox2;
+    Checkbox firstCheckBox, secondCheckBox;
     Choice categoryComboBox;
     
     @Override
@@ -26,9 +26,10 @@ public class DynamicCheckboxTest extends AssertJSwingTestngTestCase {
         application(DynamicCheckbox.class).start();
     }
     
+    // Description: Should have all components `firstCheckBox`, `secondCheckBox`, and `categoryComboBox`.
     @Test
-    public void hasAllComponents() {
-        String[] checkboxes = {"checkbox1", "checkbox1"};
+    public void shouldHaveAllComponents() {
+        String[] checkboxes = {"firstCheckBox", "secondCheckBox"};
         
         for (String checkbox : checkboxes) {
             Checkbox radButton = (Checkbox) TestUtils.findComponent(checkbox, true);
@@ -39,9 +40,10 @@ public class DynamicCheckboxTest extends AssertJSwingTestngTestCase {
         assertNotNull(categoryComboBox, "No categoryComboBox found.");
     }
     
+    // Description: Should only select one checkbox at a time.
     @Test
     public void shouldOnlySelectOneRadioButton(){
-        String[] checkboxes = {"checkbox1", "checkbox1"};
+        String[] checkboxes = {"firstCheckBox", "secondCheckBox"};
         Checkbox[] rb = new Checkbox[checkboxes.length];
         for (int i = 0; i < checkboxes.length; i++) {
             rb[i] = (Checkbox) TestUtils.findComponent(checkboxes[i], true);
@@ -62,32 +64,34 @@ public class DynamicCheckboxTest extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should change the `firstCheckBox` and `secondCheckBox` value when "Food" is selected in `categoryComboBox`.
     @Test
     public void shouldChangeCheckboxTextWhenCategoryFoodIsSelected(){
         categoryComboBox = (Choice) TestUtils.findComponent("categoryComboBox", true);
-        checkbox1 = (Checkbox) TestUtils.findComponent("checkbox1", true);
-        checkbox2 = (Checkbox) TestUtils.findComponent("checkbox2", true);
+        firstCheckBox = (Checkbox) TestUtils.findComponent("firstCheckBox", true);
+        secondCheckBox = (Checkbox) TestUtils.findComponent("secondCheckBox", true);
         
         categoryComboBox.select("Food");
         robot().waitForIdle();
         
-        assertEquals(checkbox1.getLabel(), "Pizza");
-        assertEquals(checkbox2.getLabel(), "Burger");
+        assertEquals(firstCheckBox.getLabel(), "Pizza");
+        assertEquals(secondCheckBox.getLabel(), "Burger");
     }
 
+    // Description: Should change the `firstCheckBox` and `secondCheckBox` value when "Drinks" is selected in `categoryComboBox`.
     @Test
     public void shouldChangeCheckboxTextWhenCategoryDrinkIsSelected() {
         categoryComboBox = (Choice) TestUtils.findComponent("categoryComboBox", true);
-        checkbox1 = (Checkbox) TestUtils.findComponent("checkbox1", true);
-        checkbox2 = (Checkbox) TestUtils.findComponent("checkbox2", true);
+        firstCheckBox = (Checkbox) TestUtils.findComponent("firstCheckBox", true);
+        secondCheckBox = (Checkbox) TestUtils.findComponent("secondCheckBox", true);
     
         robot().click(categoryComboBox);
         robot().pressAndReleaseKeys(VK_DOWN);
         robot().pressAndReleaseKeys(VK_ENTER);
         robot().waitForIdle();
     
-        assertEquals(checkbox1.getLabel(), "Coke");
-        assertEquals(checkbox2.getLabel(), "Orange Juice");
+        assertEquals(firstCheckBox.getLabel(), "Coke");
+        assertEquals(secondCheckBox.getLabel(), "Orange Juice");
     }
     
 }

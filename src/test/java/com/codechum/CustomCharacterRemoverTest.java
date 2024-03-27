@@ -24,6 +24,7 @@ public class CustomCharacterRemoverTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `messageTextField`, `vowelCheckbox`, `consonantCheckbox`, `numberCheckbox`, and `removeButton`.
     @Test
     public void shouldHaveAllComponents() {
         messageTextField = (TextField) TestUtils.findComponent("messageTextField", true);
@@ -39,6 +40,7 @@ public class CustomCharacterRemoverTest extends AssertJSwingTestngTestCase {
         assertNotNull(removeButton, "No Remove button found.");
     }
 
+    // Description: Should remove vowels from the `messageTextField` when `vowelCheckbox` is checked and `removeButton` is clicked.    
     @Test
     public void shouldRemoveVowelCharactersFromTextField() {
         messageTextField = (TextField) TestUtils.findComponent("messageTextField", true);
@@ -59,6 +61,7 @@ public class CustomCharacterRemoverTest extends AssertJSwingTestngTestCase {
         assertEquals(messageTextField.getText(), "Hll123");
     }
     
+    // Description: Should remove consonants from the `messageTextField` when `consonantCheckbox` is checked and `removeButton` is clicked.
     @Test
     public void shouldRemoveConsonantCharactersFromTextField() {
         messageTextField = (TextField) TestUtils.findComponent("messageTextField", true);
@@ -79,6 +82,7 @@ public class CustomCharacterRemoverTest extends AssertJSwingTestngTestCase {
         assertEquals(messageTextField.getText(), "eo123");
     }
     
+    // Description: Should remove numbers from the `messageTextField` when `numberCheckbox` is checked and `removeButton` is clicked.
     @Test
     public void shouldRemoveNumberCharactersFromTextField() {
         messageTextField = (TextField) TestUtils.findComponent("messageTextField", true);

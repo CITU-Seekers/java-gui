@@ -35,6 +35,7 @@ public class WindowWithPositionTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have a frame with a dimension of 600x500.
     @Test
     public void shouldHaveCorrectDimensionsForMainFrame() {
         String actualDimensions = frame.getWidth() + "x" + frame.getHeight();
@@ -42,6 +43,7 @@ public class WindowWithPositionTest extends AssertJSwingTestngTestCase {
         assertEquals(actualDimensions, "600x500");
     }
 
+    // Description: Should have a frame with a location of (200, 100).
     @Test
     public void shouldHaveCorrectLocationForMainFrame() {
         String actualLocation = "(" + frame.getX() + "," + frame.getY() + ")";
@@ -49,12 +51,14 @@ public class WindowWithPositionTest extends AssertJSwingTestngTestCase {
         assertEquals(actualLocation, "(200,100)");
     }
 
+    // Description: Should have a window named `mainWindow`.
     @Test
     public void shouldHaveMainWindow() {
         mainWindow = (Window) TestUtils.findComponent("mainWindow", true);
         assertNotNull(mainWindow, "No mainWindow found.");
     }
 
+    // Description: Should have a parent named `mainFrame` for `mainWindow`.
     @Test
     public void shouldHaveCorrectParentForMainWindow() {
         mainWindow = (Window) TestUtils.findComponent("mainWindow", true);
@@ -62,6 +66,7 @@ public class WindowWithPositionTest extends AssertJSwingTestngTestCase {
         assertEquals(mainWindow.getParent().getName(), "mainFrame");
     }
 
+    // Description: Should have a dimension of 400x400 for `mainWindow`.
     @Test
     public void shouldHaveCorrectDimensionsForMainWindow() {
         mainWindow = (Window) TestUtils.findComponent("mainWindow", true);
@@ -71,6 +76,7 @@ public class WindowWithPositionTest extends AssertJSwingTestngTestCase {
         assertEquals(actualDimensions, "400x400");
     }
 
+    // Description: Should have a location of (300, 150) for `mainWindow`.
     @Test
     public void shouldHaveCorrectLocationForMainWindow() {
         mainWindow = (Window) TestUtils.findComponent("mainWindow", true);

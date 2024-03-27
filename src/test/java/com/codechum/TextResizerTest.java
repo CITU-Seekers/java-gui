@@ -22,9 +22,10 @@ public class TextResizerTest extends AssertJSwingTestngTestCase {
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
         application(TextResizer.class).start();
-        robot().waitForIdle();
+    robot().waitForIdle();
     }
     
+    // Description: Should have all compoents `resizeScrollBar` and `textLabel`.
     @Test
     public void shouldHaveAllComponents() {
         resizeScrollBar = (Scrollbar) TestUtils.findComponent("resizeScrollBar", true);
@@ -34,6 +35,7 @@ public class TextResizerTest extends AssertJSwingTestngTestCase {
         assertNotNull(textLabel, "No textLabel found.");
     }
     
+    // Description: Should change font size of `textLabel` when `resizeScrollBar` is moved.
     @Test
     public void shouldChangeFontSizeCorrectly() throws InterruptedException {
         resizeScrollBar = (Scrollbar) TestUtils.findComponent("resizeScrollBar", true);

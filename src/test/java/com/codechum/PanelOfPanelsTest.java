@@ -36,12 +36,14 @@ public class PanelOfPanelsTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have a panel named `mainPanel`.
     @Test
     public void shouldHavePanelMain() {
         mainPanel = (Panel) TestUtils.getChildNamed(frame, "mainPanel");
         assertNotNull(mainPanel, "No mainPanel found.");
     }
 
+    // Description: Should have a panel named `subPanelA` in `mainPanel`.
     @Test
     public void shouldHavePanelSubAInPanelMain() {
         mainPanel = (Panel) TestUtils.getChildNamed(frame, "mainPanel");
@@ -49,6 +51,7 @@ public class PanelOfPanelsTest extends AssertJSwingTestngTestCase {
         assertNotNull(subPanelA, "No subPanelA found.");
     }
 
+    // Description: Should have a panel named `subPanelB` in `mainPanel`.
     @Test
     public void shouldHavePanelSubBInPanelMain() {
         mainPanel = (Panel) TestUtils.getChildNamed(frame, "mainPanel");

@@ -22,6 +22,7 @@ public class AreaCasingTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `messageTextArea`, `lowercaseButton`, and `uppercaseButton`.
     @Test
     public void shouldHaveAllComponents() {
         messageTextArea = (TextArea) TestUtils.findComponent("messageTextArea", true);
@@ -33,6 +34,7 @@ public class AreaCasingTest extends AssertJSwingTestngTestCase {
         assertNotNull(uppercaseButton, "No uppercaseButton found.");
     }
 
+    // Description: Should convert the text in `messageTextArea` to uppercase when `uppercaseButton` is clicked.
     @Test
     public void shouldConvertToUppercase() {
         messageTextArea = (TextArea) TestUtils.findComponent("messageTextArea", true);
@@ -51,6 +53,7 @@ public class AreaCasingTest extends AssertJSwingTestngTestCase {
         assertEquals(messageTextArea.getText(), "HELLO, HOW ARE YOU?");
     }
 
+    // Description: Should convert the text in `messageTextArea` to lowercase when `lowercaseButton` is clicked.
     @Test
     public void shouldConvertToLowercase() {
         messageTextArea = (TextArea) TestUtils.findComponent("messageTextArea", true);

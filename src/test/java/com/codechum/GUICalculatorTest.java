@@ -46,6 +46,7 @@ public class GUICalculatorTest extends AssertJSwingTestngTestCase {
         resultLabel = (Label) TestUtils.findComponent("resultLabel", true);
     }
     
+    // Description: Should have all components named `num1TextField`, `num2TextField`, `operationsChoice`, `computeButton`, and `resultLabel`.
     @Test
     public void shouldHaveAllComponents() {
         initializeComponents();
@@ -57,6 +58,7 @@ public class GUICalculatorTest extends AssertJSwingTestngTestCase {
         assertNotNull(resultLabel, "No resultLabel found.");
     }
     
+    // Description: Should display sum of `num1TextField` and `num2TextField` in `resultLabel` when "+" is selected in `operationsChoice` and `computeButton` is clicked.
     @Test
     public void shouldShowComputedSum(){
         initializeComponents();
@@ -67,6 +69,7 @@ public class GUICalculatorTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "5");
     }
 
+    // Description: Should display difference of `num1TextField` and `num2TextField` in `resultLabel` when "-" is selected in `operationsChoice` and `computeButton` is clicked.
     @Test
     public void shouldShowComputedDifference(){
         initializeComponents();
@@ -77,6 +80,7 @@ public class GUICalculatorTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "5");
     }
 
+    // Description: Should display product of `num1TextField` and `num2TextField` in `resultLabel` when "*" is selected in `operationsChoice` and `computeButton` is clicked.
     @Test
     public void shouldShowComputedProduct(){
         initializeComponents();
@@ -87,6 +91,7 @@ public class GUICalculatorTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "50");
     }
 
+    // Description: Should display quotient of `num1TextField` and `num2TextField` in `resultLabel` when "/" is selected in `operationsChoice` and `computeButton` is clicked.
     @Test
     public void shouldShowComputedQuotient(){
         initializeComponents();

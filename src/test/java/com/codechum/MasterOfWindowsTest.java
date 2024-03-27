@@ -35,6 +35,7 @@ public class MasterOfWindowsTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have a frame with dimensions 1000x500.
     @Test
     public void shouldHaveCorrectDimensionsForMainFrame() {
         String actualDimensions = frame.getWidth() + "x" + frame.getHeight();
@@ -42,6 +43,7 @@ public class MasterOfWindowsTest extends AssertJSwingTestngTestCase {
         assertEquals(actualDimensions, "1000x500");
     }
 
+    // Description: Should have a location of (500, 200) for the frame.
     @Test
     public void shouldHaveCorrectLocationForMainFrame() {
         String actualLocation = "(" + frame.getX() + "," + frame.getY() + ")";
@@ -49,6 +51,7 @@ public class MasterOfWindowsTest extends AssertJSwingTestngTestCase {
         assertEquals(actualLocation, "(500,200)");
     }
 
+    // Description: Should have all windows named `window1`, `window2`, and `window3`.
     @Test
     public void shouldHaveAllWindows() {
         window1 = (Window) TestUtils.findComponent("window1", true);
@@ -60,6 +63,7 @@ public class MasterOfWindowsTest extends AssertJSwingTestngTestCase {
         assertNotNull(window3, "No window3 found.");
     }
 
+    // Description: Should have a parent named `mainFrame` for all windows.
     @Test
     public void shouldHaveCorrectParentForAllWindows() {
         window1 = (Window) TestUtils.findComponent("window1", true);
@@ -71,6 +75,7 @@ public class MasterOfWindowsTest extends AssertJSwingTestngTestCase {
          assertEquals(window3.getParent().getName(), "mainFrame");
     }
 
+    // Description: Should have a dimension of 200x200 for `window1`.
     @Test
     public void shouldHaveCorrectDimensionsForWindow1() {
         window1 = (Window) TestUtils.findComponent("window1", true);
@@ -80,6 +85,7 @@ public class MasterOfWindowsTest extends AssertJSwingTestngTestCase {
         assertEquals(actualDimensions, "200x200");
     }
 
+    // Description: Should have a location of (400, 250) for `window1`.
     @Test
     public void shouldHaveCorrectLocationForWindow1() {
         window1 = (Window) TestUtils.findComponent("window1", true);
@@ -89,6 +95,7 @@ public class MasterOfWindowsTest extends AssertJSwingTestngTestCase {
         assertEquals(actualLocation, "(400,250)");
     }
 
+    // Description: Should have a dimension of 200x200 for `window2`.
     @Test
     public void shouldHaveCorrectDimensionsForWindow2() {
         window2 = (Window) TestUtils.findComponent("window2", true);
@@ -98,6 +105,7 @@ public class MasterOfWindowsTest extends AssertJSwingTestngTestCase {
         assertEquals(actualDimensions, "200x200");
     }
 
+    // Description: Should have a location of (500, 350) for `window2`.
     @Test
     public void shouldHaveCorrectLocationForWindow2() {
         window2 = (Window) TestUtils.findComponent("window2", true);
@@ -107,6 +115,7 @@ public class MasterOfWindowsTest extends AssertJSwingTestngTestCase {
         assertEquals(actualLocation, "(500,350)");
     }
 
+    // Description: Should have a dimension of 200x200 for `window3`.
     @Test
     public void shouldHaveCorrectDimensionsForWindow3() {
         window3 = (Window) TestUtils.findComponent("window3", true);
@@ -116,6 +125,7 @@ public class MasterOfWindowsTest extends AssertJSwingTestngTestCase {
         assertEquals(actualDimensions, "200x200");
     }
 
+    // Description: Should have a location of (600, 450) for `window3`.
     @Test
     public void shouldHaveCorrectLocationForWindow3() {
         window3 = (Window) TestUtils.findComponent("window3", true);

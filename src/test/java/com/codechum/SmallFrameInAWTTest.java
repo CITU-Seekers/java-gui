@@ -33,26 +33,31 @@ public class SmallFrameInAWTTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have a frame with a title of "Small Frame".
     @Test
     public void shouldDisplayCorrectTitle() {
         assertEquals(frame.getTitle(), "Small Frame");
     }
 
+    // Description: Should have a frame with a width of 100.
     @Test
     public void shouldHaveCorrectWidth() {
         assertEquals(frame.getSize().getWidth(), 100);
     }
 
+    // Description: Should have a frame with a height of 200.
     @Test
     public void shouldHaveCorrectHeight() {
         assertEquals(frame.getSize().getHeight(), 200);
     }
 
+    // Description: Should have a frame with an x position of 600.
     @Test
     public void shouldHaveCorrectXPosition() {
         assertEquals(frame.getLocation().getX(), 600);
     }
 
+    // Description: Should have a frame with a y position of 450.
     @Test
     public void shouldHaveCorrectYPosition() {
         assertEquals(frame.getLocation().getY(), 450);

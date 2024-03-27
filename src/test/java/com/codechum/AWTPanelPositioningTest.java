@@ -35,36 +35,42 @@ public class AWTPanelPositioningTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have a panel named `panelA`.
     @Test
     public void shouldHavePanelA() {
         panelA = (Panel) TestUtils.getChildNamed(frame, "panelA");
         assertNotNull(panelA, "No panelA found.");
     }
 
+    // Description: Should have a panel named `panelB`.
     @Test
     public void shouldHavePanelB() {
         panelB = (Panel) TestUtils.getChildNamed(frame, "panelB");
         assertNotNull(panelB, "No panelB found.");
     }
 
+    // Description: Should have an x position of 155 for `panelA`
     @Test
     public void panelAShouldBeInCorrectXPosition() {
         panelA = (Panel) TestUtils.getChildNamed(frame, "panelA");
         assertEquals(panelA.getLocation().getX(), 155);
     }
 
+    // Description: Should have a y position of 55 for `panelA`
     @Test
     public void panelAShouldBeInCorrectYPosition() {
         panelA = (Panel) TestUtils.getChildNamed(frame, "panelA");
         assertEquals(panelA.getLocation().getY(), 55);
     }
 
+    // Description: Should have an x position of 200 for `panelB`
     @Test
     public void panelBShouldBeInCorrectXPosition() {
         panelB = (Panel) TestUtils.getChildNamed(frame, "panelB");
         assertEquals(panelB.getLocation().getX(), 200);
     }
 
+    // Description: Should have a y position of 35 for `panelB`
     @Test
     public void panelBShouldBeInCorrectYPosition() {
         panelB = (Panel) TestUtils.getChildNamed(frame, "panelB");

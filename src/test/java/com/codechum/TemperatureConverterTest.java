@@ -27,6 +27,7 @@ public class TemperatureConverterTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all components `temperatureRangeBar`, `celsiusTempLabel` and `fahrenheitTempLabel`.
     @Test
     public void shouldHaveAllComponents() {
         temperatureRangeBar = (Scrollbar) TestUtils.findComponent("temperatureRangeBar", true);
@@ -38,6 +39,7 @@ public class TemperatureConverterTest extends AssertJSwingTestngTestCase {
         assertNotNull(fahrenheitTempLabel, "No fahrenheitTempLabel found");
     }
 
+    // Description: Should convert and display the temperature in celsius and fahrenheit in `celsiusTempLabel` and `fahrenheitTempLabel` respectively when `temperatureRangeBar` is moved.
     @Test
     public void shouldConvertTemperature() {
         robot().waitForIdle();

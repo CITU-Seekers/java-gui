@@ -43,6 +43,7 @@ public class MyPlaylistTest extends AssertJSwingTestngTestCase {
         robot().enterText(title);
     }
     
+    // Description: Should have all components `musicList`, `musicTextField`, `addButton`, and `removeButton`.
     @Test
     public void shouldHaveAllComponents() {
         musicList = (List) TestUtils.findComponent("musicList", true);
@@ -56,6 +57,7 @@ public class MyPlaylistTest extends AssertJSwingTestngTestCase {
         assertNotNull(removeButton, "No removeButton found.");
     }
     
+    // Description: Should add music entered in `musicTextField` to `musicList` when `addButton` is clicked.
     @Test
     public void shouldBeAbleToAddMusicToList() {
         musicList = (List) TestUtils.findComponent("musicList", true);
@@ -71,6 +73,7 @@ public class MyPlaylistTest extends AssertJSwingTestngTestCase {
         assertEquals(actualMusicListString, "Music Main 1, Music Main 2, New Music");
     }
     
+    // Description: Should remove selected music from `musicList` when `removeButton` is clicked.
     @Test
     public void shouldBeAbleToRemoveMusicFromList() {
         musicList = (List) TestUtils.findComponent("musicList", true);
