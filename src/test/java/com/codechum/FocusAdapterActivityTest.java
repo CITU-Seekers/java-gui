@@ -1,6 +1,5 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.eventAdapters.FocusAdapterActivity;
 import static org.testng.Assert.*;
 import static java.awt.event.KeyEvent.*;

@@ -1,6 +1,5 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.drawingShapes.RandomDots;
 import java.awt.Canvas;
 import java.awt.Color;

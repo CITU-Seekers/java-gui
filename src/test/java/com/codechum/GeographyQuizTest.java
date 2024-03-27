@@ -1,20 +1,14 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.layouts.GeographyQuiz;
 import static org.testng.Assert.*;
 
 import java.awt.*;
-import static java.awt.event.KeyEvent.*;
-import javax.swing.*;
-import org.assertj.swing.core.BasicComponentFinder;
-import org.assertj.swing.core.ComponentFinder;
 
 import org.testng.annotations.*;
 
 import org.assertj.swing.core.EmergencyAbortListener;
-import org.assertj.swing.core.GenericTypeMatcher;
-import static org.assertj.swing.finder.WindowFinder.findFrame;
+
 import org.assertj.swing.testng.testcase.AssertJSwingTestngTestCase;
 import static org.assertj.swing.launcher.ApplicationLauncher.*;
 

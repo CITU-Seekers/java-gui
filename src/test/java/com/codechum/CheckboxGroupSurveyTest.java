@@ -1,11 +1,10 @@
 package com.codechum;
 
 import com.codechum.awt.checkBoxGroup.CheckboxGroupSurvey;
-import com.codechum.TestUtils;
+
 import static org.testng.Assert.*;
 
 import java.awt.*;
-import static java.awt.event.KeyEvent.*;
 
 import org.testng.annotations.*;
 

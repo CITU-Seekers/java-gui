@@ -1,6 +1,5 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.canvas.DrawingRectangles;
 import com.codechum.awt.canvas.MyCanvasRectangle;
 import static org.testng.Assert.*;

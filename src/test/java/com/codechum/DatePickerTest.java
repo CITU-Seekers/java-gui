@@ -1,6 +1,5 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.scrollBar.DatePicker;
 import static org.testng.Assert.*;
 

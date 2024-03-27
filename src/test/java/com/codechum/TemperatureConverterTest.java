@@ -1,7 +1,6 @@
 package com.codechum;
 
 import com.codechum.awt.scrollBar.TemperatureConverter;
-import com.codechum.TestUtils;
 import static org.testng.Assert.*;
 
 import java.awt.*;

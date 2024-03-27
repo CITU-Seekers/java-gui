@@ -1,10 +1,8 @@
 package com.codechum;
                 
-import com.codechum.TestUtils;
 import com.codechum.awt.fonts.FontStyles2;
 import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.beans.Transient;
 
 import mockit.Mocked;
 import mockit.Verifications;

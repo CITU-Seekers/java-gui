@@ -1,6 +1,5 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.eventClasses.ActionEventActivity;
 import static org.testng.Assert.*;
 import java.awt.*;
