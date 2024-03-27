@@ -43,12 +43,14 @@ public class GUICalculatorUpdateTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should use `BorderLayout` for the frame.
     @Test
     public void shouldUseBorderLayout() {
         BorderLayout layout = (BorderLayout) frame.getLayout();
         assertTrue(layout.toString().contains("BorderLayout"), "should use BorderLayout.");
     }
 
+    // Description: Should contain `resultLabel` in the `NORTH` of the frame.
     @Test
     public void shouldContainLblResultInNorth() {
         BorderLayout layout = (BorderLayout) frame.getLayout();
@@ -57,6 +59,7 @@ public class GUICalculatorUpdateTest extends AssertJSwingTestngTestCase {
         assertNotNull(comp, "No resultLabel found.");
     }
     
+    // Description: Should contain `buttonsPanel` in the `CENTER` of the frame.
     @Test
     public void shouldContainPnlButtonsWithGridLayoutInCenter() {
         BorderLayout layout = (BorderLayout) frame.getLayout();
@@ -67,6 +70,7 @@ public class GUICalculatorUpdateTest extends AssertJSwingTestngTestCase {
         assertTrue(compLayout.toString().contains("GridLayout"), "buttonsPanel should have GridLayout");
     }
 
+    // Description: Should contain number buttons in `buttonsPanel` such as `button0`, `button1`, `button2`, `button3`, `button4`, `button5`, `button6`, `button7`, `button8`, and `button9`.
     @Test
     public void shouldContainNumberButtonsInPnlButtons() {
         buttonsPanel = (Panel) TestUtils.getChildNamed(frame, "buttonsPanel");
@@ -77,6 +81,7 @@ public class GUICalculatorUpdateTest extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should contain operation buttons in `buttonsPanel` such as `addButton`, `subtractButton`, `multiplyButton`, `divideButton`, `clearButton`, and `computeButton`.
     @Test
     public void shouldContainBtnOperationsInPnlButtons() {
         String[] operations = {"addButton", "subtractButton", "multiplyButton", "divideButton", "clearButton", "computeButton"};
@@ -88,6 +93,7 @@ public class GUICalculatorUpdateTest extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should perform addition operation and show the result in `resultLabel` on `computeButton` click.
     @Test
     public void shouldPerformAddition() {
         resultLabel = (Label) TestUtils.findComponent("resultLabel", true);
@@ -100,6 +106,7 @@ public class GUICalculatorUpdateTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "8");
     }
 
+    // Description: Should perform subtraction operation and show the result in `resultLabel` on `computeButton` click.
     @Test
     public void shouldPerformSubtraction() {
         resultLabel = (Label) TestUtils.findComponent("resultLabel", true);
@@ -112,6 +119,7 @@ public class GUICalculatorUpdateTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "3");
     }
 
+    // Description: Should perform multiplication operation and show the result in `resultLabel` on `computeButton` click.
     @Test
     public void shouldPerformMultiplication() {
         resultLabel = (Label) TestUtils.findComponent("resultLabel", true);
@@ -124,6 +132,7 @@ public class GUICalculatorUpdateTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "49");
     }
 
+    // Description: Should perform division operation and show the result in `resultLabel` on `computeButton` click.
     @Test
     public void shouldPerformDivision() {
         resultLabel = (Label) TestUtils.findComponent("resultLabel", true);
@@ -136,6 +145,7 @@ public class GUICalculatorUpdateTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "2");
     }
 
+    // Description: Should perform clear operation and clear the `resultLabel` on `clearButton` click.
     @Test
     public void shouldPerformClear() {
         resultLabel = (Label) TestUtils.findComponent("resultLabel", true);

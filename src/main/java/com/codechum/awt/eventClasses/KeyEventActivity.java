@@ -22,30 +22,30 @@ public class KeyEventActivity extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        textArea1 = new TextArea();
+        editableTextArea = new TextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        textArea2 = new TextArea();
+        nonEditableTextArea = new TextArea();
         jLabel1 = new Label();
         jLabel2 = new Label();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        textArea1.setColumns(20);
-        textArea1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        textArea1.setRows(5);
-        textArea1.setName("textArea1"); // NOI18N
-        textArea1.addKeyListener(new java.awt.event.KeyAdapter() {
+        editableTextArea.setColumns(20);
+        editableTextArea.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        editableTextArea.setRows(5);
+        editableTextArea.setName("editableTextArea"); // NOI18N
+        editableTextArea.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTextArea1KeyReleased(evt);
             }
         });
-        jScrollPane1.setViewportView(textArea1);
+        jScrollPane1.setViewportView(editableTextArea);
 
-        textArea2.setColumns(20);
-        textArea2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        textArea2.setRows(5);
-        textArea2.setName("textArea2"); // NOI18N
-        jScrollPane2.setViewportView(textArea2);
+        nonEditableTextArea.setColumns(20);
+        nonEditableTextArea.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        nonEditableTextArea.setRows(5);
+        nonEditableTextArea.setName("nonEditableTextArea"); // NOI18N
+        jScrollPane2.setViewportView(nonEditableTextArea);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setText("Editable");
@@ -93,9 +93,9 @@ public class KeyEventActivity extends javax.swing.JFrame {
         
         if (Character.isLetterOrDigit(ch) || Character.isWhitespace(ch)) {
             if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
-                textArea2.setText(textArea2.getText() + Character.toUpperCase(ch));
+                nonEditableTextArea.setText(nonEditableTextArea.getText() + Character.toUpperCase(ch));
             } else {
-                textArea2.setText(textArea2.getText() + ch);
+                nonEditableTextArea.setText(nonEditableTextArea.getText() + ch);
             }
         }
     }//GEN-LAST:event_jTextArea1KeyReleased
@@ -141,7 +141,7 @@ public class KeyEventActivity extends javax.swing.JFrame {
     private Label jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private TextArea textArea1;
-    private TextArea textArea2;
+    private TextArea editableTextArea;
+    private TextArea nonEditableTextArea;
     // End of variables declaration//GEN-END:variables
 }

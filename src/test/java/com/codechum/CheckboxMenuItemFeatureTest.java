@@ -99,6 +99,7 @@ public class CheckboxMenuItemFeatureTest extends AssertJSwingTestngTestCase{
         assertEquals(featureLabel.getForeground(), color);
     }
 
+    // Description: Should have a `formatMenu` and its items `featureCheckBoxMenu` and `colorsMenu` containing `redMenuItem`, `greenMenuItem`, and `blueMenuItem`.
     @Test
     public void shouldHaveAllComponents(){
         formatMenu = menuBar.getMenu(0);
@@ -121,21 +122,25 @@ public class CheckboxMenuItemFeatureTest extends AssertJSwingTestngTestCase{
         assertNotNull(blueMenuItem, "No blueMenuItem found.");
     }
 
+    // Description: Should display "Feature enabled!" in `featureLabel` when `featureCheckBoxMenu` is selected.
     @Test
     public void shouldDisplayLabelWhenFeatureCheckBoxIsSelected(){
         testCheckBoxMenuItemBehavior("featureCheckBoxMenu", "Feature enabled!");
     }
 
+    // Description: Should change the font color of `featureLabel` to red when `redMenuItem` is selected.
     @Test
     public void shouldDisplayLabelInRedWhenRedMenuItemIsSelected(){
         testMenuItemFontColorBehavior("redMenuItem", Color.RED);
     }
 
+    // Description: Should change the font color of `featureLabel` to green when `greenMenuItem` is selected.
     @Test
     public void shouldDisplayLabelInGreenWhenGreenMenuItemIsSelected(){
         testMenuItemFontColorBehavior("greenMenuItem", Color.GREEN);
     }
 
+    // Description: Should change the font color of `featureLabel` to blue when `blueMenuItem` is selected.
     @Test
     public void shouldDisplayLabelInBlueWhenBlueMenuItemIsSelected(){
         testMenuItemFontColorBehavior("blueMenuItem", Color.BLUE);

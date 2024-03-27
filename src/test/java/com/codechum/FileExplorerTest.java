@@ -118,6 +118,7 @@ public class FileExplorerTest extends AssertJSwingTestngTestCase {
         assertEquals(fileList.getItemCount(), itemCount + 2);
     }
 
+    // Description: Should have components `fileList`, `fileNameTextField`, `addButton`, and `statusLabel` and menus `fileMenu` and its items `newMenuItem`, `openMenuItem`, `saveMenuItem`, and `viewMenu` containing `viewHiddenMenuItem`.
     @Test
     public void shouldHaveAllComponents(){
         newMenuItem = retrieveFileMenuItemByName("newMenuItem");
@@ -139,26 +140,31 @@ public class FileExplorerTest extends AssertJSwingTestngTestCase {
         assertNotNull(statusLabel, "No statusLabel found.");
     }
 
+    // Description: Should enable `fileNameTextField` and `addButton` when `newMenuItem` is clicked.
     @Test
     public void shouldEnableComponentsWhenNewMenuItemIsClicked(){
         testNewMenuItemBehavior("newMenuItem");    
     }
 
+    // Description: Should display "Opening a file..." in `statusLabel` when `openMenuItem` is clicked.
     @Test
     public void shouldDisplayStatusLabelWhenOpenMenuItemIsClicked(){
         testMenuItemBehavior("openMenuItem", "Opening a file...");
     }
 
+    // Description: Should display "Saving a file..." in `statusLabel` when `saveMenuItem` is clicked.
     @Test
     public void shouldDisplayStatusLabelWhenSaveMenuItemIsClicked(){
         testMenuItemBehavior("saveMenuItem", "Saving a file...");
     }
 
+    // Description: Should display hidden items in `fileList` when `viewHiddenMenuItem` is clicked.
     @Test
     public void shouldDisplayHiddenFilesWhenViewHiddenMenuItemIsClicked(){
         testCheckBoxMenuItemBehavior("viewHiddenMenuItem");
     }
 
+    // Description: Should add item to `fileList` when `fileNameTextField` is filled and `addButton` is clicked.
     @Test
     public void shouldAddItemToList(){
         MenuItem item = retrieveFileMenuItemByName("newMenuItem");

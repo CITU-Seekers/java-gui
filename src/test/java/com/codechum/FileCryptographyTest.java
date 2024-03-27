@@ -30,6 +30,7 @@ public class FileCryptographyTest extends AssertJSwingTestngTestCase {
         application(FileCryptography.class).start();
     }
     
+    // Description: Should have all components `openButton`, `encryptButton`, `decryptButton`, and `contentTextField`.
     @Test 
     public void shouldHaveAllComponents(){
         openButton = (Button) TestUtils.findComponent("openButton", true);
@@ -43,6 +44,7 @@ public class FileCryptographyTest extends AssertJSwingTestngTestCase {
         assertNotNull(contentTextField, "No contentTextField found.");
     }
     
+    // Description: Should have created files `test1.txt` and `test2.txt`.
     @Test
     public void shouldHaveCreatedFiles() {
         File file = new File("test1.txt");
@@ -68,6 +70,7 @@ public class FileCryptographyTest extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should open `fileDialog` on `openButton` click.
     @Test
     public void shouldOpenFile() throws IOException {
 
@@ -80,6 +83,7 @@ public class FileCryptographyTest extends AssertJSwingTestngTestCase {
         assertTrue(fd.isVisible(), "The file dialog should be visible");
     }
 
+    // Description: Should encrypt the entered text in `contentTextField` and save it to a file on `encryptButton` click.
     @Test
     public void shouldEncryptAndSaveFile(){
         encryptButton = (Button) TestUtils.findComponent("encryptButton", true);
@@ -105,6 +109,7 @@ public class FileCryptographyTest extends AssertJSwingTestngTestCase {
         assertEquals(contentTextField.getText(), "Ifmmp");
     }
 
+    // Description: Should decrypt the entered text in `contentTextField` and display it on `decryptButton` click.
     @Test
     public void shouldDecryptFile(){
         decryptButton = (Button) TestUtils.findComponent("decryptButton", true);

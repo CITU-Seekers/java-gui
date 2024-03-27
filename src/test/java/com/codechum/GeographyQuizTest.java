@@ -19,7 +19,7 @@ public class GeographyQuizTest extends AssertJSwingTestngTestCase {
     TextField question1TextField, question2TextField, question3TextField;
     Button nextButton, backButton;
     Label scoreLabel;
-    Panel Panel1, Panel2, Panel3;
+    Panel panel1, panel2, panel3;
     
     
     @Override   
@@ -30,19 +30,21 @@ public class GeographyQuizTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all components in `panel1` such as `scoreLabel`, `nextButton`, and `question1TextField`. 
     @Test 
     public void shouldHaveAllComponentsInPanel1(){
         scoreLabel = (Label) TestUtils.findComponent("scoreLabel", true);
         nextButton = (Button) TestUtils.findComponent("nextButton", true);
-        Panel1 = (Panel) TestUtils.findComponent("Panel1", true);
-        question1TextField = (TextField) TestUtils.getChildNamed(Panel1, "question1TextField");
+        panel1 = (Panel) TestUtils.findComponent("panel1", true);
+        question1TextField = (TextField) TestUtils.getChildNamed(panel1, "question1TextField");
 
         assertNotNull(scoreLabel, "No scoreLabel found.");
         assertNotNull(nextButton, "No nextButton found.");
-        assertNotNull(Panel1, "No Panel1 found.");
+        assertNotNull(panel1, "No panel1 found.");
         assertNotNull(question1TextField, "No question1TextField found.");
     }
 
+    // Description: Should have all components in `panel2` such as `scoreLabel`, `nextButton`, `backButton`, and `question2TextField`.
     @Test
     public void shouldHaveAllComponentsInPanel2(){
         scoreLabel = (Label) TestUtils.findComponent("scoreLabel", true);
@@ -52,18 +54,19 @@ public class GeographyQuizTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
 
         backButton = (Button) TestUtils.findComponent("backButton", true);
-        Panel2 = (Panel) TestUtils.findComponent("Panel2", true);
-        question2TextField = (TextField) TestUtils.getChildNamed(Panel2, "question2TextField");
+        panel2 = (Panel) TestUtils.findComponent("panel2", true);
+        question2TextField = (TextField) TestUtils.getChildNamed(panel2, "question2TextField");
 
         
 
         assertNotNull(scoreLabel, "No scoreLabel found.");
         assertNotNull(nextButton, "No nextButton found.");
         assertNotNull(backButton, "No backButton found.");
-        assertNotNull(Panel2, "No Panel2 found.");
+        assertNotNull(panel2, "No panel2 found.");
         assertNotNull(question2TextField, "No question2TextField found.");
     }
 
+    // Description: Should have all components in `panel3` such as `scoreLabel`, `nextButton`, `backButton`, and `question3TextField`.
     @Test
     public void shouldHaveAllComponentsInPanel3(){
         scoreLabel = (Label) TestUtils.findComponent("scoreLabel", true);
@@ -75,22 +78,23 @@ public class GeographyQuizTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
 
         backButton = (Button) TestUtils.findComponent("backButton", true);
-        Panel3 = (Panel) TestUtils.findComponent("Panel3", true);
-        question3TextField = (TextField) TestUtils.getChildNamed(Panel3, "question3TextField");
+        panel3 = (Panel) TestUtils.findComponent("panel3", true);
+        question3TextField = (TextField) TestUtils.getChildNamed(panel3, "question3TextField");
 
         assertNotNull(scoreLabel, "No scoreLabel found.");
         assertNotNull(nextButton, "No nextButton found.");
         assertNotNull(backButton, "No backButton found.");
-        assertNotNull(Panel3, "No Panel3 found.");
+        assertNotNull(panel3, "No panel3 found.");
         assertNotNull(question3TextField, "No question3TextField found.");
     }
 
+    // Description: Should compute score correctly and display it in `scoreLabel`.
     @Test
     public void shouldComputeScore(){
         scoreLabel = (Label) TestUtils.findComponent("scoreLabel", true);
         nextButton = (Button) TestUtils.findComponent("nextButton", true);
-        Panel1 = (Panel) TestUtils.findComponent("Panel1", true);
-        question1TextField = (TextField) TestUtils.getChildNamed(Panel1, "question1TextField");
+        panel1 = (Panel) TestUtils.findComponent("panel1", true);
+        question1TextField = (TextField) TestUtils.getChildNamed(panel1, "question1TextField");
 
         robot().click(question1TextField);
         robot().enterText("Paris");
@@ -100,8 +104,8 @@ public class GeographyQuizTest extends AssertJSwingTestngTestCase {
         assertEquals(scoreLabel.getText(), "Your Score: 1/3");
 
         backButton = (Button) TestUtils.findComponent("backButton", true);
-        Panel2 = (Panel) TestUtils.findComponent("Panel2", true);
-        question2TextField = (TextField) TestUtils.getChildNamed(Panel2, "question2TextField");
+        panel2 = (Panel) TestUtils.findComponent("panel2", true);
+        question2TextField = (TextField) TestUtils.getChildNamed(panel2, "question2TextField");
 
         robot().click(question2TextField);
         robot().enterText("Tokyo");
@@ -109,8 +113,8 @@ public class GeographyQuizTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
         assertEquals(scoreLabel.getText(), "Your Score: 2/3");
 
-        Panel3 = (Panel) TestUtils.findComponent("Panel3", true);
-        question3TextField = (TextField) TestUtils.getChildNamed(Panel3, "question3TextField");
+        panel3 = (Panel) TestUtils.findComponent("panel3", true);
+        question3TextField = (TextField) TestUtils.getChildNamed(panel3, "question3TextField");
 
         robot().click(question3TextField);
         robot().enterText("Berlin");

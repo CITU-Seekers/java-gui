@@ -17,7 +17,7 @@ public class InteractiveGreetingsTest extends AssertJSwingTestngTestCase {
     Button greetButton;
     
     Dialog dialogNotice;
-    Label lblMessage;
+    Label messageLabel;
     
     @Override
     protected void onSetUp() {
@@ -26,6 +26,7 @@ public class InteractiveGreetingsTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all components `greetButton` and `nameTextField`.
     @Test
     public void shouldHaveAllComponents(){
         greetButton = (Button) TestUtils.findComponent("greetButton",true);
@@ -35,6 +36,7 @@ public class InteractiveGreetingsTest extends AssertJSwingTestngTestCase {
         assertNotNull(nameTextField, "No nameTextField found.");
     }
     
+    // Description: Should show the `greetingsDialog` with the `messageLabel` displaying "Hello, {name}! Have a good day!" on `greetButton` click.
     @Test
     public void shouldDisplayCorrectNameInGreetingsDialog(){
         greetButton = (Button) TestUtils.findComponent("greetButton", true);
@@ -45,11 +47,11 @@ public class InteractiveGreetingsTest extends AssertJSwingTestngTestCase {
         robot().click(greetButton);
         robot().waitForIdle();
         
-        dialogNotice = (Dialog) TestUtils.findComponent("dialogGreetings", true);
-        lblMessage = (Label) TestUtils.findComponent("lblMessage", true);
+        dialogNotice = (Dialog) TestUtils.findComponent("greetingsDialog", true);
+        messageLabel = (Label) TestUtils.findComponent("messageLabel", true);
         
         assertTrue(dialogNotice.isVisible(), "The dialogNotice should be visible");
-        assertEquals(lblMessage.getText(), "Hello, John Doe! Have a good day!");
+        assertEquals(messageLabel.getText(), "Hello, John Doe! Have a good day!");
     }
     
 }

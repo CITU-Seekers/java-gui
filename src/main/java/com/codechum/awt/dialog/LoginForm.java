@@ -32,10 +32,10 @@ public class LoginForm extends java.awt.Frame {
         dlgNotice = new Dialog(this, "Status", false);
         dlgNotice.setSize(200, 200);
         dlgNotice.setLayout(new BorderLayout());
-        dlgNotice.setName("dialogStatus");
-        Label lblMessage = new Label();
-        lblMessage.setName("lblMessage");
-        dlgNotice.add(lblMessage, BorderLayout.CENTER);
+        dlgNotice.setName("statusDialog");
+        Label messageLabel = new Label();
+        messageLabel.setName("messageLabel");
+        dlgNotice.add(messageLabel, BorderLayout.CENTER);
 
         // Add a WindowListener to handle the dialog closing event
         dlgNotice.addWindowListener(new WindowAdapter() {
@@ -113,13 +113,13 @@ public class LoginForm extends java.awt.Frame {
 
         if (username.equals("admin") && password.equals("admin")) {
             // Show the dialog
-            Label lblMessage = (Label) dlgNotice.getComponent(0);
-            lblMessage.setText("Login Successful!");
+            Label messageLabel = (Label) dlgNotice.getComponent(0);
+            messageLabel.setText("Login Successful!");
             dlgNotice.setVisible(true);
         } else {
             // Show the dialog
-            Label lblMessage = (Label) dlgNotice.getComponent(0);
-            lblMessage.setText("Login Failed!");
+            Label messageLabel = (Label) dlgNotice.getComponent(0);
+            messageLabel.setText("Login Failed!");
             dlgNotice.setVisible(true);
         }
         

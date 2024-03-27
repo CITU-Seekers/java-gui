@@ -16,8 +16,8 @@ public class LoginFormTest extends AssertJSwingTestngTestCase {
     TextField userNameTextField, passwordTextField;
     Button loginButton;
     
-    Dialog dialogStatus;
-    Label lblMessage;
+    Dialog statusDialog;
+    Label messageLabel;
 
     @Override
     protected void onSetUp() {
@@ -25,7 +25,8 @@ public class LoginFormTest extends AssertJSwingTestngTestCase {
         application(LoginForm.class).start();
         robot().waitForIdle();
     }
-    
+
+    // Description: Should have all components `userNameTextField`, `passwordTextField`, and `loginButton`.
     @Test 
     public void shouldHaveAllComponents(){
         userNameTextField = (TextField) TestUtils.findComponent("userNameTextField", true);
@@ -37,6 +38,7 @@ public class LoginFormTest extends AssertJSwingTestngTestCase {
         assertNotNull(loginButton, "No loginButton found");
     }
 
+    // Description: Should display "Login Successful!" in `messageLabel` of `statusDialog` on `loginButton` click.
     @Test
     public void shouldDisplayLoginSucessInStatusDialog(){
         userNameTextField = (TextField) TestUtils.findComponent("userNameTextField", true);
@@ -50,13 +52,14 @@ public class LoginFormTest extends AssertJSwingTestngTestCase {
         robot().click(loginButton);
         robot().waitForIdle();
         
-        dialogStatus = (Dialog) TestUtils.findComponent("dialogStatus", true);
-        lblMessage = (Label) TestUtils.findComponent("lblMessage", true);
+        statusDialog = (Dialog) TestUtils.findComponent("statusDialog", true);
+        messageLabel = (Label) TestUtils.findComponent("messageLabel", true);
         
-        assertTrue(dialogStatus.isVisible(), "The dialogStatus should be visible");
-        assertEquals(lblMessage.getText(), "Login Successful!");
+        assertTrue(statusDialog.isVisible(), "The statusDialog should be visible");
+        assertEquals(messageLabel.getText(), "Login Successful!");
     }
 
+    // Description: Should display "Login Failed!" in `messageLabel` of `statusDialog` on `loginButton` click.
     @Test
     public void shouldDisplayLoginFailedInStatusDialog(){
         userNameTextField = (TextField) TestUtils.findComponent("userNameTextField", true);
@@ -70,11 +73,11 @@ public class LoginFormTest extends AssertJSwingTestngTestCase {
         robot().click(loginButton);
         robot().waitForIdle();
         
-        dialogStatus = (Dialog) TestUtils.findComponent("dialogStatus", true);
-        lblMessage = (Label) TestUtils.findComponent("lblMessage", true);
+        statusDialog = (Dialog) TestUtils.findComponent("statusDialog", true);
+        messageLabel = (Label) TestUtils.findComponent("messageLabel", true);
         
-        assertTrue(dialogStatus.isVisible(), "The dialogStatus should be visible");
-        assertEquals(lblMessage.getText(), "Login Failed!");
+        assertTrue(statusDialog.isVisible(), "The statusDialog should be visible");
+        assertEquals(messageLabel.getText(), "Login Failed!");
     }
     
 }

@@ -21,6 +21,7 @@ public class FontResizerTest extends AssertJSwingTestngTestCase {
         application(FontResizer.class).start();
     }
 
+    // Description: Should have all components `textLabel` and `increaseButton`.
     @Test
     public void shouldHaveAllComponents() {
         textLabel = (Label) TestUtils.findComponent("textLabel", true);
@@ -30,6 +31,7 @@ public class FontResizerTest extends AssertJSwingTestngTestCase {
         assertNotNull(increaseButton);
     }
 
+    // Description: Should increase the font size of `textLabel` when `increaseButton` is clicked.
     @Test
     public void shouldIncreaseFontSize() {
         textLabel = (Label) TestUtils.findComponent("textLabel", true);

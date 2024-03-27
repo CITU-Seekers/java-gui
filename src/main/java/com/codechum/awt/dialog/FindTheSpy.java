@@ -11,8 +11,8 @@ public class FindTheSpy extends java.awt.Frame implements ActionListener {
      */
     public FindTheSpy() {
         initComponents();
-        dialogNotice = new Dialog(this, "Message", false);
-        dialogNotice.setSize(200, 200);
+        noticeDialog = new Dialog(this, "Message", false);
+        noticeDialog.setSize(200, 200);
         Label lblMessage = new Label("Spy found!");
         lblMessage.setName("lblMessage");
         Panel leapYearPanel = new Panel(new BorderLayout());
@@ -21,9 +21,9 @@ public class FindTheSpy extends java.awt.Frame implements ActionListener {
         leapYearPanel.add(lblMessage, BorderLayout.CENTER);
         leapYearPanel.add(new Panel(), BorderLayout.EAST);
         leapYearPanel.add(new Panel(), BorderLayout.WEST);
-        dialogNotice.add(leapYearPanel);
-        dialogNotice.setName("dialogNotice");
-        dialogNotice.setVisible(false);
+        noticeDialog.add(leapYearPanel);
+        noticeDialog.setName("noticeDialog");
+        noticeDialog.setVisible(false);
         
         button1.addActionListener(this);
         button11.addActionListener(this);
@@ -66,7 +66,7 @@ public class FindTheSpy extends java.awt.Frame implements ActionListener {
         boolean isSpy = checkSpy(Integer.parseInt(button.getLabel()));
         
         if (isSpy) {
-            dialogNotice.setVisible(true);
+            noticeDialog.setVisible(true);
         }
     }
 
@@ -157,7 +157,7 @@ public class FindTheSpy extends java.awt.Frame implements ActionListener {
         });
     }
 
-    private java.awt.Dialog dialogNotice;
+    private java.awt.Dialog noticeDialog;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private java.awt.Button button1;
     private java.awt.Button button10;

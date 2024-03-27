@@ -29,9 +29,9 @@ public class CommunitySurvey extends java.awt.Frame {
         dlgNotice.setSize(200, 200);
         dlgNotice.setLayout(new BorderLayout());
         dlgNotice.setName("dialogNotice");
-        Label lblMessage = new Label();
-        lblMessage.setName("lblMessage");
-        dlgNotice.add(lblMessage, BorderLayout.CENTER);
+        Label messageLabel = new Label();
+        messageLabel.setName("messageLabel");
+        dlgNotice.add(messageLabel, BorderLayout.CENTER);
 
         // Add a WindowListener to handle the dialog closing event
         dlgNotice.addWindowListener(new WindowAdapter() {
@@ -152,8 +152,8 @@ public class CommunitySurvey extends java.awt.Frame {
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
         // TODO add your handling code here:
-        Label lblMessage = (Label) dlgNotice.getComponent(0);
-        lblMessage.setText("Response has been recorded!");
+        Label messageLabel = (Label) dlgNotice.getComponent(0);
+        messageLabel.setText("Response has been recorded!");
         dlgNotice.setVisible(true);
     }//GEN-LAST:event_button1ActionPerformed
 

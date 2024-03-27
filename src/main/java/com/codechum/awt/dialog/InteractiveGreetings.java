@@ -30,10 +30,10 @@ public class InteractiveGreetings extends java.awt.Frame {
         dlgNotice = new Dialog(this, "Greetings", false);
         dlgNotice.setSize(200, 200);
         dlgNotice.setLayout(new BorderLayout());
-        dlgNotice.setName("dialogGreetings");
-        Label lblMessage = new Label();
-        lblMessage.setName("lblMessage");
-        dlgNotice.add(lblMessage, BorderLayout.CENTER);
+        dlgNotice.setName("greetingsDialog");
+        Label messageLabel = new Label();
+        messageLabel.setName("messageLabel");
+        dlgNotice.add(messageLabel, BorderLayout.CENTER);
 
         // Add a WindowListener to handle the dialog closing event
         dlgNotice.addWindowListener(new WindowAdapter() {
@@ -93,8 +93,8 @@ public class InteractiveGreetings extends java.awt.Frame {
         name = textField1.getText();
 
         // Update the label in the dialog box
-        Label lblMessage = (Label) dlgNotice.getComponent(0);
-        lblMessage.setText("Hello, " + name + "! Have a good day!");
+        Label messageLabel = (Label) dlgNotice.getComponent(0);
+        messageLabel.setText("Hello, " + name + "! Have a good day!");
 
         // Pack and show the dialog box
         dlgNotice.pack();

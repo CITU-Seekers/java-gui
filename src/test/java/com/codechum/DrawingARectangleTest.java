@@ -10,6 +10,7 @@ public class DrawingARectangleTest {
     @Tested DrawingARectangle codeChumActivity;
     @Mocked Graphics g;
     
+    // Description: Should override the frame's paint method and display a rectangle.
     @Test
     public void shouldOverridePaintMethod() {
         codeChumActivity.paint(g);

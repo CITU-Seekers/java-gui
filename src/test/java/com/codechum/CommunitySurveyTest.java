@@ -20,7 +20,7 @@ public class CommunitySurveyTest extends AssertJSwingTestngTestCase {
     Button submitButton;
 
     Dialog dialogNotice;
-    Label lblMessage;
+    Label messageLabel;
     
     @Override
     protected void onSetUp() {
@@ -30,6 +30,7 @@ public class CommunitySurveyTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all components `nameTextField`, `yesCheckBox`, `noCheckBox`, and `submitButton`.
     @Test
     public void shouldHaveAllComponents(){
         nameTextField = (TextField) TestUtils.findComponent("nameTextField", true);
@@ -43,6 +44,7 @@ public class CommunitySurveyTest extends AssertJSwingTestngTestCase {
         assertNotNull(submitButton, "No submitButton found.");
     }
 
+    // Description: Should display `panel1` components when `yesCheckBox` is selected such as `dogNameTextField`, `dogBreedTextField`, and `dogAgeTextField`.
     @Test
     public void shouldDisplayPanel1ComponentsWhenYesCheckBoxIsSelected(){
         nameTextField = (TextField) TestUtils.findComponent("nameTextField", true);
@@ -64,6 +66,7 @@ public class CommunitySurveyTest extends AssertJSwingTestngTestCase {
         assertNotNull(dogAgeTextField, "No dogAgeTextField found.");
     }
 
+    // Description: Should display `dialogNotice` with a message "Response has been recorded!" in `messageLabel` when `submitButton` is clicked.
     @Test
     public void shouldDisplayDialogWhenSubmitButtonIsClicked(){
         nameTextField = (TextField) TestUtils.findComponent("nameTextField", true);
@@ -75,10 +78,10 @@ public class CommunitySurveyTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
 
         dialogNotice = (Dialog) TestUtils.findComponent("dialogNotice", true);
-        lblMessage = (Label) TestUtils.findComponent("lblMessage", true);
+        messageLabel = (Label) TestUtils.findComponent("messageLabel", true);
 
         assertNotNull(dialogNotice, "No dialogNotice found.");
-        assertNotNull(lblMessage, "No lblMessage found.");
-        assertEquals(lblMessage.getText(), "Response has been recorded!");
+        assertNotNull(messageLabel, "No messageLabel found.");
+        assertEquals(messageLabel.getText(), "Response has been recorded!");
     } 
 }

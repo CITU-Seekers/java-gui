@@ -95,6 +95,7 @@ public class MenuInAMenuTest extends AssertJSwingTestngTestCase {
         assertEquals(statusLabel.getText(), expectedResult);
     }
     
+    // Description: Should have a `fileMenu` and its items `newMenuItem`, `openMenuItem`, `saveMenuItem`, and `exitMenuItem`.
     @Test
     public void shouldHaveMenuFileAndItsItems() {
         fileMenu = menuBar.getMenu(0);
@@ -108,9 +109,10 @@ public class MenuInAMenuTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should have a `formatMenu` and its item `fontColorMenu` that contains `redColorMenuItem`, `greenColorMenuItem`, and `blueColorMenuItem`.
     @Test
     public void shouldHaveMenuFormatAndItsItems() {
-        String[] menuItemNames = {"newMenuItem", "openMenuItem", "saveMenuItem", "exitMenuItem"};
+        String[] menuItemNames = {"redColorMenuItem ", "greenColorMenuItem ", "blueColorMenuItem "};
         formatMenu = menuBar.getMenu(1);
 
         assertNotNull(formatMenu, "No formatMenu found.");
@@ -125,42 +127,50 @@ public class MenuInAMenuTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should have a label named `statusLabel`.
     @Test
     public void shouldHaveLabelStatus() {
         statusLabel = (Label) TestUtils.findComponent("statusLabel", true);
         assertNotNull(statusLabel, "No statusLabel found.");
     }
     
+    // Description: Should display "Creating new file..." in `statusLabel` when `newMenuItem` is clicked.
     @Test
     public void shouldDisplayCorrectMessageOnNewClick() {
         testMenuItemBehavior("newMenuItem", "Creating new file...");
     }
     
+    // Description: Should display "Opening file..." in `statusLabel` when `openMenuItem` is clicked.
     @Test
     public void shouldDisplayCorrectMessageOnOpenClick() {
         testMenuItemBehavior("openMenuItem", "Opening file...");
     }
     
+    // Description: Should display "Saving file..." in `statusLabel` when `saveMenuItem` is clicked.
     @Test
     public void shouldDisplayCorrectMessageOnSaveClick() {
         testMenuItemBehavior("saveMenuItem", "Saving file...");
     }
     
+    // Description: Should change foreground color of `statusLabel` to red when `redColorMenuItem` is clicked.
     @Test
     public void shouldChangeFontColorOnRedClick() {
         testMenuItemFontColorBehavior("redColorMenuItem", Color.RED);
     }
     
+    // Description: Should change foreground color of `statusLabel` to green when `greenColorMenuItem` is clicked.
     @Test
     public void shouldChangeFontColorOnGreenClick() {
         testMenuItemFontColorBehavior("greenColorMenuItem", Color.GREEN);
     }
     
+    // Description: Should change foreground color of `statusLabel` to blue when `blueColorMenuItem` is clicked.
     @Test
     public void shouldChangeFontColorOnBlueClick() {
         testMenuItemFontColorBehavior("blueColorMenuItem", Color.BLUE);
     }
     
+    // Description: Should close the app when `exitMenuItem` is clicked.
     @Test
     public void shouldCloseAppOnExitClick() {
         MenuItem item = retrieveMenuItemByName("exitMenuItem");

@@ -28,6 +28,7 @@ public class FileMergerTest extends AssertJSwingTestngTestCase {
         application(FileMerger.class).start();
     }
     
+    // Description: Should have created files `test1.txt` and `test2.txt`.
     @Test
     public void shouldHaveCreatedFiles() {
         File file = new File("test1.txt");
@@ -43,6 +44,7 @@ public class FileMergerTest extends AssertJSwingTestngTestCase {
         assertTrue(file2.exists(), "File 2 does not exist.");
     }
     
+    // Description: Should have all components `openFileButton` and `contentTextField`.
     @Test
     public void shouldHaveAllComponents() {
         openFileButton = (Button) TestUtils.findComponent("openFileButton", true);
@@ -52,6 +54,7 @@ public class FileMergerTest extends AssertJSwingTestngTestCase {
         assertNotNull(contentTextField, "No contentTextField found.");
     }
     
+    // Description: Should display merged files content in `contentTextField`.
     @Test
     public void shouldDisplayMergedFilesContentInTextField() {
         shouldHaveCreatedFiles();

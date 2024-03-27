@@ -20,6 +20,7 @@ public class ActionEventActivityTest extends AssertJSwingTestngTestCase {
         application(ActionEventActivity.class).start();
     }
     
+    // Description: Should have all components `colorChangeButton` and `textLabel`.
     @Test
     public void shouldHaveAllComponents(){
         colorChangeButton = (Button) TestUtils.findComponent("colorChangeButton", true);
@@ -29,6 +30,7 @@ public class ActionEventActivityTest extends AssertJSwingTestngTestCase {
         assertNotNull(textLabel);
     }
 
+    // Description: Should change the foreground color of `textLabel` in this sequence (red -> blue -> green -> red) when `colorChangeButton` is clicked.
     @Test 
     public void shouldChangeColor(){
         colorChangeButton = (Button) TestUtils.findComponent("colorChangeButton", true);

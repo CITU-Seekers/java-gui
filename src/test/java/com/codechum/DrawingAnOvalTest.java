@@ -16,8 +16,9 @@ public class DrawingAnOvalTest {
     @Tested DrawingAnOvalMyCanvas canvas;
     @Injectable Graphics g;
     
+    // Description: Should override frame's paint method of MyCanvas class to draw an oval.
     @Test
-    public void testPaintMethodOfCanvasClass() {
+    public void shouldOverridePaintMethodOfCanvasClass() {
         canvas.paint(g);
         
         new Verifications(){{
@@ -25,6 +26,7 @@ public class DrawingAnOvalTest {
         }};
     }
     
+    // Description: Should have a canvas named `canvasMain`.
     @Test
     public void shouldHaveCanvasMain() {
         Canvas canvasMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "canvasMain");

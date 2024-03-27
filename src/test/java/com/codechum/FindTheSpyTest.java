@@ -17,7 +17,7 @@ public class FindTheSpyTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     String[] buttons = {"button1", "button2", "button3", "button4", "button5", "button6", "button7", "button8", "button9", "button10"};
     
-    @Mocked Dialog dialogNotice;
+    @Mocked Dialog noticeDialog;
     
     @Override
     protected void onSetUp() {
@@ -26,6 +26,7 @@ public class FindTheSpyTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all buttons `button1`, `button2`, `button3`, `button4`, `button5`, `button6`, `button7`, `button8`, `button9`, and `button10`.
     @Test
     public void shouldHaveAllButtons() {
         for (String button: buttons) {
@@ -34,6 +35,7 @@ public class FindTheSpyTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should display the dialog `noticeDialog` when a spy is identified.
     @Test
     public void shouldIdentifySpyCorrectly() {
         for (int i = 0; i < buttons.length; i++) {
@@ -43,7 +45,7 @@ public class FindTheSpyTest extends AssertJSwingTestngTestCase {
         }
         
         new Verifications(){{
-            dialogNotice.setVisible(true); times = 3;
+            noticeDialog.setVisible(true); times = 3;
         }};
     }
     

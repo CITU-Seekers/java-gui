@@ -10,6 +10,7 @@ public class FontStylesTest {
     @Tested FontStyles codeChumActivity;
     @Injectable Graphics g;
     
+    // Description: Should display a text "Bold Text" in bold font with a font family of "Default" and size of 20.
     @Test
     public void shouldDrawBoldText() {
         codeChumActivity.paint(g);
@@ -20,6 +21,7 @@ public class FontStylesTest {
         }};
     }
     
+    // Description: Should display a text "Italic Text" in italic font with a font family of "Default" and size of 20.
     @Test
     public void shouldDrawItalicText() {
         codeChumActivity.paint(g);
@@ -30,6 +32,7 @@ public class FontStylesTest {
         }};
     }
     
+    // Description: Should display a text "Bold Italic Text" in bold italic font with a font family of "Default" and size of 20.
     @Test
     public void shouldDrawBoldItalicText() {
         codeChumActivity.paint(g);
