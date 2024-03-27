@@ -1,6 +1,5 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.fonts.FontResizer;
 import static org.testng.Assert.*;
 import java.awt.*;

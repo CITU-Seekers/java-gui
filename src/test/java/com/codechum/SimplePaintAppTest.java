@@ -1,6 +1,5 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.drawingShapes.SimplePaintApp;
 import java.awt.*;
 import java.awt.event.KeyEvent;

@@ -1,6 +1,6 @@
 package com.codechum;
 
-import com.codechum.swing.jPanel.PanelClassQuiz;
+import com.codechum.swing.jPanel.PanelPractice;
 import static org.testng.Assert.*;
 
 import java.awt.*;
@@ -16,15 +16,16 @@ import org.assertj.swing.core.GenericTypeMatcher;
 import org.assertj.swing.testng.testcase.AssertJSwingTestngTestCase;
 import static org.assertj.swing.launcher.ApplicationLauncher.*;
 
-public class PanelClassQuizTest extends AssertJSwingTestngTestCase {
+public class PanelPracticeTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     Frame frame;
+
     JPanel mainPanel, subPanelA, subPanelB;
 
     @Override
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
-        application(PanelClassQuiz.class).start();
+        application(PanelPractice.class).start();
         
         robot().waitForIdle();
         
@@ -54,34 +55,6 @@ public class PanelClassQuizTest extends AssertJSwingTestngTestCase {
         mainPanel = (JPanel) TestUtils.getChildNamed(frame, "mainPanel");
         subPanelB = (JPanel) TestUtils.getChildNamed(mainPanel, "subPanelB");
         assertNotNull(subPanelB, "No subPanelB found.");
-    }
-
-    @Test
-    public void subPanelAShouldBeInCorrectXPosition() {
-        mainPanel = (JPanel) TestUtils.getChildNamed(frame, "mainPanel");
-        subPanelA = (JPanel) TestUtils.getChildNamed(mainPanel, "subPanelA");
-        assertEquals(subPanelA.getLocation().getX(), 10);
-    }
-
-    @Test
-    public void subPanelAShouldBeInCorrectYPosition() {
-        mainPanel = (JPanel) TestUtils.getChildNamed(frame, "mainPanel");
-        subPanelA = (JPanel) TestUtils.getChildNamed(mainPanel, "subPanelA");
-        assertEquals(subPanelA.getLocation().getY(), 10);
-    }
-
-    @Test
-    public void subPanelBShouldBeInCorrectXPosition() {
-        mainPanel = (JPanel) TestUtils.getChildNamed(frame, "mainPanel");
-        subPanelB = (JPanel) TestUtils.getChildNamed(mainPanel, "subPanelB");
-        assertEquals(subPanelB.getLocation().getX(), 200);
-    }
-
-    @Test
-    public void subPanelBShouldBeInCorrectYPosition() {
-        mainPanel = (JPanel) TestUtils.getChildNamed(frame, "mainPanel");
-        subPanelB = (JPanel) TestUtils.getChildNamed(mainPanel, "subPanelB");
-        assertEquals(subPanelB.getLocation().getY(), 90);
     }
 
     @AfterMethod

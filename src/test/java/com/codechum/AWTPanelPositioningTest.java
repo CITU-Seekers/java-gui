@@ -1,6 +1,5 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.panels.PanelPositioning;
 import static org.testng.Assert.*;
 

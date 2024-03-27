@@ -5,8 +5,8 @@ import javax.swing.*;
 import javax.swing.border.Border;
 
 
-public class PanelClassQuiz extends JFrame {
-    public PanelClassQuiz() {
+public class PanelsAtCorners extends JFrame {
+    public PanelsAtCorners() {
         this.setTitle("Panel Quiz");
         this.setSize(300,220);
 
@@ -49,7 +49,7 @@ public class PanelClassQuiz extends JFrame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PanelClassQuiz().setVisible(true);
+                new PanelsAtCorners().setVisible(true);
             }
         });
     }

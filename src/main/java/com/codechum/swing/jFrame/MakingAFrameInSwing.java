@@ -6,8 +6,22 @@ package com.codechum.swing.jFrame;
 
 /**
  *
- * @author Jhonray Acojedo
+ * @author AzalithenPC
  */
-public class MakingAFrameInSwing {
-    
+import java.awt.*;
+
+public class MakingAFrameInSwing extends Frame {
+    public MakingAFrameInSwing() {
+        this.setTitle("Frame");
+        this.setName("frmPractice");
+        this.setSize(500,400);
+    }
+
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MakingAFrameInSwing().setVisible(true);
+            }
+        });
+    }
 }

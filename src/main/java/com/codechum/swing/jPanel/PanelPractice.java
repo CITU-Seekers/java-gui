@@ -5,8 +5,8 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.*;
 
-public class PanelClassPracticeProblemII extends JFrame {
-    public PanelClassPracticeProblemII() {
+public class PanelPractice extends JFrame {
+    public PanelPractice() {
         this.setTitle("Panel Practice");
         this.setSize(300,220);
 
@@ -42,6 +42,6 @@ public class PanelClassPracticeProblemII extends JFrame {
     }
 
     public static void main(String args[]) {
-        new PanelClassPracticeProblemII().setVisible(true);
+        new PanelPractice().setVisible(true);
     }
 }

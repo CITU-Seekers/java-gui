@@ -1,14 +1,9 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.dialog.InteractiveGreetings;
 import static org.testng.Assert.*;
 
 import java.awt.*;
-import mockit.Expectations;
-import mockit.Mocked;
-import mockit.Verifications;
-
 import org.testng.annotations.*;
 
 import org.assertj.swing.core.EmergencyAbortListener;

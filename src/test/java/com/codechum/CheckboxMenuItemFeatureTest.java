@@ -1,6 +1,5 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.menu.CheckboxMenuItemFeature;
 import org.assertj.swing.testng.testcase.AssertJSwingTestngTestCase;
 

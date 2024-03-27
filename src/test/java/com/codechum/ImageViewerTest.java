@@ -1,6 +1,5 @@
 package com.codechum;
 
-import com.codechum.TestUtils;
 import com.codechum.awt.image.ImageViewer;
 import static org.testng.Assert.*;
 

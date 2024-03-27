@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.codechum.swing.jFrame;
 
-/**
- *
- * @author Jhonray Acojedo
- */
-public class SwingFrameMaster {
-    
+import javax.swing.JFrame;
+
+public class SwingFrameMaster extends JFrame {
+    public SwingFrameMaster() {
+        this.setTitle("Frame Master");
+        this.setName("frmMaster");
+        this.setSize(700, 500);
+        this.setLocation(500, 300);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // Properly handle window closing
+    }
+
+    public static void main(String args[]) {
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new SwingFrameMaster().setVisible(true);
+            }
+        });
+    }
 }
