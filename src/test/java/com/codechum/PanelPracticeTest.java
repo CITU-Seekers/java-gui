@@ -37,12 +37,14 @@ public class PanelPracticeTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have a JPanel named `mainPanel`.
     @Test
     public void shouldHavePanelMain() {
         mainPanel = (JPanel) TestUtils.getChildNamed(frame, "mainPanel");
         assertNotNull(mainPanel, "No mainPanel found.");
     }
 
+    // Description: Should have a JPanel named `subPanelA` in `mainPanel`.
     @Test
     public void shouldHavePanelSubAInPanelMain() {
         mainPanel = (JPanel) TestUtils.getChildNamed(frame, "mainPanel");
@@ -50,6 +52,7 @@ public class PanelPracticeTest extends AssertJSwingTestngTestCase {
         assertNotNull(subPanelA, "No subPanelA found.");
     }
 
+    // Description: Should have a JPanel named `subPanelB` in `mainPanel`.
     @Test
     public void shouldHavePanelSubBInPanelMain() {
         mainPanel = (JPanel) TestUtils.getChildNamed(frame, "mainPanel");

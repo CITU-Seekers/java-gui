@@ -37,24 +37,23 @@ public class SwingPalindromeCheckerWithJOptionPaneTest extends AssertJSwingTestn
         });
     }
 
+    // Description: Should have all components `inputTextField` and `checkButton`.
     @Test
-    public void hasInputTextField(){
+    public void shouldHaveAllComponents(){
         inputTextField = (JTextField) TestUtils.getChildNamed(frame, "inputTextField");
-        assertNotNull(inputTextField, "No inputTextField found.");
-    }
-
-    @Test
-    public void hasCheckButton(){
         checkButton = (JButton) TestUtils.getChildNamed(frame, "checkButton");
+        assertNotNull(inputTextField, "No inputTextField found.");
         assertNotNull(checkButton, "No checkButton found.");
     }
 
+    // Description: Should have an empty default value for `inputTextField`.
     @Test
-    public void checkInputTextFieldDefaultValue(){
+    public void shouldCheckInputTextFieldDefaultValue(){
         inputTextField = (JTextField) TestUtils.getChildNamed(frame, "inputTextField");
         assertEquals(inputTextField.getText(), "", "The inputTextField should be empty by default");
     }
 
+    // Description: Should show a dialog with the message "Palindrome" if the `inputTextField` value is a palindrome and the `checkButton` is clicked.
     @Test
     public void shouldShowDialogForPalindromeOnButtonClick(){
         inputTextField = (JTextField) TestUtils.getChildNamed(frame, "inputTextField");
@@ -68,6 +67,7 @@ public class SwingPalindromeCheckerWithJOptionPaneTest extends AssertJSwingTestn
         assertEquals(message, "Palindrome");
     }
 
+    // Description: Should show a dialog with the message "Not a Palindrome" if the `inputTextField` value is not a palindrome and the `checkButton` is clicked.
     @Test
     public void shouldShowDialogForNotAPalindromeOnButtonClick(){
         inputTextField = (JTextField) TestUtils.getChildNamed(frame, "inputTextField");

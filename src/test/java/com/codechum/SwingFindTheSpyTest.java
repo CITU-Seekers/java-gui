@@ -53,6 +53,7 @@ public class SwingFindTheSpyTest extends AssertJSwingTestngTestCase {
         return sum == product;
     }
     
+    // Description: Should have all buttons `button1`, `button2`, `button3`, `button4`, `button5`, `button6`, `button7`, `button8`, `button9`, and `button10`.
     @Test
     public void shouldHaveAllButtons() {
         for (String button: buttons) {
@@ -61,6 +62,7 @@ public class SwingFindTheSpyTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should display JOptionPane with message "Spy found!" when a spy is identified.
     @Test
     public void shouldIdentifySpyCorrectly() {
         for (int i = 0; i < buttons.length; i++) {
