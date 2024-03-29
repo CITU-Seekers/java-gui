@@ -26,10 +26,10 @@ public class DrawingTextTest {
         }};
     }
     
-    // Description: Should have a canvas named `canvasMain`.
+    // Description: Should have a canvas named `mainCanvas`.
     @Test
     public void shouldHaveCanvasMain() {
-        Canvas canvasMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "canvasMain");
-        assertNotNull(canvasMain, "No canvasMain found");
+        Canvas canvasMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "mainCanvas");
+        assertNotNull(canvasMain, "No mainCanvas found");
     }
 }
