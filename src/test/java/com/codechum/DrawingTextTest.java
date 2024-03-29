@@ -27,7 +27,7 @@ public class DrawingTextTest {
     
     @Test
     public void shouldHaveCanvasMain() {
-        Canvas canvasMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "canvasMain");
-        assertNotNull(canvasMain, "No canvasMain found");
+        Canvas canvasMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "mainCanvas");
+        assertNotNull(canvasMain, "No mainCanvas found");
     }
 }

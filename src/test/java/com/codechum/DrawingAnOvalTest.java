@@ -12,22 +12,29 @@ import mockit.Injectable;
 import mockit.Verifications;
 
 public class DrawingAnOvalTest {
+
     @Tested DrawingAnOval codeChumActivity;
     @Tested DrawingAnOvalMyCanvas canvas;
     @Injectable Graphics g;
-    
+
+    @BeforeMethod
+    public void setUp() {
+        codeChumActivity = new DrawingAnOval();
+        canvas = new DrawingAnOvalMyCanvas();
+    }
+
     @Test
     public void testPaintMethodOfCanvasClass() {
         canvas.paint(g);
-        
-        new Verifications(){{
-            g.fillOval(anyInt,anyInt, anyInt, anyInt);
+
+        new Verifications() {{
+            g.fillOval(anyInt, anyInt, anyInt, anyInt);
         }};
     }
-    
+
     @Test
     public void shouldHaveCanvasMain() {
-        Canvas canvasMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "canvasMain");
-        assertNotNull(canvasMain, "No canvasMain found");
+        Canvas canvasMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "mainCanvas");
+        assertNotNull(canvasMain, "No mainCanvas found");
     }
 }
