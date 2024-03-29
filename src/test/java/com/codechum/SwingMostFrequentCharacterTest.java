@@ -29,12 +29,14 @@ public class SwingMostFrequentCharacterTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
     
+    // Description: Should have all components `textArea` and `frequentCharLabel`.
     @Test
     public void shouldHaveAllComponents() {
         assertNotNull(frame.textBox("textArea"), "No textArea found.");
         assertNotNull(frame.label("frequentCharLabel"), "No frequentCharLabel found.");
     }
     
+    // Description: Should display the correct frequent character in the `frequentCharLabel` when a text is entered in the `textArea`.
     @Test
     public void shouldDisplayCorrectFrequentChar() {
         boolean isLetterCorrect = false;
@@ -62,6 +64,7 @@ public class SwingMostFrequentCharacterTest extends AssertJSwingTestngTestCase {
         assertTrue(isLetterCorrect, "The displayed text should be 'E' or 'e'");
     }
     
+    // Description: Should not count the space as a frequent character in the `frequentCharLabel` when a text is entered in the `textArea`.
     @Test
     public void shouldDisplayCorrectFrequentCharWithSpace() {
         boolean isLetterCorrect = false;

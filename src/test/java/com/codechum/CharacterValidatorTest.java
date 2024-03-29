@@ -36,6 +36,7 @@ public class CharacterValidatorTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `passwordTextField`, `resultLabel`, and `validateButton`.
     @Test
     public void shouldHaveAllComponents() {
         passwordTextField = (JPasswordField) TestUtils.findComponent("passwordTextField", true);
@@ -47,6 +48,7 @@ public class CharacterValidatorTest extends AssertJSwingTestngTestCase {
         assertNotNull(validateButton, "No validateButton found.");
     }
 
+    // Description: Should display "Has special characters" in `resultLabel` when `passwordTextField` contains special characters.
     @Test
     public void shouldBeAbleToValidateSpecialCharacters() {
         resultLabel = (JLabel) TestUtils.findComponent("resultLabel", true);
@@ -57,6 +59,7 @@ public class CharacterValidatorTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "Has special characters");
     }
 
+    // Description: Should display "No special characters" in `resultLabel` when `passwordTextField` does not contain special characters.
     @Test
     public void shouldBeAbleToValidateNoSpecialCharacters() {
         resultLabel = (JLabel) TestUtils.findComponent("resultLabel", true);

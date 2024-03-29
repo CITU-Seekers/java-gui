@@ -7,24 +7,24 @@ import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 public class LeapYearChecker extends JFrame{
     private JPanel panel1;
-    private JTextField tfYear;
-    private JButton btnCheckYear;
+    private JTextField yearTextField;
+    private JButton checkYearButton;
 
     public LeapYearChecker() {
         this.setTitle("Leap Year Checker");
-        this.tfYear = new JTextField();
-        this.tfYear.setName("tfYear");
-        this.btnCheckYear = new JButton();
-        this.btnCheckYear.setName("btnCheckYear");
-        this.btnCheckYear.addActionListener(new ActionListener() {
+        this.yearTextField = new JTextField();
+        this.yearTextField.setName("yearTextField");
+        this.checkYearButton = new JButton();
+        this.checkYearButton.setName("checkYearButton");
+        this.checkYearButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 checkYear();
             }
         });
         panel1 = new JPanel();
-        panel1.add(tfYear);
-        panel1.add(btnCheckYear);
+        panel1.add(yearTextField);
+        panel1.add(checkYearButton);
         setContentPane(panel1);
         setSize(500, 300);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -42,7 +42,7 @@ public class LeapYearChecker extends JFrame{
     public void checkYear() {
         int year = 0;
         try {
-            year = Integer.parseInt(tfYear.getText());
+            year = Integer.parseInt(yearTextField.getText());
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(null, "Input a valid number.");
             return;

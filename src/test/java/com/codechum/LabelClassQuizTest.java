@@ -21,6 +21,7 @@ public class LabelClassQuizTest extends AssertJSwingTestngTestCase {
         application(LabelClassQuiz.class).start();
     }
 
+    // Description: Should have all labels `label1`, `label2`, `label3`, and `label4`.
     @Test
     public void shouldHaveAllLabels() {
         label1 = (JLabel) TestUtils.findComponent("label1", true);
@@ -33,26 +34,30 @@ public class LabelClassQuizTest extends AssertJSwingTestngTestCase {
         assertNotNull(label4, "No label4 found.");
     }
 
+    // Description: Should have a text value of "Hello World!" in `label1`.
     @Test
-    public void checkLabel1Value() {
+    public void shouldCheckLabel1Value() {
         label1 = (JLabel) TestUtils.findComponent("label1", true);
         assertEquals(label1.getText(), "Hello World!");
     }
 
+    // Description: Should have a text value of "I love programming" in `label2`.
     @Test
-    public void checkLabel2Value() {
+    public void shouldCheckLabel2Value() {
         label2 = (JLabel) TestUtils.findComponent("label2", true);
         assertEquals(label2.getText(), "I love programming");
     }
 
+    // Description: Should have a text value of "I love CodeChum" in `label3`.
     @Test
-    public void checkLabel3Value() {
+    public void shouldCheckLabel3Value() {
         label3 = (JLabel) TestUtils.findComponent("label3", true);
         assertEquals(label3.getText(), "I love CodeChum");
     }
 
+    // Description: Should have a text value of "I love Java" in `label4`.
     @Test
-    public void checkLabel4Value() {
+    public void shouldCheckLabel4Value() {
         label4 = (JLabel) TestUtils.findComponent("label4", true);
         assertEquals(label4.getText(), "I love Java");
     }

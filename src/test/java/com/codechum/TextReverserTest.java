@@ -42,6 +42,7 @@ public class TextReverserTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `textArea`, `reversedTextLabel`, and `reverseButton`.
     /**
      * Test to check the presence of JTextArea, JLabel, and JButton components.
      */
@@ -56,11 +57,12 @@ public class TextReverserTest extends AssertJSwingTestngTestCase {
         assertNotNull(reverseButton, "No reverseButton found.");
     }
 
+    // Description: Should have an empty default value for `textArea` and `reversedTextLabel`.
     /**
      * Test to check if JTextArea and JLabel have default values.
      */
     @Test
-    public void checkTextAreaAndLabelDefaultValue() {
+    public void shouldCheckTextAreaAndLabelDefaultValue() {
         textArea = (JTextArea) TestUtils.findComponent("textArea", true);
         reversedTextLabel = (JLabel) TestUtils.findComponent("reversedTextLabel", true);
 
@@ -68,6 +70,7 @@ public class TextReverserTest extends AssertJSwingTestngTestCase {
         assertEquals(reversedTextLabel.getText(), "");
     }
 
+    // Description: Should reverse the text in `textArea` and display it in `reversedTextLabel` when `reverseButton` is clicked.
     /**
      * Test to check if text is reversed correctly.
      */

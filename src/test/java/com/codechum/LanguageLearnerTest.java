@@ -41,6 +41,7 @@ public class LanguageLearnerTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `wordList`, `wordTextField`, `languageTextField`, `addButton`, and `removeButton`.
     @Test
     public void shouldHaveAllComponents() {
         wordList = (JList) TestUtils.findComponent("wordList", true);
@@ -56,6 +57,7 @@ public class LanguageLearnerTest extends AssertJSwingTestngTestCase {
         assertNotNull(removeButton, "No removeButton found.");
     }
 
+    // Description: Should add new entered word from `wordTextField` with its language from `languageTextField` to `wordList` when `addButton` is clicked.
     @Test
     public void shouldBeAbleToAddWordToList() {
         wordList = (JList) TestUtils.findComponent("wordList", true);
@@ -74,6 +76,7 @@ public class LanguageLearnerTest extends AssertJSwingTestngTestCase {
         assertEquals(actualWordListString, "Bonjour (French), Hello (English), Salut (French)");
     }
 
+    // Description: Should remove selected word from `wordList` when `removeButton` is clicked.
     @Test
     public void shouldBeAbleToRemoveWordFromList() {
         wordList = (JList) TestUtils.findComponent("wordList", true);

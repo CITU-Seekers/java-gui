@@ -47,7 +47,8 @@ public class ExpenseTrackerTest extends AssertJSwingTestngTestCase {
         });
     }
 
-     @Test
+    // Description: Should set the JFrame's layout to GridLayout with 3 rows and 2 columns.
+    @Test
     public void shouldUseGridLayout() {
      Container contentPane = frame.getContentPane();
         LayoutManager layout = contentPane.getLayout();
@@ -65,6 +66,7 @@ public class ExpenseTrackerTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should have all components `expenseTextField`, `totalLabel`, and `addExpenseButton`.
     @Test
     public void shouldHaveAllComponents() {
         expenseTextField = (JTextField) TestUtils.findComponent("expenseTextField", true);
@@ -77,6 +79,7 @@ public class ExpenseTrackerTest extends AssertJSwingTestngTestCase {
 
     }
 
+    // Description: Should update total expense amount in `totalLabel` when expense is added from `expenseTextField` and `addExpenseButton` is clicked.
     @Test
     public void shouldUpdateTotalExpenseOnAddExpenseButtonClick() {
          expenseTextField = (JTextField) TestUtils.findComponent("expenseTextField", true);

@@ -24,12 +24,14 @@ public class TextFieldEnableDisableTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have a text field named `textField`.
     @Test
     public void shouldHaveTextField() {
         textField = (JTextField) TestUtils.findComponent("textField", true);
         assertNotNull(textField, "No textField found.");
     }
     
+    // Description: Should have all buttons `enableButton` and `disableButton`.
     @Test
     public void shouldHaveAllButtons() {
         enableButton = (JButton) TestUtils.findComponent("enableButton", true);
@@ -38,6 +40,7 @@ public class TextFieldEnableDisableTest extends AssertJSwingTestngTestCase {
         assertNotNull(disableButton, "No disableButton found.");
     }
     
+    // Description: Should enable `textField` when `enableButton` is clicked.
     @Test
     public void shouldEnableOnButtonEnableClick() {
         textField = (JTextField) TestUtils.findComponent("textField", true);
@@ -49,6 +52,7 @@ public class TextFieldEnableDisableTest extends AssertJSwingTestngTestCase {
         assertTrue(textField.isEnabled(), "The text field should be enabled");
     }
     
+    // Description: Should disable `textField` when `disableButton` is clicked.
     @Test
     public void shouldDisableOnButtonDisableClick() {
         textField = (JTextField) TestUtils.findComponent("textField", true);

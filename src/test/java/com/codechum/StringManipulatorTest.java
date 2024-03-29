@@ -29,6 +29,7 @@ public class StringManipulatorTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have a label named `textLabel` with text "Reverse the string!".
     /**
      * Test to check the initial state of the text label.
      */
@@ -39,6 +40,7 @@ public class StringManipulatorTest extends AssertJSwingTestngTestCase {
         assertEquals(textLabel.getText(), "Reverse the string!");
     }
 
+    // Description: Should reverse the text in `textLabel` when `reverseButton` is clicked.
     /**
      * Test to check the presence and functionality of the reverseButton.
      */
@@ -51,6 +53,7 @@ public class StringManipulatorTest extends AssertJSwingTestngTestCase {
         assertEquals(textLabel.getText(), "!gnirts eht esreveR");
     }
 
+    // Description: Should reset the text in `textLabel` to "Reverse the string!" when `resetButton` is clicked.
     /**
      * Test to check the presence and functionality of the resetButton.
      */

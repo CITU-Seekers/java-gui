@@ -24,6 +24,7 @@ public class LabelLoveTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have a label named `codingLabel` with text "Code is Poetry!".
     /**
      * Test to check the presence and text value of the "Code is Poetry!" label.
      */
@@ -34,6 +35,7 @@ public class LabelLoveTest extends AssertJSwingTestngTestCase {
         assertEquals(label.getText(), "Code is Poetry!");
     }
 
+    // Description: Should have a label named `debugLabel` with text "Debugging is an adventure".
     /**
      * Test to check the presence and text value of the "Debugging is an adventure" label.
      */
@@ -44,6 +46,7 @@ public class LabelLoveTest extends AssertJSwingTestngTestCase {
         assertEquals(label.getText(), "Debugging is an adventure");
     }
 
+    // Description: Should have a label named `javaLabel` with text "Java is my cup of coffee".
     /**
      * Test to check the presence and text value of the "Java is my cup of coffee" label.
      */
@@ -54,6 +57,7 @@ public class LabelLoveTest extends AssertJSwingTestngTestCase {
         assertEquals(label.getText(), "Java is my cup of coffee");
     }
 
+    // Description: Should have a label named `chumLabel` with text "CodeChum makes learning fun".
     /**
      * Test to check the presence and text value of the "CodeChum makes learning fun" label.
      */

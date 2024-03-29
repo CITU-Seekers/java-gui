@@ -22,12 +22,14 @@ public class LabelClassPracticeProblemITest extends AssertJSwingTestngTestCase {
         application(LabelClassPracticeProblemI.class).start();
     }
 
+    // Description: Should have a label named `labelHelloWorld`.
     @Test
     public void shouldHaveLabelHelloWorld() {
         labelHelloWorld = (JLabel) TestUtils.findComponent("labelHelloWorld", true);
         assertNotNull(labelHelloWorld, "No labelHelloWorld found.");
     }
 
+    // Description: Should have a text value of "Hello World! I love Java!" in `labelHelloWorld`.
     @Test
     public void shouldHaveCorrectTextValue() {
         labelHelloWorld = (JLabel) TestUtils.findComponent("labelHelloWorld", true);

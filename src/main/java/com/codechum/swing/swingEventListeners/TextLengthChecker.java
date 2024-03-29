@@ -8,21 +8,21 @@ public class TextLengthChecker extends JFrame{
     public TextLengthChecker() {
         this.setTitle("Text Length Checker");
         
-        JTextField textField = new JTextField();
+        JTextField wordTextField = new JTextField();
         JLabel messageLabel = new JLabel("The text is short.");
 
-        textField.setName("textField");
+        wordTextField.setName("wordTextField");
         messageLabel.setName("messageLabel");
 
-        textField.setBounds(100,80,120,30);
+        wordTextField.setBounds(100,80,120,30);
         messageLabel.setBounds(110,100,180,80);
 
-        textField.addKeyListener(
+        wordTextField.addKeyListener(
             new KeyAdapter() {
                 @Override
                 public void keyReleased(KeyEvent e) {
                     // TODO Auto-generated method stub
-                    if(textField.getText().length() > 10) {
+                    if(wordTextField.getText().length() > 10) {
                         messageLabel.setText("The text is long.");
                     }
                     else {
@@ -32,7 +32,7 @@ public class TextLengthChecker extends JFrame{
             }
         );
 
-        this.add(textField);
+        this.add(wordTextField);
         this.add(messageLabel);
         this.setSize(350,300);    
         this.setLayout(null);

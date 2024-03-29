@@ -60,6 +60,7 @@ public class PHPCurrencyConverterTest extends AssertJSwingTestngTestCase {
         frame.button("convertButton").click();
     }
 
+    // Description: Should have all components named `amountTextField`, `toCurrencyComboBox`, `convertButton`, and `resultLabel`.
     /**
      * Test to check if all the necessary components are present.
      */
@@ -73,6 +74,7 @@ public class PHPCurrencyConverterTest extends AssertJSwingTestngTestCase {
         assertNotNull(resultLabel, "No resultLabel found.");
     }
 
+    // Description: Should convert the amount in `amountTextField` to USD when `toCurrencyComboBox` is set to USD and `convertButton` is clicked.
     /**
      * Test to check the currency conversion for USD.
      */
@@ -85,6 +87,8 @@ public class PHPCurrencyConverterTest extends AssertJSwingTestngTestCase {
         clickConvertButton();
         assertEquals(resultLabel.getText(), "2.00");
     }
+
+    // Description: Should convert the amount in `amountTextField` to EUR when `toCurrencyComboBox` is set to EUR and `convertButton` is clicked.
     /**
      * Test to check the conversion for EUR.
      */
@@ -98,6 +102,7 @@ public class PHPCurrencyConverterTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "1.80");
     }
 
+    // Description: Should convert the amount in `amountTextField` to JPY when `toCurrencyComboBox` is set to JPY and `convertButton` is clicked.
     /**
      * Test to check the conversion for JPY.
      */

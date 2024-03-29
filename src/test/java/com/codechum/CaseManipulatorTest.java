@@ -29,6 +29,7 @@ public class CaseManipulatorTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have a label named `textLabel` with text "Unlock the Power of Strings!".
     /**
      * Test to check the initial state of the text label.
      */
@@ -39,6 +40,7 @@ public class CaseManipulatorTest extends AssertJSwingTestngTestCase {
         assertEquals(textLabel.getText(), "Unlock the Power of Strings!");
     }
 
+    // Description: Should convert the text in `textLabel` to uppercase when `toUpperCaseButton` is clicked.
     /**
      * Test to check the presence and functionality of the toUpperCaseButton.
      */
@@ -51,6 +53,7 @@ public class CaseManipulatorTest extends AssertJSwingTestngTestCase {
         assertEquals(textLabel.getText(), "UNLOCK THE POWER OF STRINGS!");
     }
 
+    // Description: Should convert the text in `textLabel` to lowercase when `toLowerCaseButton` is clicked.
     /**
      * Test to check the presence and functionality of the toLowerCaseButton.
      */

@@ -54,6 +54,7 @@ public class SwingGUICalculatorTest extends AssertJSwingTestngTestCase {
         resultLabel = (JLabel) TestUtils.findComponent("resultLabel", true);
     }
     
+    // Description: Should have all components named `num1TextField`, `num2TextField`, `operationsComboBox`, `computeButton`, and `resultLabel`.
     @Test
     public void shouldHaveAllComponents() {
         initializeComponents();
@@ -65,6 +66,7 @@ public class SwingGUICalculatorTest extends AssertJSwingTestngTestCase {
         assertNotNull(resultLabel, "No resultLabel found.");
     }
     
+    // Description: Should display sum of `num1TextField` and `num2TextField` in `resultLabel` when "+" is selected in `operationsComboBox` and `computeButton` is clicked.
     @Test
     public void shouldShowComputedSum(){
         initializeComponents();
@@ -84,6 +86,7 @@ public class SwingGUICalculatorTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "-1");
     }
 
+    // Description: Should display difference of `num1TextField` and `num2TextField` in `resultLabel` when "-" is selected in `operationsComboBox` and `computeButton` is clicked.
     @Test
     public void shouldShowComputedDifference(){
         initializeComponents();
@@ -102,6 +105,7 @@ public class SwingGUICalculatorTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "5");
     }
 
+    // Description: Should display product of `num1TextField` and `num2TextField` in `resultLabel` when "*" is selected in `operationsComboBox` and `computeButton` is clicked.
     @Test
     public void shouldShowComputedProduct(){
         initializeComponents();
@@ -120,6 +124,7 @@ public class SwingGUICalculatorTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "50");
     }
 
+    // Description: Should display quotient of `num1TextField` and `num2TextField` in `resultLabel` when "/" is selected in `operationsComboBox` and `computeButton` is clicked.
     @Test
     public void shouldShowComputedQuotient(){
         initializeComponents();

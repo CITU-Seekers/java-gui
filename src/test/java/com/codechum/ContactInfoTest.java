@@ -23,9 +23,9 @@ public class ContactInfoTest extends AssertJSwingTestngTestCase {
     FrameFixture frameFixture;
     JFrame frame;
 
-    JTextField nameField;
-    JTextField phoneField;
-    JTextField emailField;
+    JTextField nameTextField;
+    JTextField phoneTextField;
+    JTextField emailTextField;
     JButton clearButton;
     JButton submitButton;
 
@@ -44,6 +44,7 @@ public class ContactInfoTest extends AssertJSwingTestngTestCase {
         });
     }
     
+    // Description: Should set the JFrame's layout to GridLayout with 4 rows and 2 columns.
     @Test
     public void shouldUseGridLayout() {
      Container contentPane = frame.getContentPane();
@@ -62,59 +63,61 @@ public class ContactInfoTest extends AssertJSwingTestngTestCase {
         }
     }
 
-    
+    // Description: Should have all components `nameTextField`, `phoneTextField`, `emailTextField`, `clearButton`, and `submitButton`.
     @Test
     public void shouldHaveAllComponents() {
-        nameField = (JTextField) TestUtils.findComponent("nameField", true);
-        phoneField = (JTextField) TestUtils.findComponent("phoneField", true);
-        emailField = (JTextField) TestUtils.findComponent("emailField", true);
+        nameTextField = (JTextField) TestUtils.findComponent("nameTextField", true);
+        phoneTextField = (JTextField) TestUtils.findComponent("phoneTextField", true);
+        emailTextField = (JTextField) TestUtils.findComponent("emailTextField", true);
         clearButton = (JButton) TestUtils.findComponent("clearButton", true);
         submitButton = (JButton) TestUtils.findComponent("submitButton", true);
 
 
-        assertNotNull(nameField, "No nameField found.");
-        assertNotNull(phoneField, "No phoneField found.");
-        assertNotNull(nameField, "No emailField found.");
+        assertNotNull(nameTextField, "No nameTextField found.");
+        assertNotNull(phoneTextField, "No phoneTextField found.");
+        assertNotNull(nameTextField, "No emailTextField found.");
         assertNotNull(clearButton, "No clearButton found.");
         assertNotNull(submitButton, "No submitButton found.");
     }
 
+    // Description: Should clear all text fields when `clearButton` is clicked.
     @Test
     public void shouldClearFields() {
-          nameField = (JTextField) TestUtils.getChildNamed(frame, "nameField");
-        phoneField = (JTextField) TestUtils.getChildNamed(frame, "phoneField");
-        emailField = (JTextField) TestUtils.getChildNamed(frame, "emailField");
+          nameTextField = (JTextField) TestUtils.getChildNamed(frame, "nameTextField");
+        phoneTextField = (JTextField) TestUtils.getChildNamed(frame, "phoneTextField");
+        emailTextField = (JTextField) TestUtils.getChildNamed(frame, "emailTextField");
         clearButton = (JButton) TestUtils.getChildNamed(frame, "clearButton");
         submitButton = (JButton) TestUtils.getChildNamed(frame, "submitButton");
         
-        robot().click(nameField);
+        robot().click(nameTextField);
         robot().enterText("John Doe");
-        robot().click(phoneField);
+        robot().click(phoneTextField);
         robot().enterText("123-456-7890");
-        robot().click(emailField);
+        robot().click(emailTextField);
         robot().enterText("john.doe@example.com");
         robot().click(clearButton);
 
-        assertEquals(nameField.getText(), "");
-        assertEquals(phoneField.getText(), "");
-        assertEquals(emailField.getText(), "");
+        assertEquals(nameTextField.getText(), "");
+        assertEquals(phoneTextField.getText(), "");
+        assertEquals(emailTextField.getText(), "");
     }
 
     @Mocked JOptionPane jOptionPane;
     
+    // Description: Should show a message dialog with the entered contact information when `submitButton` is clicked.
     @Test
     public void shouldShowMessageOnSubmit() {
-         nameField = (JTextField) TestUtils.getChildNamed(frame, "nameField");
-        phoneField = (JTextField) TestUtils.getChildNamed(frame, "phoneField");
-        emailField = (JTextField) TestUtils.getChildNamed(frame, "emailField");
+         nameTextField = (JTextField) TestUtils.getChildNamed(frame, "nameTextField");
+        phoneTextField = (JTextField) TestUtils.getChildNamed(frame, "phoneTextField");
+        emailTextField = (JTextField) TestUtils.getChildNamed(frame, "emailTextField");
         clearButton = (JButton) TestUtils.getChildNamed(frame, "clearButton");
         submitButton = (JButton) TestUtils.getChildNamed(frame, "submitButton");
         
-       robot().click(nameField);
+       robot().click(nameTextField);
         robot().enterText("TEST");
-        robot().click(phoneField);
+        robot().click(phoneTextField);
         robot().enterText("12355");
-        robot().click(emailField);
+        robot().click(emailTextField);
         robot().enterText("emailss");
         robot().click(submitButton);
 

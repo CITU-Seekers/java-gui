@@ -40,6 +40,7 @@ public class PizzaToppingsSelectorTest extends AssertJSwingTestngTestCase {
         resultLabel = (JLabel) TestUtils.findComponent("resultLabel", true);
     }
 
+    // Description: Should only select one radio button at a time between `pepperoniRadioButton`, `mushroomRadioButton`, `oliveRadioButton`, and `pineappleRadioButton`.
     @Test
     public void shouldOnlySelectOneRadioButton() {
         robot().click(pepperoniRadioButton);
@@ -67,6 +68,7 @@ public class PizzaToppingsSelectorTest extends AssertJSwingTestngTestCase {
         assertFalse(oliveRadioButton.isSelected());
     }
 
+    // Description: Should display selected topping on `resultLabel` when `confirmButton` is clicked.
     @Test
     public void shouldDisplaySelectedToppingOnButtonClick() {
         robot().click(pepperoniRadioButton);

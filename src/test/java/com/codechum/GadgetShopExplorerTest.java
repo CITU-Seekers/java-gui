@@ -31,6 +31,7 @@ public class GadgetShopExplorerTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `phoneCheckBox`, `laptopCheckBox`, `headphonesCheckBox`, `chargerCheckBox`, `calculateButton`, and `totalCostLabel`.
     /**
      * Test to check the presence of all components including JCheckBox, JButton, and JLabel.
      */
@@ -49,6 +50,7 @@ public class GadgetShopExplorerTest extends AssertJSwingTestngTestCase {
         assertNotNull(totalCostLabel, "No totalCostLabel found.");
     }
 
+    // Description: Should display the correct total cost in `totalCostLabel` when checkboxes are selected and `calculateButton` is clicked.
     /**
      * Test to check if the label displays the correct total cost after calculating.
      */
