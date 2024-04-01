@@ -43,10 +43,10 @@ public class LinesBrightLikeADiamondTest {
         };
     }
 
-    // Description: Should have a canvas named `canvasMain`.
+    // Description: Should have a canvas named `mainCanvas`.
     @Test
     public void shouldHaveCanvas() {
-        Canvas cnvMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "canvasMain");
-        assertNotNull(cnvMain, "No canvasMain found");
+        Canvas cnvMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "mainCanvas");
+        assertNotNull(cnvMain, "No mainCanvas found");
     }
 }
