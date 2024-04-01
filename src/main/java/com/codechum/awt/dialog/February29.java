@@ -58,7 +58,7 @@ public class February29 extends java.awt.Frame {
         yearTextField.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         yearTextField.setName("yearTextField"); // NOI18N
 
-        checkYearButton.setLabel("checkYearButton");
+        checkYearButton.setLabel("Check");
         checkYearButton.setName("checkYearButton"); // NOI18N
         checkYearButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

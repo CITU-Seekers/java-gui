@@ -31,6 +31,8 @@ public class PlusButton extends java.awt.Frame {
         label1 = new java.awt.Label();
         button1 = new java.awt.Button();
 
+        setName("Counter"); // NOI18N
+        setTitle("Counter");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);
