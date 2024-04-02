@@ -28,7 +28,9 @@ public class PanelPositioning extends JFrame {
     }
 
     public static void main(String args[]) {
-        new PanelPositioning().setVisible(true);
+        SwingUtilities.invokeLater(() -> {
+            new PanelPositioning().setVisible(true);
+        });
     }
 }
 
