@@ -2,12 +2,13 @@ package com.codechum.swing.jRadioButton;
 
 public class SimpleQuestionnaire extends javax.swing.JFrame {
 
-    /**
-     * Creates new form JComboBox
-     */
     public SimpleQuestionnaire() {
         initComponents();
-        setTitle("My Pet");
+        btnGrpChoice.add(charRadioButton);
+        btnGrpChoice.add(booleanRadioButton);
+        btnGrpChoice.add(intRadioButton);
+        btnGrpChoice.add(stringRadioButton);
+        setTitle("Questionnaire");
     }
 
     /**
@@ -19,88 +20,118 @@ public class SimpleQuestionnaire extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        petNameTextField = new javax.swing.JTextField();
+        btnGrpChoice = new javax.swing.ButtonGroup();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        petTypeComboBox = new javax.swing.JComboBox<>();
-        generateTextButton = new javax.swing.JButton();
-        displayLabel = new javax.swing.JLabel();
-
-        petNameTextField.setName("petNameTextField");
-        petTypeComboBox.setName("petTypeComboBox");
-        generateTextButton.setName("generateTextButton");
-        displayLabel.setName("displayLabel");
+        charRadioButton = new javax.swing.JRadioButton();
+        booleanRadioButton = new javax.swing.JRadioButton();
+        intRadioButton = new javax.swing.JRadioButton();
+        stringRadioButton = new javax.swing.JRadioButton();
+        checkButton = new javax.swing.JButton();
+        resultLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("Pet's Name:");
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
+        jLabel1.setText("Q:");
 
-        jLabel2.setText("Pet's Type:");
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel2.setText("Which one is not a primitive datatype?");
 
-        petTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cat", "Dog", "Parrot", "Rabbit" }));
+        charRadioButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        charRadioButton.setText("char");
+        charRadioButton.setName("charRadioButton"); // NOI18N
 
-        generateTextButton.setText("Generate");
+        booleanRadioButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        booleanRadioButton.setText("boolean");
+        booleanRadioButton.setName("booleanRadioButton"); // NOI18N
 
-        displayLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        displayLabel.setText("The pet is a dog named Pero");
+        intRadioButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        intRadioButton.setText("int");
+        intRadioButton.setName("intRadioButton"); // NOI18N
 
-        generateTextButton.addActionListener(new java.awt.event.ActionListener() {
+        stringRadioButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        stringRadioButton.setText("String");
+        stringRadioButton.setName("stringRadioButton"); // NOI18N
+
+        checkButton.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        checkButton.setText("Check Answer");
+        checkButton.setName("checkButton"); // NOI18N
+        checkButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                generateTextButtonActionPerformed(evt);
+                checkButtonActionPerformed(evt);
             }
         });
 
+        resultLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        resultLabel.setText("Correct!");
+        resultLabel.setName("resultLabel"); // NOI18N
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGap(37, 37, 37)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(petNameTextField)
-                            .addComponent(petTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(generateTextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(booleanRadioButton)
+                                    .addComponent(charRadioButton)
+                                    .addComponent(intRadioButton)
+                                    .addComponent(stringRadioButton)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(49, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(displayLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(resultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(162, 162, 162))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(petNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(petTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addGap(33, 33, 33)
-                .addComponent(generateTextButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(charRadioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(booleanRadioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(intRadioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(stringRadioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(checkButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(displayLabel)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addComponent(resultLabel)
+                .addContainerGap(33, Short.MAX_VALUE))
         );
+
+        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void generateTextButtonActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void checkButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCheckActionPerformed
         // TODO add your handling code here:
-        String selectedItem = petTypeComboBox.getModel().getSelectedItem().toString().toLowerCase();
-        displayLabel.setText("The pet is a " + selectedItem + " named " + petNameTextField.getText());
-    }  
+        if (stringRadioButton.isSelected()) {
+            resultLabel.setText("Correct!");
+        } else {
+            resultLabel.setText("Incorrect!");
+        }
+    }//GEN-LAST:event_btnCheckActionPerformed
 
     /**
      * @param args the command line arguments
@@ -128,9 +159,6 @@ public class SimpleQuestionnaire extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(SimpleQuestionnaire.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -141,11 +169,15 @@ public class SimpleQuestionnaire extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton generateTextButton;
-    private javax.swing.JComboBox<String> petTypeComboBox;
+    private javax.swing.JButton checkButton;
+    private javax.swing.ButtonGroup btnGrpChoice;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel displayLabel;
-    private javax.swing.JTextField petNameTextField;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel resultLabel;
+    private javax.swing.JRadioButton booleanRadioButton;
+    private javax.swing.JRadioButton charRadioButton;
+    private javax.swing.JRadioButton intRadioButton;
+    private javax.swing.JRadioButton stringRadioButton;
     // End of variables declaration//GEN-END:variables
 }

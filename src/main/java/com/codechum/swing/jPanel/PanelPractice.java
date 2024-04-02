@@ -42,6 +42,10 @@ public class PanelPractice extends JFrame {
     }
 
     public static void main(String args[]) {
-        new PanelPractice().setVisible(true);
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                new PanelPractice().setVisible(true);
+            }
+        });
     }
 }
