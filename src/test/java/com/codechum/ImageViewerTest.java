@@ -26,6 +26,7 @@ public class ImageViewerTest extends AssertJSwingTestngTestCase {
         application(ImageViewer.class).start();
     }
 
+    // Description: Should have all components `openButton`, `statusLabel`, `imagePanel`, and `controlPanel`.
     @Test
     public void shouldHaveAllComponents() {
         openButton = (Button) TestUtils.findComponent("openButton", true);
@@ -39,6 +40,7 @@ public class ImageViewerTest extends AssertJSwingTestngTestCase {
         assertNotNull(controlPanel, "No controlPanel found.");
     }
 
+    // Description: Should loaded image from `fileDialog` and display it in the `imagePanel` and update the `statusLabel`.
     @Test
     public void shouldDisplayImage() {
         openButton = (Button) TestUtils.findComponent("openButton", true);

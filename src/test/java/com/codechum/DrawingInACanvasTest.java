@@ -62,6 +62,7 @@ public class DrawingInACanvasTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should have all components `redCheckBox`, `greenCheckBox`, `blueCheckBox`, and `mainCanvas`.
     @Test
     public void shouldHaveAllComponents() {
         String[] checkboxes = {"redCheckBox", "greenCheckBox", "blueCheckBox"};
@@ -74,6 +75,7 @@ public class DrawingInACanvasTest extends AssertJSwingTestngTestCase {
         assertNotNull(mainCanvas, "No mainCanvas found.");
     }
     
+    // Description: Should draw an oval on the clicked area of the `mainCanvas` with the color red when the `redCheckBox` is selected.
     @Test
     public void shouldDrawRedOvalOnClickedArea() {
         pickColor("redCheckBox");
@@ -86,6 +88,7 @@ public class DrawingInACanvasTest extends AssertJSwingTestngTestCase {
         }};
     }
     
+    // Description: Should draw an oval on the clicked area of the `mainCanvas` with the color green when the `greenCheckBox` is selected.
     @Test
     public void shouldDrawGreenOvalOnClickedArea() {
         pickColor("greenCheckBox");
@@ -98,6 +101,7 @@ public class DrawingInACanvasTest extends AssertJSwingTestngTestCase {
         }};
     }
     
+    // Description: Should draw an oval on the clicked area of the `mainCanvas` with the color blue when the `blueCheckBox` is selected.
     @Test
     public void shouldDrawBlueOvalOnClickedArea() {
         pickColor("blueCheckBox");
@@ -110,6 +114,7 @@ public class DrawingInACanvasTest extends AssertJSwingTestngTestCase {
         }};
     }
     
+    // Description: Should draw in red when the user clicks and drags their mouse pointer within the `mainCanvas` when the `redCheckBox` is selected.
     @Test
     public void shouldDrawRedOvalOnClickedAreaToEndPoint() {
         pickColor("redCheckBox");
@@ -124,6 +129,8 @@ public class DrawingInACanvasTest extends AssertJSwingTestngTestCase {
             g.fillOval(xCenter - 4, yCenter - 4, 15, 15);
         }};
     }
+
+    // Description: Should draw in green when the user clicks and drags their mouse pointer within the `mainCanvas` when the `greenCheckBox` is selected.
     @Test
     public void shouldDrawGreenOvalOnClickedAreaToEndPoint() {
         pickColor("greenCheckBox");
@@ -139,6 +146,7 @@ public class DrawingInACanvasTest extends AssertJSwingTestngTestCase {
         }};
     }
     
+    // Description: Should draw in blue when the user clicks and drags their mouse pointer within the `mainCanvas` when the `blueCheckBox` is selected.
     @Test
     public void shouldDrawBlueOvalOnClickedAreaToEndPoint() {
         pickColor("blueCheckBox");
