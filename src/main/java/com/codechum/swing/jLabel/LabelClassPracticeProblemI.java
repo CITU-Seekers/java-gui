@@ -19,12 +19,12 @@ public class LabelClassPracticeProblemI extends javax.swing.JFrame {
         this.setName("helloWorld");
         this.setTitle("Hello World!");
 
-        labelHelloWorld = new javax.swing.JLabel();
+        helloWorldLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        labelHelloWorld.setText("Hello World! I love Java!");
-        labelHelloWorld.setName("labelHelloWorld");
+        helloWorldLabel.setText("Hello World! I love Java!");
+        helloWorldLabel.setName("helloWorldLabel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -32,14 +32,14 @@ public class LabelClassPracticeProblemI extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(125, 125, 125)
-                .addComponent(labelHelloWorld, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(helloWorldLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(136, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
-                .addComponent(labelHelloWorld, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(helloWorldLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(82, Short.MAX_VALUE))
         );
 
@@ -83,7 +83,7 @@ public class LabelClassPracticeProblemI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JLabel labelHelloWorld;
+    private javax.swing.JLabel helloWorldLabel;
     // End of variables declaration                   
 }
 
