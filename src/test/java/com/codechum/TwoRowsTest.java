@@ -22,6 +22,7 @@ public class TwoRowsTest extends AssertJSwingTestngTestCase {
         application(TwoRows.class).start();
     }
 
+    // Description: Should have all components named `label1` and `label2`.
     @Test
     public void shouldHaveAllComponents() {
         label1 = (Label) TestUtils.findComponent("label1", true);
@@ -31,6 +32,7 @@ public class TwoRowsTest extends AssertJSwingTestngTestCase {
         assertNotNull(label2, "No label1 found.");
     }
 
+    // Description: Should have a text value of "This is the first row" for `label1` and "This is the second row" for `label2`.
     @Test
     public void shouldHaveCorrectTextValue() {
         label1 = (Label) TestUtils.findComponent("label1", true);
@@ -40,6 +42,7 @@ public class TwoRowsTest extends AssertJSwingTestngTestCase {
         assertEquals(label2.getText(), "This is the second row");
     }
     
+    // Description: Should have a background color of light gray for `label1` and default color for `label2`.
     @Test
     public void shouldHaveCorrectBackgroundColor() {
         label1 = (Label) TestUtils.findComponent("label1", true);

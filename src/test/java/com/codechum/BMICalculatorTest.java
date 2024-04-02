@@ -36,36 +36,33 @@ public class BMICalculatorTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have all components `weightTextField`, `heightTextField`, and `calculateButton`.
     @Test
-    public void hasWeightTextField(){
+    public void shouldHaveAllComponents(){
         weightTextField = (JTextField) TestUtils.getChildNamed(frame, "weightTextField");
-        assertNotNull(weightTextField, "No weightTextField found.");
-    }
-
-    @Test
-    public void hasHeightTextField(){
         heightTextField = (JTextField) TestUtils.getChildNamed(frame, "heightTextField");
-        assertNotNull(heightTextField, "No heightTextField found.");
-    }
-
-    @Test
-    public void hasCalculateButton(){
         calculateButton = (JButton) TestUtils.getChildNamed(frame, "calculateButton");
+        
+        assertNotNull(weightTextField, "No weightTextField found.");
+        assertNotNull(heightTextField, "No heightTextField found.");
         assertNotNull(calculateButton, "No calculateButton found.");
     }
 
+    // Description: Should have an empty default value for `weightTextField`.
     @Test
-    public void checkWeightTextFieldDefaultValue(){
+    public void shouldCheckWeightTextFieldDefaultValue(){
         weightTextField = (JTextField) TestUtils.getChildNamed(frame, "weightTextField");
         assertEquals(weightTextField.getText(), "", "The weightTextField should be empty by default");
     }
 
+    // Description: Should have an empty default value for `heightTextField`.
     @Test
-    public void checkHeightTextFieldDefaultValue(){
+    public void shouldCheckHeightTextFieldDefaultValue(){
         heightTextField = (JTextField) TestUtils.getChildNamed(frame, "heightTextField");
         assertEquals(heightTextField.getText(), "", "The heightTextField should be empty by default");
     } 
 
+    // Description: Should show a dialog with the calculated BMI when the `calculateButton` is clicked.
     @Test
     public void shouldShowDialogWithCalculatedBMIOnButtonClick(){
         weightTextField = (JTextField) TestUtils.getChildNamed(frame, "weightTextField");

@@ -20,6 +20,7 @@ public class ItemEventActivityTest extends AssertJSwingTestngTestCase {
         application(ItemEventActivity.class).start();
     }
     
+    // Description: Should have all components `checkbox1`, `checkbox2`, `checkbox3` and `statusLabel`.
     @Test
     public void shouldHaveAllComponents(){
         checkbox1 = (Checkbox) TestUtils.findComponent("checkbox1", true);
@@ -33,6 +34,7 @@ public class ItemEventActivityTest extends AssertJSwingTestngTestCase {
         assertNotNull(statusLabel);
     }
 
+    // Description: Should display correct status in `statusLabel` based on the checkboxes selected.
     @Test
     public void shouldDisplayCorrectStatus(){
         checkbox1 = (Checkbox) TestUtils.findComponent("checkbox1", true);

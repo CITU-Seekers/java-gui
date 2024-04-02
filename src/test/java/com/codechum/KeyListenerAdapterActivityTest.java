@@ -34,6 +34,7 @@ public class KeyListenerAdapterActivityTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `inputField`, `keyLabel`, and `specialLabel`.
     @Test
     public void shouldHaveAllComponents() {
         assertNotNull(frame.textBox("inputField"), "No inputField found.");
@@ -41,6 +42,7 @@ public class KeyListenerAdapterActivityTest extends AssertJSwingTestngTestCase {
         assertNotNull(frame.label("specialLabel"), "No specialLabel found.");
     }
 
+    // Description: Should update the `keyLabel` text to "Key pressed: {key}" when a key is pressed and the `specialLabel` if the key is a special character.
     @Test
     public void shouldUpdateLabelsOnKeyPress() {
         frame.textBox("inputField").pressKey(VK_A);
@@ -49,6 +51,7 @@ public class KeyListenerAdapterActivityTest extends AssertJSwingTestngTestCase {
         assertEquals(frame.label("specialLabel").text(), "Special character not pressed.");
     }
 
+    // Description: Should update the `keyLabel` text to "Key released: {key}" when a key is released and the `specialLabel` if the key is a special character.
     @Test
     public void shouldUpdateLabelsOnSpecialKeyPressAndRelease() {
          frame.textBox("inputField").pressKey(VK_Z);

@@ -7,21 +7,21 @@ public class TextLengthChecker extends Frame{
     public TextLengthChecker() {
         this.setTitle("Text Length Checker");
         
-        TextField textField = new TextField();
+        TextField wordTextField = new TextField();
         Label messageLabel = new Label("The text is short.");
 
-        textField.setName("textField");
+        wordTextField.setName("wordTextField");
         messageLabel.setName("messageLabel");
 
-        textField.setBounds(80,80,100,30);
+        wordTextField.setBounds(80,80,100,30);
         messageLabel.setBounds(90,120,120,80);
 
-        textField.addKeyListener(
+        wordTextField.addKeyListener(
             new KeyAdapter() {
                 @Override
                 public void keyReleased(KeyEvent e) {
                     // TODO Auto-generated method stub
-                    if(textField.getText().length() > 10) {
+                    if(wordTextField.getText().length() > 10) {
                         messageLabel.setText("The text is long.");
                     }
                     else {
@@ -32,7 +32,7 @@ public class TextLengthChecker extends Frame{
         );
 
 
-        this.add(textField);
+        this.add(wordTextField);
         this.add(messageLabel);
         this.setSize(300,250);    
         this.setLayout(null);

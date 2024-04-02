@@ -14,9 +14,9 @@ import static org.assertj.swing.launcher.ApplicationLauncher.*;
 public class CheckItOutTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
 
-    Checkbox checkBoxFirst, checkBoxThird;
-    Button buttonDisplaySelected;
-    Label labelCheckBoxes;
+    Checkbox firstCheckBox, thirdCheckBox;
+    Button displaySelectedButton;
+    Label checkBoxesLabel;
 
     @Override
     protected void onSetUp() {
@@ -25,9 +25,10 @@ public class CheckItOutTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all components named `firstCheckBox`, `secondCheckBox`, `thirdCheckBox`, `displaySelectedButton`, and `checkBoxesLabel`.
     @Test
     public void shouldHaveAllComponents() {
-        String[] components = {"checkBoxFirst", "checkBoxSecond", "checkBoxThird", "buttonDisplaySelected", "labelCheckBoxes"};
+        String[] components = {"firstCheckBox", "secondCheckBox", "thirdCheckBox", "displaySelectedButton", "checkBoxesLabel"};
         
         for (String comp: components) {
             Component component = TestUtils.findComponent(comp, true);
@@ -35,22 +36,23 @@ public class CheckItOutTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should display the correct label in `checkBoxesLabel` when checkboxes are selected and `displaySelectedButton` is clicked.
     @Test
     public void shouldDisplayCorrectLabels() {
-        checkBoxFirst = (Checkbox) TestUtils.findComponent("checkBoxFirst", true);
-        checkBoxThird = (Checkbox) TestUtils.findComponent("checkBoxThird", true);
-        buttonDisplaySelected = (Button) TestUtils.findComponent("buttonDisplaySelected", true);
-        labelCheckBoxes = (Label) TestUtils.findComponent("labelCheckBoxes", true);
+        firstCheckBox = (Checkbox) TestUtils.findComponent("firstCheckBox", true);
+        thirdCheckBox = (Checkbox) TestUtils.findComponent("thirdCheckBox", true);
+        displaySelectedButton = (Button) TestUtils.findComponent("displaySelectedButton", true);
+        checkBoxesLabel = (Label) TestUtils.findComponent("checkBoxesLabel", true);
         
-        robot().click(checkBoxFirst);
+        robot().click(firstCheckBox);
         robot().waitForIdle();
-        robot().click(checkBoxThird);
-        robot().waitForIdle();
-        
-        robot().click(buttonDisplaySelected);
+        robot().click(thirdCheckBox);
         robot().waitForIdle();
         
-        assertEquals(labelCheckBoxes.getText(), "First, Third");
+        robot().click(displaySelectedButton);
+        robot().waitForIdle();
+        
+        assertEquals(checkBoxesLabel.getText(), "First, Third");
     }
 
     @AfterMethod

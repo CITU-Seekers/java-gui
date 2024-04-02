@@ -39,6 +39,7 @@ public class ColorPaletteExplorerTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `colorList`, `displayColorButton`, and `colorLabel`.
     @Test
     public void shouldHaveAllComponents() {
         colorList = (JList) TestUtils.findComponent("colorList", true);
@@ -50,6 +51,7 @@ public class ColorPaletteExplorerTest extends AssertJSwingTestngTestCase {
         assertNotNull(colorLabel, "No colorLabel found.");
     }
 
+    // Description: Should display selected color from `colorList` in `colorLabel` when `displayColorButton` is clicked.
     @Test
     public void shouldBeAbleToDisplaySelectedColor() {
         colorList = (JList) TestUtils.findComponent("colorList", true);

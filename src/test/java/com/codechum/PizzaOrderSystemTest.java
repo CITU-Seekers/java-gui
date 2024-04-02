@@ -27,6 +27,7 @@ public class PizzaOrderSystemTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `pizzaSizeChoice`, `pizzaToppingsChoice`, `extraCheeseChoice`, `calculateButton`, and `totalLabel`.
     @Test
     public void shouldHaveAllComponents() {
         pizzaSizeChoice = (Choice) TestUtils.findComponent("pizzaSizeCheckBox", true);
@@ -42,21 +43,25 @@ public class PizzaOrderSystemTest extends AssertJSwingTestngTestCase {
         assertNotNull(totalLabel, "No totalLabel found.");
     }
 
+    // Description: Should calculate the total for a small pizza with no extra cheese and display it in `totalLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculateTotalForSmallPizzaWithNoExtraCheese() {
         calculateTotal("Small", "Mushrooms", "No", 12);
     }
     
+    // Description: Should calculate the total for a small pizza with toppings and extra cheese and display it in `totalLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculateTotalForSmallPizzaWithToppingsAndExtraCheese() {
         calculateTotal("Small", "Mushrooms", "Yes", 15);
     }
     
+    // Description: Should calculate the total for a medium pizza with toppings and extra cheese and display it in `totalLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculateTotalForMediumPizzaWithToppingsAndExtraCheese() {
         calculateTotal("Large", "Pepperoni", "Yes", 25);
     }
 
+    // Description: Should calculate the total for a large pizza with toppings and extra cheese and display it in `totalLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculateTotalForLargePizzaWithToppingsAndExtraCheese() {
         calculateTotal("Large", "Onions", "Yes", 25);

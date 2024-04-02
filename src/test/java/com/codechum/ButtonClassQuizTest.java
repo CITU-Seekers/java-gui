@@ -29,6 +29,7 @@ public class ButtonClassQuizTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have a label named `textLabel` with text "I love programming!".
     @Test
     public void shouldHaveLabelText() {
         textLabel = (JLabel) TestUtils.findComponent("textLabel", true);
@@ -37,6 +38,7 @@ public class ButtonClassQuizTest extends AssertJSwingTestngTestCase {
         assertEquals(textLabel.getText(), "I love programming!");
     }
 
+    // Description: Should have all buttons named `switchVowelCaseButton`, `switchConsonantCaseButton`, and `switchAllCaseButton`.
     @Test
     public void shouldHaveAllButtons() {
         switchVowelCaseButton = (JButton) TestUtils.findComponent("switchVowelCaseButton", true);
@@ -47,6 +49,7 @@ public class ButtonClassQuizTest extends AssertJSwingTestngTestCase {
         assertNotNull(switchAllCaseButton, "No switchAllCaseButton found.");
     }
 
+    // Description: Should switch the case of all vowel letters in `textLabel` when `switchVowelCaseButton` is clicked.
     @Test
     public void shouldBeAbleToSwitchCaseOfVowelLetters() {
         textLabel = (JLabel) TestUtils.findComponent("textLabel", true);
@@ -57,6 +60,7 @@ public class ButtonClassQuizTest extends AssertJSwingTestngTestCase {
         assertEquals(textLabel.getText(), "i lOvE prOgrAmmIng!");
     }
 
+    // Description: Should switch the case of all consonant letters in `textLabel` when `switchConsonantCaseButton` is clicked.
     @Test
     public void shouldBeAbleToSwitchCaseOfConsonantLetters() {
         textLabel = (JLabel) TestUtils.findComponent("textLabel", true);
@@ -67,6 +71,7 @@ public class ButtonClassQuizTest extends AssertJSwingTestngTestCase {
         assertEquals(textLabel.getText(), "I LoVe PRoGRaMMiNG!");
     }
 
+    // Description: Should switch the case of all letters in `textLabel` when `switchAllCaseButton` is clicked.
     @Test
     public void shouldBeAbleToSwitchCaseOfAllLetters() {
         textLabel = (JLabel) TestUtils.findComponent("textLabel", true);
@@ -77,6 +82,7 @@ public class ButtonClassQuizTest extends AssertJSwingTestngTestCase {
         assertEquals(textLabel.getText(), "i LOVE PROGRAMMING!");
     }
 
+    // Description: Should switch the case of the letters in `textLabel` when `switchVowelCaseButton`, `switchConsonantCaseButton`, and `switchAllCaseButton` are clicked in succession.
     @Test
     public void shouldSwitchCaseProperlyWhenAllButtonsAreClicked() {
         textLabel = (JLabel) TestUtils.findComponent("textLabel", true);

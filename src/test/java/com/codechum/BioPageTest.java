@@ -46,6 +46,7 @@ public class BioPageTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should contain `panelCard` at the CENTER of the frame.
     @Test
     public void shouldHaveCardPanelInCenter() {
         BorderLayout layout = (BorderLayout) frame.getLayout();
@@ -53,8 +54,9 @@ public class BioPageTest extends AssertJSwingTestngTestCase {
         assertNotNull(comp, "No cardPanel found.");
     }
     
+    // Description: Should have all components `prevButton`, `nextButton`, `firstPanel`, `secondPanel`, and `thirdPanel`.
     @Test
-    public void hasButtonsAndPanels() {
+    public void shouldHaveButtonsAndPanels() {
         prevButton = (Button) TestUtils.getChildNamed(frame, "prevButton");
         nextButton = (Button) TestUtils.getChildNamed(frame, "nextButton");
         firstPanel = (Panel) TestUtils.getChildNamed(frame, "firstPanel");
@@ -68,8 +70,9 @@ public class BioPageTest extends AssertJSwingTestngTestCase {
         assertNotNull(thirdPanel, "No thirdPanel found.");
     }
 
+    // Description: Should not be visible by default `secondPanel` and `thirdPanel`.
     @Test
-    public void secondAndThirdPanelShouldNotBeVisibleByDefault() {
+    public void shouldNotBeVisibleByDefaultSecondAndThirdPanel() {
         secondPanel = (Panel) TestUtils.getChildNamed(frame, "secondPanel");
         thirdPanel = (Panel) TestUtils.getChildNamed(frame, "thirdPanel");
         
@@ -77,16 +80,18 @@ public class BioPageTest extends AssertJSwingTestngTestCase {
         assertFalse(thirdPanel.isVisible(), "secondPanel is visible.");
     }
     
+    // Description: Should have `cardPanel` with `CardLayout`.
     @Test
-    public void cardPanelShouldHaveCardLayout() {
+    public void shouldHaveCardLayoutCardPanel() {
         cardPanel = (Panel) TestUtils.findComponent("cardPanel", true);
         CardLayout layout = (CardLayout) cardPanel.getLayout();
         
         assertTrue(layout.toString().contains("CardLayout"), "cardPanel should have CardLayout");
     }
 
+    // Description: Should have `firstPanel` with `GridLayout` and contain `nameTextField` and `ageTextField`.
     @Test
-    public void firstPanelShouldContainCorrectComponentsAndLayout() {
+    public void shouldContainCorrectComponentsAndLayoutFirstPanel() {
         firstPanel = (Panel) TestUtils.findComponent("firstPanel", true);
         GridLayout layout = (GridLayout) firstPanel.getLayout();
         nameTextField = (TextField) TestUtils.getChildNamed(firstPanel, "nameTextField");
@@ -97,16 +102,18 @@ public class BioPageTest extends AssertJSwingTestngTestCase {
         assertNotNull(ageTextField, "No ageTextField found in firstPanel.");
     }
 
+    // Description: Should have `secondPanel` with `GridLayout` and contain `quoteTextArea`.
     @Test
-    public void secondPanelShouldContainCorrectComponents() {
+    public void shouldContainCorrectComponentsSecondPanel() {
         secondPanel = (Panel) TestUtils.getChildNamed(frame, "secondPanel");
         quoteTextArea = (TextArea) TestUtils.getChildNamed(secondPanel, "quoteTextArea");
         
         assertNotNull(quoteTextArea, "No quoteTextArea found in secondPanel.");
     }
 
+    // Description: Should have `thirdPanel` with `GridLayout` and contain `nameLabel`, `ageLabel`, and `quoteLabel`.
     @Test
-    public void thirdPanelShouldContainCorrectComponents() {
+    public void shouldContainCorrectComponentsThirdPanel() {
         thirdPanel = (Panel) TestUtils.getChildNamed(frame, "thirdPanel");
         GridLayout layout = (GridLayout) thirdPanel.getLayout();
         nameLabel = (Label) TestUtils.getChildNamed(thirdPanel, "nameLabel");
@@ -119,12 +126,14 @@ public class BioPageTest extends AssertJSwingTestngTestCase {
         assertNotNull(quoteLabel,"No quoteLabel found in thirdPanel.");
     }
 
+    // Description: Should hide `prevButton` on the first page.
     @Test
     public void shouldNotDisplayPrevButtonOnFirstPage() {
         prevButton = (Button) TestUtils.getChildNamed(frame, "prevButton");
         assertFalse(prevButton.isVisible(),"prevButton is visible.");
     }
 
+    // Description: Should not display `nextButton` on the last page.
     @Test
     public void shouldNotDisplayNextButtonOnLastPage() {
         nextButton = (Button) TestUtils.getChildNamed(frame, "nextButton");
@@ -135,6 +144,7 @@ public class BioPageTest extends AssertJSwingTestngTestCase {
         assertFalse(nextButton.isVisible(),"nextButton should not be visible on last page.");
     }
 
+    // Description: Should reflect the values in the first two pages on the third page when `nextButton` is clicked.
     @Test
     public void shouldBeAbleToDisplayValuesInLastPage() {
         nameTextField = (TextField) TestUtils.findComponent("nameTextField", true);
@@ -165,6 +175,7 @@ public class BioPageTest extends AssertJSwingTestngTestCase {
         assertEquals(quoteLabel.getText(), "a quote");
     }
 
+    // Description: Should display the correct panels on `nextButton` click.
     @Test
     public void shouldProperlyDisplayPanelsOnBtnNextClick() {
         firstPanel = (Panel) TestUtils.findComponent("firstPanel", true);
@@ -189,6 +200,7 @@ public class BioPageTest extends AssertJSwingTestngTestCase {
         assertTrue(thirdPanel.isVisible(), "thirdPanel is not visible");
     }
 
+    // Description: Should display the correct panels on `prevButton` click.
     @Test
     public void shouldProperlyDisplayPanelsOnBtnPrevClick() {
         nextButton = (Button) TestUtils.getChildNamed(frame, "nextButton");

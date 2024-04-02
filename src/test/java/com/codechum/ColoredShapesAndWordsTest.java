@@ -10,6 +10,7 @@ public class ColoredShapesAndWordsTest {
     @Tested ColoredShapesAndWords codeChumActivity;
     @Mocked Graphics g;
     
+    // Description: Should override the frame's paint method and display a gray rectangle.
     @Test
     public void shouldDrawGreyRectangle() {
         codeChumActivity.paint(g);
@@ -20,6 +21,7 @@ public class ColoredShapesAndWordsTest {
         }};
     }
     
+    // Description: Should override the frame's paint method and display a yellow oval.
     @Test
     public void shouldDrawYellowOval() {
         codeChumActivity.paint(g);
@@ -30,6 +32,7 @@ public class ColoredShapesAndWordsTest {
         }};
     }
     
+    // Description: Should override the frame's paint method and display a red text.
     @Test
     public void shouldDrawRedText() {
         codeChumActivity.paint(g);

@@ -26,6 +26,7 @@ public class MovieCatalogueTest extends AssertJSwingTestngTestCase {
         application(MovieCatalogue.class).start();
     }
     
+    // Description: Should have all components `comedyList`, `horrorList`, `actionList`, `addActionButton`, `addComedyButton`, `addHorrorButton`, `removeButton`, and `movieTextField`.
     @Test
     public void shouldHaveAllComponents() {
         robot().waitForIdle(); 
@@ -49,6 +50,7 @@ public class MovieCatalogueTest extends AssertJSwingTestngTestCase {
         assertNotNull(movieTextField, "No movieTextField found.");        
     }
 
+    // Description: Should add movie entered in `movieTextField` to `comedyList` when `addComedyButton` is clicked.
     @Test
     public void shouldAddMovieToComedyList(){
         robot().waitForIdle();
@@ -62,6 +64,7 @@ public class MovieCatalogueTest extends AssertJSwingTestngTestCase {
         assertEquals(comedyList.getItem(0), "The Hangover");
     }
 
+    // Description: Should add movie entered in `movieTextField` to `horrorList` when `addHorrorButton` is clicked.
     @Test
     public void shouldAddMovieToHorrorList(){
         robot().waitForIdle();
@@ -75,6 +78,7 @@ public class MovieCatalogueTest extends AssertJSwingTestngTestCase {
         assertEquals(horrorList.getItem(0), "The Conjuring");
     }
 
+    // Description: Should add movie entered in `movieTextField` to `actionList` when `addActionButton` is clicked.
     @Test
     public void shouldAddMovieToActionList(){
         robot().waitForIdle();
@@ -88,6 +92,7 @@ public class MovieCatalogueTest extends AssertJSwingTestngTestCase {
         assertEquals(actionList.getItem(0), "Avengers");
     }
 
+    // Description: Should remove selected movie from `comedyList` when `removeButton` is clicked.
     @Test
     public void shouldRemoveMovieFromComedyList(){
         robot().waitForIdle();
@@ -104,6 +109,7 @@ public class MovieCatalogueTest extends AssertJSwingTestngTestCase {
         assertEquals(comedyList.getItemCount(), 0);
     }
 
+    // Description: Should remove selected movie from `horrorList` when `removeButton` is clicked.
     @Test
     public void shouldRemoveMovieFromHorrorList(){
         robot().waitForIdle();
@@ -120,6 +126,7 @@ public class MovieCatalogueTest extends AssertJSwingTestngTestCase {
         assertEquals(horrorList.getItemCount(), 0);
     }
 
+    // Description: Should remove selected movie from `actionList` when `removeButton` is clicked.
     @Test
     public void shouldRemoveMovieFromActionList(){
         robot().waitForIdle();

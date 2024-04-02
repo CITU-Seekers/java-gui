@@ -19,8 +19,8 @@ public class TextFieldPracticeProblemITest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     FrameFixture frame;
     
-    JTextField textField;
-    JLabel label;
+    JTextField inputTextField;
+    JLabel displayLabel;
     JButton displayButton;
     
     @Override
@@ -36,41 +36,44 @@ public class TextFieldPracticeProblemITest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `inputTextField`, `displayLabel`, and `displayButton`.
     @Test
     public void shouldHaveAllComponents() {
-        textField = (JTextField) TestUtils.findComponent("textField", true);
-        label = (JLabel) TestUtils.findComponent("label", true);
+        inputTextField = (JTextField) TestUtils.findComponent("inputTextField", true);
+        displayLabel = (JLabel) TestUtils.findComponent("displayLabel", true);
         displayButton = (JButton) TestUtils.findComponent("displayButton", true);
-        assertNotNull(textField, "No textField found.");
-        assertNotNull(label, "No label found.");
+        assertNotNull(inputTextField, "No inputTextField found.");
+        assertNotNull(displayLabel, "No displayLabel found.");
         assertNotNull(displayButton, "No displayButton found.");
     }
 
+    // Description: Should have a default text value of `inputTextField` as empty. 
     @Test
-    public void checkLblDisplayTextDefaultValue() {
-        label = (JLabel) TestUtils.findComponent("label", true);
-        assertEquals(label.getText(), "");
+    public void shouldCheckLblDisplayTextDefaultValue() {
+        displayLabel = (JLabel) TestUtils.findComponent("displayLabel", true);
+        assertEquals(displayLabel.getText(), "");
     }
 
+    // Description: Should copy the text from `inputTextField` to `displayLabel` when `displayButton` is clicked.
     @Test
     public void shouldDisplayTextWhenClicked(){
-        textField = (JTextField) TestUtils.findComponent("textField", true);
-        label = (JLabel) TestUtils.findComponent("label", true);
+        inputTextField = (JTextField) TestUtils.findComponent("inputTextField", true);
+        displayLabel = (JLabel) TestUtils.findComponent("displayLabel", true);
         displayButton = (JButton) TestUtils.findComponent("displayButton", true);
         
-        frame.textBox("textField").setText("Java");
+        frame.textBox("inputTextField").setText("Java");
         robot().click(displayButton);
         robot().waitForIdle();
 
-        assertEquals(label.getText(), textField.getText());
+        assertEquals(displayLabel.getText(), inputTextField.getText());
 
-        frame.textBox("textField").deleteText();
+        frame.textBox("inputTextField").deleteText();
 
-        frame.textBox("textField").setText("CodeChum");
+        frame.textBox("inputTextField").setText("CodeChum");
         robot().click(displayButton);
         robot().waitForIdle();
 
-        assertEquals(label.getText(), textField.getText());
+        assertEquals(displayLabel.getText(), inputTextField.getText());
     }
     
     @AfterMethod

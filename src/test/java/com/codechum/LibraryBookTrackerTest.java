@@ -31,6 +31,7 @@ public class LibraryBookTrackerTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `fictionCheckBox`, `nonFictionCheckBox`, `referenceCheckBox`, `calculateButton`, and `lateFeeLabel`.
     /**
      * Test to check the presence of all components including JCheckBox, JButton, and JLabel.
      */
@@ -49,6 +50,7 @@ public class LibraryBookTrackerTest extends AssertJSwingTestngTestCase {
         assertNotNull(lateFeeLabel, "No lateFeeLabel found.");
     }
 
+    // Description: Should display the correct late fee in `lateFeeLabel` when checkboxes are selected and `calculateButton` is clicked.
     /**
      * Test to check if the label displays the correct late fee after calculating.
      */

@@ -60,12 +60,14 @@ public class RandomDotsTest extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should have a canvas named `mainCanvas`.
     @Test
     public void shouldHaveACanvas() {
         mainCanvas = (Canvas) TestUtils.findComponent("mainCanvas", true);
         assertNotNull(mainCanvas, "No mainCanvas found");
     }
 
+    // Description: Should draw dots on `mainCanvas`.
     @Test
     public void shouldDrawDots() {
         clickCenterOfCnvMain();
@@ -87,6 +89,7 @@ public class RandomDotsTest extends AssertJSwingTestngTestCase {
         };
     }
 
+    // Description: Should draw dots with no consecutive same colors on `mainCanvas` each time the mouse is clicked.
     @Test
     public void shouldDrawDotsWithNoConsecutiveSameColors() {
         clickCenterOfCnvMain();

@@ -25,6 +25,7 @@ public class DatePickerTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all components `monthScrollBar`, `dateScrollBar`, `monthLabel` and `dateLabel`.
     @Test
     public void shouldHaveAllComponents(){
         monthScrollBar = (Scrollbar) TestUtils.findComponent("monthScrollBar", true);
@@ -38,8 +39,9 @@ public class DatePickerTest extends AssertJSwingTestngTestCase {
         assertNotNull(dateLabel, "No dateLabel found");
     }
 
+    // Description: Should display correct date in `monthLabel` and `dateLabel` when `monthScrollBar` and `dateScrollBar` are moved.
     @Test
-    public void shouldHaveDisplayCorrectDate(){
+    public void shouldDisplayCorrectDate(){
         monthScrollBar = (Scrollbar) TestUtils.findComponent("monthScrollBar", true);
         dateScrollBar = (Scrollbar) TestUtils.findComponent("dateScrollBar", true);
         monthLabel = (Label) TestUtils.findComponent("monthLabel", true);

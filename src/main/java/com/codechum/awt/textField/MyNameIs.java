@@ -31,8 +31,8 @@ public class MyNameIs extends javax.swing.JFrame {
         this.setTitle("Text Display");
         this.setName("textDisplay");
 
-        tfText.setName("textField");
-        lblDisplayText.setName("label");
+        tfText.setName("nameTextField");
+        lblDisplayText.setName("nameLabel");
         btnDisplay.setName("displayButton");
 
         btnDisplay.setLabel("Display Text");

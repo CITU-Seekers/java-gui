@@ -10,6 +10,7 @@ public class ColoredTextsTest {
     @Tested ColoredTexts codeChumActivity;
     @Mocked Graphics g;
     
+    // Description: Should override the frame's paint method and display "Red" text in red color.
     @Test
     public void shouldDrawRedText() {
         codeChumActivity.paint(g);
@@ -20,6 +21,7 @@ public class ColoredTextsTest {
         }};
     }
     
+    // Description: Should override the frame's paint method and display "Green" text in green color.
     @Test
     public void shouldDrawGreenText() {
         codeChumActivity.paint(g);
@@ -30,6 +32,7 @@ public class ColoredTextsTest {
         }};
     }
     
+    // Description: Should override the frame's paint method and display "Blue" text in blue color.
     @Test
     public void shouldDrawBlueText() {
         codeChumActivity.paint(g);

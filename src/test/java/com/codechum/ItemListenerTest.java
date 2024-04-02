@@ -23,7 +23,8 @@ public class ItemListenerTest extends AssertJSwingTestngTestCase {
         listener = EmergencyAbortListener.registerInToolkit();
         application(ItemListenerActivity.class).start();
     }
-        
+
+    // Description: Should have all components `cCheckBox`, `cppCheckBox`, `cSharpCheckBox`, `javaCheckBox`, `pythonCheckBox`, `languageLabel`, `proficiencyLabel`, and `proficiencyChoice`.   
     @Test
     public void shouldHaveAllComponents() {
         String[] checkButtons = {"cCheckBox", "cppCheckBox", "cSharpCheckBox", "javaCheckBox", "pythonCheckBox"};
@@ -42,6 +43,7 @@ public class ItemListenerTest extends AssertJSwingTestngTestCase {
         assertNotNull(proficiencyChoice, "No proficiencyChoice found.");
     }
     
+    // Description: Should display the selected languages in the `languageLabel` when the checkboxes are clicked.
     @Test
     public void shouldProperlyDisplayOnLanguageLabel() {
         languageLabel = (Label) TestUtils.findComponent("languageLabel", true);
@@ -57,6 +59,7 @@ public class ItemListenerTest extends AssertJSwingTestngTestCase {
         assertEquals(languageLabel.getText(), "C++, C, Python, C#, Java");
     }
     
+    // Description: Should display the selected proficiency in the `proficiencyLabel` when the proficiency choice is changed.
     @Test
     public void shouldProperlyDisplayOnProficiencyLabel() {
         proficiencyLabel = (Label) TestUtils.findComponent("proficiencyLabel", true);

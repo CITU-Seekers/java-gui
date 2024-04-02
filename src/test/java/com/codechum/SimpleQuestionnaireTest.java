@@ -24,6 +24,7 @@ public class SimpleQuestionnaireTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all components `charRadioButton`, `booleanRadioButton`, `intRadioButton`, `stringRadioButton`, `checkButton`, and `resultLabel`.
     @Test
     public void shouldHaveAllComponents() {
         String[] radiobuttons = {"charRadioButton", "booleanRadioButton", "intRadioButton", "stringRadioButton"};
@@ -39,6 +40,7 @@ public class SimpleQuestionnaireTest extends AssertJSwingTestngTestCase {
         assertNotNull(resultLabel, "No resultLabel found.");
     }
     
+    // Description: Should only be able to select one radio button at a time.
     @Test
     public void shouldOnlySelectOneRadioButton(){
         String[] radiobuttons = {"charRadioButton", "booleanRadioButton", "intRadioButton", "stringRadioButton"};
@@ -62,6 +64,7 @@ public class SimpleQuestionnaireTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should display "Correct!" or "Incorrect!" in `resultLabel` depending on what radio button is selected when `checkButton` is clicked.
     @Test
     public void shouldDisplayCorrespondingMessagesOnButtonClick() {
         String[] radiobuttons = {"charRadioButton", "booleanRadioButton", "intRadioButton", "stringRadioButton"};

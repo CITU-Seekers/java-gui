@@ -25,6 +25,7 @@ public class RGBSliderTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all components `redScrollBar`, `greenScrollBar`, `blueScrollBar` and `colorPanel`.
     @Test
     public void shouldHaveAllComponents() {
         redScrollBar = (Scrollbar) TestUtils.findComponent("redScrollBar", true);
@@ -38,8 +39,9 @@ public class RGBSliderTest extends AssertJSwingTestngTestCase {
         assertNotNull(colorPanel, "No colorPanel found.");
     }
     
+    // Description: Should have a default value of 0, minimum value of 0 and maximum value of 255 for all scroll bars.
     @Test
-    public void allScrollBarsShouldHaveCorrectDefaultMinAndMaxValues() {
+    public void shouldHaveCorrectDefaultMinAndMaxValuesForAllScrollBars() {
         String[] scrollBars = {"redScrollBar", "greenScrollBar", "blueScrollBar"};
         
         String minMaxValues;
@@ -52,6 +54,7 @@ public class RGBSliderTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should change the background of `colorPanel` according to the value of `redScrollBar`.
     @Test
     public void shouldChangeColorOnRedScrollbarChange() {
         redScrollBar = (Scrollbar) TestUtils.findComponent("redScrollBar", true);
@@ -66,6 +69,7 @@ public class RGBSliderTest extends AssertJSwingTestngTestCase {
         assertEquals(colorPanel.getBackground().getRed(), redScrollBar.getValue());
     }
     
+    // Description: Should change the background of `colorPanel` according to the value of `greenScrollBar`.
     @Test
     public void shouldChangeColorOnGreenScrollbarChange() {
         greenScrollBar = (Scrollbar) TestUtils.findComponent("greenScrollBar", true);
@@ -80,6 +84,7 @@ public class RGBSliderTest extends AssertJSwingTestngTestCase {
         assertEquals(colorPanel.getBackground().getGreen(), greenScrollBar.getValue());
     }
     
+    // Description: Should change the background of `colorPanel` according to the value of `blueScrollBar`.
     @Test
     public void shouldChangeColorOnBlueScrollbarChange() {
         blueScrollBar = (Scrollbar) TestUtils.findComponent("blueScrollBar", true);

@@ -38,18 +38,20 @@ public class PasswordStrengthCheckerTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have all components `passwordTextField` and `checkStrengthButton`.
     @Test
     public void shouldHaveAllComponents() {
-        passwordTextField = (JPasswordField) TestUtils.findComponent("passwordField", true);
+        passwordTextField = (JPasswordField) TestUtils.findComponent("passwordTextField", true);
         checkStrengthButton = (JButton) TestUtils.findComponent("checkStrengthButton", true);
 
-        assertNotNull(passwordTextField, "No passwordField found.");
+        assertNotNull(passwordTextField, "No passwordTextField found.");
         assertNotNull(checkStrengthButton, "No checkStrengthButton found.");
     }
 
+    // Description: Should show dialog with message "Password Strength: Weak" when `passwordTextField` is weak and `checkStrengthButton` is clicked.
     @Test
     public void shouldShowWeakPasswordMessage(){
-        passwordTextField = (JPasswordField) TestUtils.getChildNamed(frame, "passwordField");
+        passwordTextField = (JPasswordField) TestUtils.getChildNamed(frame, "passwordTextField");
         checkStrengthButton = (JButton) TestUtils.getChildNamed(frame, "checkStrengthButton");
         robot().click(passwordTextField);
         robot().enterText("weak");
@@ -59,9 +61,10 @@ public class PasswordStrengthCheckerTest extends AssertJSwingTestngTestCase {
         assertEquals(message, "Password Strength: Weak");
     }
     
+    // Description: Should show dialog with message "Password Strength: Moderate" when `passwordTextField` is moderaate and `checkStrengthButton` is clicked.
     @Test
     public void shouldShowModeratePasswordMessage(){
-        passwordTextField = (JPasswordField) TestUtils.getChildNamed(frame, "passwordField");
+        passwordTextField = (JPasswordField) TestUtils.getChildNamed(frame, "passwordTextField");
         checkStrengthButton = (JButton) TestUtils.getChildNamed(frame, "checkStrengthButton");
         robot().click(passwordTextField);
         robot().enterText("moderate123");
@@ -71,9 +74,10 @@ public class PasswordStrengthCheckerTest extends AssertJSwingTestngTestCase {
         assertEquals(message, "Password Strength: Moderate");
     }
     
+    // Description: Should show dialog with message "Password Strength: Strong" when `passwordTextField` is strong and `checkStrengthButton` is clicked.
     @Test
     public void shouldShowStrongPasswordMessage(){
-        passwordTextField = (JPasswordField) TestUtils.getChildNamed(frame, "passwordField");
+        passwordTextField = (JPasswordField) TestUtils.getChildNamed(frame, "passwordTextField");
         checkStrengthButton = (JButton) TestUtils.getChildNamed(frame, "checkStrengthButton");
         robot().click(passwordTextField);
         robot().enterText("Strong@123");

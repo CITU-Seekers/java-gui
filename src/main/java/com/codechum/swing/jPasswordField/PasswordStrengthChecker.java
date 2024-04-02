@@ -35,7 +35,7 @@ public class PasswordStrengthChecker extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Password Strength Checker");
 
-        jPasswordField1.setName("passwordField"); // NOI18N
+        jPasswordField1.setName("passwordTextField"); // NOI18N
         jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordField1ActionPerformed(evt);

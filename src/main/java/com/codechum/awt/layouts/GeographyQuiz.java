@@ -76,7 +76,7 @@ public class GeographyQuiz extends java.awt.Frame {
         });
         add(button2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, -1, -1));
 
-        panel3.setName("Panel3"); // NOI18N
+        panel3.setName("panel3"); // NOI18N
         panel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -88,7 +88,7 @@ public class GeographyQuiz extends java.awt.Frame {
 
         add(panel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 320, 190));
 
-        panel1.setName("Panel1"); // NOI18N
+        panel1.setName("panel1"); // NOI18N
         panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
@@ -100,7 +100,7 @@ public class GeographyQuiz extends java.awt.Frame {
 
         add(panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 350, 200));
 
-        panel4.setName("Panel4"); // NOI18N
+        panel4.setName("panel4"); // NOI18N
         panel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label4.setAlignment(java.awt.Label.CENTER);
@@ -110,7 +110,7 @@ public class GeographyQuiz extends java.awt.Frame {
 
         add(panel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 60, 310, 180));
 
-        panel2.setName("Panel2"); // NOI18N
+        panel2.setName("panel2"); // NOI18N
         panel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         label2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N

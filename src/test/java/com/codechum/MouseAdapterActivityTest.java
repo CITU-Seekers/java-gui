@@ -32,16 +32,19 @@ public class MouseAdapterActivityTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have a component `textArea`.
     @Test
     public void shouldHaveAllComponents() {
         assertNotNull(frame.textBox("textArea"), "No textArea found.");
     }
     
+    // Description: Should have an initial text of "No clicks" for the `textArea`.
      @Test
     public void shouldHaveInitialTextForTextArea() {
         assertEquals(frame.textBox("textArea").text(), "No clicks");
     }
 
+    // Description: Should update the `textArea` text to "Left Mouse Button Clicked!" when left mouse button is clicked.
     @Test
     public void shouldUpdateTextAreaOnLeftMouseClick() {
         frame.textBox("textArea").click();
@@ -49,6 +52,7 @@ public class MouseAdapterActivityTest extends AssertJSwingTestngTestCase {
         assertEquals(frame.textBox("textArea").text(), "Left Mouse Button Clicked!");
     }
 
+    // Description: Should update the `textArea` text to "Right Mouse Button Clicked!" when right mouse button is clicked.
     @Test
     public void shouldUpdateTextAreaOnRightMouseClick() {
         frame.textBox("textArea").rightClick();

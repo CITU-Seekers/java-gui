@@ -27,6 +27,7 @@ public class CheckboxGroupSurveyTest extends AssertJSwingTestngTestCase {
         application(CheckboxGroupSurvey.class).start();
     }
     
+    // Description: Should have all components `maleCheckbox`, `femaleCheckbox`, `javaCheckbox`, `pythonCheckbox`, `cppCheckbox`, `csharpCheckbox`, `javascriptCheckbox`, `resultLabel`, and `submitButton`.
     @Test
     public void shouldHaveAllComponents() {
         robot().waitForIdle(); 
@@ -52,6 +53,7 @@ public class CheckboxGroupSurveyTest extends AssertJSwingTestngTestCase {
         assertNotNull(submitButton, "No submitButton found.");
     }
     
+    // Description: Should only select one gender checkbox between `maleCheckbox` and `femaleCheckbox`.
     @Test 
     public void shouldOnlySelectOneRadioButtonInGenderCheckboxGroup(){
         String[] checkboxes = {"maleCheckbox", "femaleCheckbox"};
@@ -75,6 +77,7 @@ public class CheckboxGroupSurveyTest extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should only select one programming checkbox between `javaCheckbox`, `pythonCheckbox`, `cppCheckbox`, `csharpCheckbox`, and `javascriptCheckbox`.
     @Test
     public void shouldOnlySelectOneCheckboxInProgrammingCheckboxGroup(){
         String[] checkboxes = {"javaCheckbox", "pythonCheckbox", "cppCheckbox", "csharpCheckbox", "javascriptCheckbox"};
@@ -98,6 +101,7 @@ public class CheckboxGroupSurveyTest extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should display "Your response has been recorded." in `resultLabel` when `submitButton` is clicked.
     @Test
     public void shouldDisplayCorrectMessageLabel(){
         maleCheckbox = (Checkbox) TestUtils.findComponent("maleCheckbox", true);

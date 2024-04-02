@@ -25,7 +25,7 @@ public class TextFieldQuiz extends javax.swing.JFrame {
         this.setTitle("Text Repeater");
         this.setName("textRepeater");
         
-        textField.setName("textField");
+        textField.setName("stringTextField");
         numberTextField.setName("numberTextField");
         resultTextArea.setName("resultTextArea");
         displayTextButton.setName("displayTextButton");

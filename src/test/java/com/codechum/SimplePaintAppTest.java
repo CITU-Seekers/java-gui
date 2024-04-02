@@ -126,6 +126,7 @@ public class SimplePaintAppTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components `mainCanvas`, `shapesMenu` with items `rectangleMenuItem`, `circleMenuItem`, and `linesMenuItem`, and `colorsMenu` with items `redMenuItem`, `greenMenuItem`, and `blueMenuItem`.
     @Test
     public void shouldHaveAllComponents() {
         shapesMenu = menuBar.getMenu(0);
@@ -152,6 +153,7 @@ public class SimplePaintAppTest extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should draw a rectangle when `rectangleMenuItem` is clicked.
     @Test
     public void shouldDrawRectangle() {
         testShapesMenuItemBehavior("rectangleMenuItem");
@@ -168,6 +170,7 @@ public class SimplePaintAppTest extends AssertJSwingTestngTestCase {
         };
     }
 
+    // Description: Should draw a circle when `circleMenuItem` is clicked.
     @Test
     public void shouldDrawCircle() {
         testShapesMenuItemBehavior("circleMenuItem");
@@ -184,6 +187,7 @@ public class SimplePaintAppTest extends AssertJSwingTestngTestCase {
         };
     }
 
+    // Description: Should draw lines when `linesMenuItem` is clicked.
     @Test
     public void shouldDrawLines() {
         testShapesMenuItemBehavior("linesMenuItem");
@@ -200,6 +204,7 @@ public class SimplePaintAppTest extends AssertJSwingTestngTestCase {
         };
     }
 
+    // Description: Should draw a shape in red when `redMenuItem` is clicked.
     @Test
     public void shouldDrawRed() {
         testColorsMenuItemBehavior("redMenuItem");
@@ -215,6 +220,7 @@ public class SimplePaintAppTest extends AssertJSwingTestngTestCase {
         };
     }
 
+    // Description: Should draw a shape in green when `greenMenuItem` is clicked.
     @Test
     public void shouldDrawGreen() {
         testColorsMenuItemBehavior("greenMenuItem");
@@ -230,6 +236,7 @@ public class SimplePaintAppTest extends AssertJSwingTestngTestCase {
         };
     }
 
+    // Description: Should draw a shape in blue when `blueMenuItem` is clicked.
     @Test
     public void shouldDrawBlue() {
         testColorsMenuItemBehavior("blueMenuItem");

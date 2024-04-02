@@ -35,7 +35,7 @@ public class PINValidator extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("PIN Validator");
 
-        jPasswordField1.setName("pinField"); // NOI18N
+        jPasswordField1.setName("pinTextField"); // NOI18N
 
         jButton1.setText("Validate");
         jButton1.setName("validateButton"); // NOI18N

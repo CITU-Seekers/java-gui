@@ -16,6 +16,7 @@ public class DrawingRectangleTest {
     @Tested MyCanvasRectangle canvas;
     @Injectable Graphics g;
     
+    // Description: Should override frame's paint method of MyCanvas class to draw a red rectangle and three green squares.
     @Test
     public void shouldDrawGreenSquares() {
         canvas.paint(g);
@@ -34,9 +35,10 @@ public class DrawingRectangleTest {
         };
     }
     
+    // Description: Should have a canvas named `mainCanvas`.
     @Test
     public void shouldHaveCanvas() {
-        Canvas cnvMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "canvasMain");
-        assertNotNull(cnvMain, "No canvasMain found");
+        Canvas cnvMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "mainCanvas");
+        assertNotNull(cnvMain, "No mainCanvas found");
     }
 }

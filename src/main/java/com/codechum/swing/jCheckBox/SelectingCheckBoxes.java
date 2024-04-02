@@ -19,36 +19,36 @@ public class SelectingCheckBoxes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        checkBoxFirst = new javax.swing.JCheckBox();
-        checkBoxSecond = new javax.swing.JCheckBox();
-        checkBoxThird = new javax.swing.JCheckBox();
-        buttonDisplaySelected = new javax.swing.JButton();
-        labelCheckBoxes = new javax.swing.JLabel();
+        firstCheckBox = new javax.swing.JCheckBox();
+        secondCheckBox = new javax.swing.JCheckBox();
+        thirdCheckBox = new javax.swing.JCheckBox();
+        displaySelectedButton = new javax.swing.JButton();
+        checkBoxesLabel = new javax.swing.JLabel();
 
-        checkBoxFirst.setName("checkBoxFirst");
-        checkBoxSecond.setName("checkBoxSecond");
-        checkBoxThird.setName("checkBoxThird");
-        buttonDisplaySelected.setName("buttonDisplaySelected");
-        labelCheckBoxes.setName("labelCheckBoxes");
+        firstCheckBox.setName("firstCheckBox");
+        secondCheckBox.setName("secondCheckBox");
+        thirdCheckBox.setName("thirdCheckBox");
+        displaySelectedButton.setName("displaySelectedButton");
+        checkBoxesLabel.setName("checkBoxesLabel");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        checkBoxFirst.setText("First");
+        firstCheckBox.setText("First");
 
-        checkBoxSecond.setText("Second");
+        secondCheckBox.setText("Second");
 
-        checkBoxThird.setText("Third");
+        thirdCheckBox.setText("Third");
 
-        buttonDisplaySelected.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        buttonDisplaySelected.setText("Display");
-        buttonDisplaySelected.addActionListener(new java.awt.event.ActionListener() {
+        displaySelectedButton.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+        displaySelectedButton.setText("Display");
+        displaySelectedButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDisplayTextActionPerformed(evt);
             }
         });
 
-        labelCheckBoxes.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        labelCheckBoxes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        checkBoxesLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        checkBoxesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -59,28 +59,28 @@ public class SelectingCheckBoxes extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(checkBoxThird)
-                            .addComponent(checkBoxSecond)
-                            .addComponent(checkBoxFirst)
-                            .addComponent(labelCheckBoxes, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(thirdCheckBox)
+                            .addComponent(secondCheckBox)
+                            .addComponent(firstCheckBox)
+                            .addComponent(checkBoxesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(73, 73, 73)
-                        .addComponent(buttonDisplaySelected, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(displaySelectedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addComponent(checkBoxFirst)
+                .addComponent(firstCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(checkBoxSecond)
+                .addComponent(secondCheckBox)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(checkBoxThird)
+                .addComponent(thirdCheckBox)
                 .addGap(18, 18, 18)
-                .addComponent(buttonDisplaySelected)
+                .addComponent(displaySelectedButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelCheckBoxes, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addComponent(checkBoxesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                 .addGap(12, 12, 12))
         );
 
@@ -91,11 +91,11 @@ public class SelectingCheckBoxes extends javax.swing.JFrame {
         // TODO add your handling code here:
         String display = "";
         
-        if (checkBoxFirst.isSelected()) {
+        if (firstCheckBox.isSelected()) {
             display += "First";
         }
         
-        if (checkBoxSecond.isSelected()) {
+        if (secondCheckBox.isSelected()) {
             if (display.length() > 0) {
                 display += ", Second";
             }
@@ -104,7 +104,7 @@ public class SelectingCheckBoxes extends javax.swing.JFrame {
             }
         }
         
-        if (checkBoxThird.isSelected()) {
+        if (thirdCheckBox.isSelected()) {
             if (display.length() > 0) {
                 display += ", Third";
             }
@@ -113,7 +113,7 @@ public class SelectingCheckBoxes extends javax.swing.JFrame {
             }
         }
         
-        labelCheckBoxes.setText(display);
+        checkBoxesLabel.setText(display);
     }//GEN-LAST:event_btnDisplayTextActionPerformed
 
     /**
@@ -153,10 +153,10 @@ public class SelectingCheckBoxes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton buttonDisplaySelected;
-    private javax.swing.JCheckBox checkBoxFirst;
-    private javax.swing.JCheckBox checkBoxSecond;
-    private javax.swing.JCheckBox checkBoxThird;
-    private javax.swing.JLabel labelCheckBoxes;
+    private javax.swing.JButton displaySelectedButton;
+    private javax.swing.JCheckBox firstCheckBox;
+    private javax.swing.JCheckBox secondCheckBox;
+    private javax.swing.JCheckBox thirdCheckBox;
+    private javax.swing.JLabel checkBoxesLabel;
     // End of variables declaration//GEN-END:variables
 }

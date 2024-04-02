@@ -1,6 +1,6 @@
 package com.codechum;
 
-import com.codechum.awt.textField.MyNameIs;
+import com.codechum.awt.nameTextField.MyNameIs;
 import static org.testng.Assert.*;
 
 import java.awt.*;
@@ -15,8 +15,8 @@ import static org.assertj.swing.launcher.ApplicationLauncher.*;
 public class MyNameIsTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     
-    TextField textField;
-    Label label;
+    TextField nameTextField;
+    Label nameLabel;
     Button displayButton;
     
     @Override
@@ -26,35 +26,38 @@ public class MyNameIsTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `nameTextField`, `nameLabel`, and `displayButton`.
     @Test
     public void shouldHaveAllComponents() {
-        textField = (TextField) TestUtils.findComponent("textField", true);
-        label = (Label) TestUtils.findComponent("label", true);
+        nameTextField = (TextField) TestUtils.findComponent("nameTextField", true);
+        nameLabel = (Label) TestUtils.findComponent("nameLabel", true);
         displayButton = (Button) TestUtils.findComponent("displayButton", true);
-        assertNotNull(textField, "No textField found.");
-        assertNotNull(label, "No label found.");
+        assertNotNull(nameTextField, "No nameTextField found.");
+        assertNotNull(nameLabel, "No nameLabel found.");
         assertNotNull(displayButton, "No displayButton found.");
     }
 
+    // Description: Should check if `nameLabel` display text is empty by default.
     @Test
-    public void checkLblDisplayTextDefaultValue() {
-        label = (Label) TestUtils.findComponent("label", true);
-        assertEquals(label.getText(), "");
+    public void shouldCheckLblDisplayTextDefaultValue() {
+        nameLabel = (Label) TestUtils.findComponent("nameLabel", true);
+        assertEquals(nameLabel.getText(), "");
     }
 
+    // Description: Should display the text in `nameTextField` to `nameLabel` when `displayButton` is clicked.
     @Test
     public void shouldDisplayTextWhenClicked(){
-        textField = (TextField) TestUtils.findComponent("textField", true);
-        label = (Label) TestUtils.findComponent("label", true);
+        nameTextField = (TextField) TestUtils.findComponent("nameTextField", true);
+        nameLabel = (Label) TestUtils.findComponent("nameLabel", true);
         displayButton = (Button) TestUtils.findComponent("displayButton", true);
         
-        robot().click(textField);
+        robot().click(nameTextField);
         robot().enterText("Java");
         robot().click(displayButton);
         robot().waitForIdle();
 
-        assertEquals(label.getText(), textField.getText());
-        robot().click(textField);
+        assertEquals(nameLabel.getText(), nameTextField.getText());
+        robot().click(nameTextField);
         robot().pressAndReleaseKeys(
             VK_BACK_SPACE,
             VK_BACK_SPACE,
@@ -65,7 +68,7 @@ public class MyNameIsTest extends AssertJSwingTestngTestCase {
         robot().click(displayButton);
         robot().waitForIdle();
 
-        assertEquals(label.getText(), textField.getText());
+        assertEquals(nameLabel.getText(), nameTextField.getText());
     }
     
     @AfterMethod

@@ -33,26 +33,31 @@ public class SwingFrameMasterTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have a frame with title "Frame Master".
     @Test
     public void shouldDisplayCorrectTitle() {
         assertEquals(frame.getTitle(), "Frame Master");
     }
 
+    // Description: Should set the frame's width to 700.
     @Test
     public void shouldHaveCorrectWidth() {
         assertEquals(frame.getSize().getWidth(), 700);
     }
 
+    // Description: Should set the frame's height to 500.
     @Test
     public void shouldHaveCorrectHeight() {
         assertEquals(frame.getSize().getHeight(), 500);
     }
 
+    // Description: Should set the frame's x position to 500.
     @Test
     public void shouldHaveCorrectXPosition() {
         assertEquals(frame.getLocation().getX(), 500);
     }
 
+    // Description: Should set the frame's y position to 300.
     @Test
     public void shouldHaveCorrectYPosition() {
         assertEquals(frame.getLocation().getY(), 300);

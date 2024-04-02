@@ -38,6 +38,7 @@ public class SwingButtonResizeTest extends AssertJSwingTestngTestCase {
         assertEquals(buttonSize, "height: " +  expectedBtnHeight + ", width: " + expectedBtnWidth);
     }
 
+    // Description: Should have all components `smallRadioButton`, `mediumRadioButton`, `largeRadioButton`, `mainButton`, and `helperLabel`.
     @Test
     public void shouldHaveAllComponents() {
         String[] radioButtons = {"smallRadioButton", "mediumRadioButton", "largeRadioButton"};
@@ -53,14 +54,16 @@ public class SwingButtonResizeTest extends AssertJSwingTestngTestCase {
         assertNotNull(helperLabel, "No helperLabel found.");
     }
 
+    // Description: Should have the `smallRadioButton` selected by default.
     @Test
-    public void radSmallShouldBeSelectedByDefault() {
+    public void ShouldBeSelectedByDefaultRadioSmall() {
         JRadioButton smallRadioButton = (JRadioButton) TestUtils.findComponent("smallRadioButton", true);
         assertTrue(smallRadioButton.isSelected(), "smallRadioButton should be selected by default");
     }
 
+    // Description: Should display a helper message on `helperLabel` when mouse pointer is hovered on any radio button.
     @Test
-    public void helperMessageShouldBeDisplayedOnHover() {
+    public void shouldBeDisplayedOnHoverHelperMessage() {
         smallRadioButton = (JRadioButton) TestUtils.findComponent("smallRadioButton", true);
         mediumRadioButton = (JRadioButton) TestUtils.findComponent("mediumRadioButton", true);
         largeRadioButton = (JRadioButton) TestUtils.findComponent("largeRadioButton", true);
@@ -79,16 +82,19 @@ public class SwingButtonResizeTest extends AssertJSwingTestngTestCase {
         assertTrue(helperLabel.getText().length() > 0, "There should be a message when mouse is hovered on largeRadioButton");
     }
 
+    // Description: Should change the size of the `mainButton` to 30x80 when `smallRadioButton` is selected.
     @Test
     public void shouldChangeSizeOnRadSmallClick() {
         simulateRadioButtonClick("smallRadioButton", 30, 80);
     }
 
+    // Description: Should change the size of the `mainButton` to 60x160 when `mediumRadioButton` is selected.
     @Test
     public void shouldChangeSizeOnRadMediumClick() {
         simulateRadioButtonClick("mediumRadioButton", 60, 160);
     }
 
+    // Description: Should change the size of the `mainButton` to 90x240 when `largeRadioButton` is selected.
     @Test
     public void shouldChangeSizeOnRadLargeClick() {
         simulateRadioButtonClick("largeRadioButton", 90, 240);

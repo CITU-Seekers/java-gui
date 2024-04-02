@@ -37,18 +37,21 @@ public class AWTPanelMasterTest extends AssertJSwingTestngTestCase {
     }
 
 
+    // Description: Should have a panel named `panelA`.
     @Test
     public void shouldHavePanelAInFrame() {
         panelA = (Panel) TestUtils.getChildNamed(frame, "panelA");
         assertNotNull(panelA, "No panelA found.");
     }
 
+    // Description: Should have a panel named `panelB`.
     @Test
     public void shouldHavePanelBInFrame() {
         panelB = (Panel) TestUtils.getChildNamed(frame, "panelB");
         assertNotNull(panelB, "No panelB found.");
     }
 
+    // Description: Should have a panel named `panelC`.
     @Test
     public void shouldHavePanelCInFrame() {
         panelC = (Panel) TestUtils.getChildNamed(frame, "panelC");

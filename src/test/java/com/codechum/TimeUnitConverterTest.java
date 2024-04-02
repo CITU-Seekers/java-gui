@@ -60,6 +60,7 @@ public class TimeUnitConverterTest extends AssertJSwingTestngTestCase {
         frame.button("convertButton").click();
     }
 
+    // Description: Should have all components named `secondsTextField`, `toUnitComboBox`, `convertButton`, and `resultLabel`.
     /**
      * Test to check if all the necessary components are present.
      */
@@ -73,6 +74,7 @@ public class TimeUnitConverterTest extends AssertJSwingTestngTestCase {
         assertNotNull(resultLabel, "No resultLabel found.");
     }
 
+    // Description: Should convert seconds to milliseconds when "Milliseconds" is selected in `toUnitComboBox` and display the result in `resultLabel` when `convertButton` is clicked.
     @Test
     public void shouldConvertToMilliSeconds() {
         initializeComponents();
@@ -83,6 +85,7 @@ public class TimeUnitConverterTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "5000.00");
     }
     
+    // Description: Should convert seconds to microseconds when "Microseconds" is selected in `toUnitComboBox` and display the result in `resultLabel` when `convertButton` is clicked.
     @Test
     public void shouldConvertToMicroSeconds() {
        initializeComponents();
@@ -93,6 +96,7 @@ public class TimeUnitConverterTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "5000000.00");
     }
 
+    // Description: Should convert seconds to nanoseconds when "Nanoseconds" is selected in `toUnitComboBox` and display the result in `resultLabel` when `convertButton` is clicked.
     @Test
     public void shouldConvertToNanoSeconds() {
        initializeComponents();
@@ -103,6 +107,7 @@ public class TimeUnitConverterTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "5000000000.00");
     }
     
+    // Description: Should convert seconds to picoseconds when "Picoseconds" is selected in `toUnitComboBox` and display the result in `resultLabel` when `convertButton` is clicked.
     @Test
     public void shouldConvertToPicoSeconds() {
        initializeComponents();

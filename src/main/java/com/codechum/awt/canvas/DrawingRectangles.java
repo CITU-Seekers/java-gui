@@ -23,7 +23,7 @@ public class DrawingRectangles extends java.awt.Frame {
         initComponents();
         setTitle("Drawing Squares");
         Canvas canvas = new MyCanvasRectangle();
-        canvas.setName("canvasMain");
+        canvas.setName("mainCanvas");
         
         add(canvas);
         

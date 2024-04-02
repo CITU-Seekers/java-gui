@@ -53,6 +53,7 @@ public class SwingSecurityQuestion1Test extends AssertJSwingTestngTestCase {
         assertEquals(displayLabel.getText(), expectedResult);
     }
     
+    // Description: Should have all components named `petNameTextField`, `petTypeComboBox`, `generateTextButton`, and `displayLabel`.
     @Test
     public void shouldHaveAllComponents() {
         petNameTextField = (JTextField) TestUtils.findComponent("petNameTextField", true);
@@ -66,24 +67,28 @@ public class SwingSecurityQuestion1Test extends AssertJSwingTestngTestCase {
         assertNotNull(displayLabel, "No labelDisplayText found.");
     }
     
+    // Description: Should display in `displayLabel` "The pet is a dog named Pero" when "Pero" is entered in `petNameTextField` and "Dog" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
     @Test
     public void shouldDisplayCorrectTextForDog() {
         int[] keys ={VK_CAPS_LOCK, VK_P, VK_CAPS_LOCK, VK_E, VK_R, VK_O};
         checkLabel(keys, "Dog", "The pet is a dog named Pero");
     }
 
+    // Description: Should display in `displayLabel` "The pet is a cat named Ming" when "Ming" is entered in `petNameTextField` and "Cat" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
     @Test
     public void shouldDisplayCorrectTextForCat() {
         int[] keys ={VK_CAPS_LOCK, VK_M, VK_CAPS_LOCK, VK_I, VK_N, VK_G};
         checkLabel(keys, "Cat", "The pet is a cat named Ming");
     }
 
+    // Description: Should display in `displayLabel` "The pet is a rabbit named Pekora" when "Pekora" is entered in `petNameTextField` and "Rabbit" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
     @Test
     public void shouldDisplayCorrectTextForRabbit() {
         int[] keys ={VK_CAPS_LOCK, VK_P, VK_CAPS_LOCK, VK_E, VK_K, VK_O, VK_R, VK_A};
         checkLabel(keys, "Rabbit", "The pet is a rabbit named Pekora");
     }
 
+    // Description: Should display in `displayLabel` "The pet is a parrot named Birdie" when "Birdie" is entered in `petNameTextField` and "Parrot" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
     @Test
     public void shouldDisplayCorrectTextForParrot() {
         int[] keys ={VK_CAPS_LOCK, VK_B, VK_CAPS_LOCK, VK_I, VK_R, VK_D, VK_I, VK_E};

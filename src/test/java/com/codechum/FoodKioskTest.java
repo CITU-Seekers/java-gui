@@ -25,6 +25,7 @@ public class FoodKioskTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `pizzaCheckBox`, `burgerCheckBox`, `teaCheckBox`, `orderButton`, and `totalCostLabel`.
     @Test
     public void shouldHaveAllComponents() {
         orderButton = (JButton) TestUtils.findComponent("orderButton", true);
@@ -40,6 +41,7 @@ public class FoodKioskTest extends AssertJSwingTestngTestCase {
         assertNotNull(totalCostLabel, "No totalCostLabel found.");
     }
 
+    // Description: Should display the correct price in `totalCostLabel` when checkboxes are selected and `orderButton` is clicked.
     @Test
     public void shouldDisplayCorrectPriceInLabel(){
         pizzaCheckBox = (JCheckBox) TestUtils.findComponent("pizzaCheckBox", true);

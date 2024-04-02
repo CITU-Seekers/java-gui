@@ -42,6 +42,7 @@ public class MakingAMessageTest extends AssertJSwingTestngTestCase {
         deleteFile("test2.txt");
     }
     
+    // Description: Should have all components `createFileButton` and `fileContentLabel`.
     @Test
     public void shouldHaveAllComponents() {
         createFileButton = (Button) TestUtils.findComponent("createFileButton", true);
@@ -51,6 +52,7 @@ public class MakingAMessageTest extends AssertJSwingTestngTestCase {
         assertNotNull(fileContentLabel, "No fileContentLabel found.");
     }
     
+    // Description: Should show the `fileDialog` on `createFileButton` click.
     @Test
     public void shouldShowFileDialogOnButtonClick() {
         createFileButton = (Button) TestUtils.findComponent("createFileButton", true);
@@ -64,6 +66,7 @@ public class MakingAMessageTest extends AssertJSwingTestngTestCase {
         assertTrue(fd.isVisible(), "The file dialog shoud be visible on button click.");
     }
     
+    // Description: Should create the text file on `createFileButton` click.
     @Test
     public void shouldHaveCreatedFile() throws InterruptedException {
         // createFileButton = (Button) TestUtils.findComponent("createFileButton", true);
@@ -138,6 +141,7 @@ public class MakingAMessageTest extends AssertJSwingTestngTestCase {
         // assertEquals(text, "File handling");
     }
     
+    // Description: Should display the created file content in `fileContentLabel`.
     @Test
     public void shouldDisplayFileContentInLabel() {
         // createFileButton = (Button) TestUtils.findComponent("createFileButton", true);

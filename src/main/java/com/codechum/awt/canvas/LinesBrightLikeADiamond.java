@@ -23,7 +23,7 @@ public class LinesBrightLikeADiamond extends java.awt.Frame {
         initComponents();
         setTitle("Lines bright like a Diamond");
         Canvas canvas = new LinesBrightLikeADiamondMyCanvas();
-        canvas.setName("canvasMain");
+        canvas.setName("mainCanvas");
         
         // Add the canvas to the frame
         add(canvas);

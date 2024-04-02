@@ -24,6 +24,7 @@ public class StringConcatenatorTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `textField1`, `textField2`, `concatenateButton`, and `resultLabel`.
     @Test
     public void shouldHaveAllComponents() {
         textField1 = (TextField) TestUtils.findComponent("textField1", true);
@@ -37,6 +38,7 @@ public class StringConcatenatorTest extends AssertJSwingTestngTestCase {
         assertNotNull(resultLabel, "No resultLabel found.");
     }
 
+    // Description: Should concatenate strings from `textField1` and `textField2` and display the result in `resultLabel` when `concatenateButton` is clicked.
     @Test
     public void shouldConcatenateStringsOnButtonClick() {
         textField1 = (TextField) TestUtils.findComponent("textField1", true);

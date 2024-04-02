@@ -33,6 +33,7 @@ public class DrawingArcsTest extends AssertJSwingTestngTestCase {
         mainCanvas = (Canvas) TestUtils.findComponent("mainCanvas", true);
     }
     
+    // Description: Should have all components `startingAngleTextField`, `extentAngleTextField`, `drawArcButton`, and `mainCanvas`.
     @Test
     public void shouldHaveAllComponents() {
         initializeComponents();
@@ -42,6 +43,7 @@ public class DrawingArcsTest extends AssertJSwingTestngTestCase {
         assertNotNull(mainCanvas, "No mainCanvas found.");
     }
     
+    // Description: Should draw an arc with correct angles based on `startingAngleTextField` and `extentAngleTextField` when `drawArcButton` is clicked.
     @Test
     public void shouldDrawArcWithCorrectAngles() {
         initializeComponents();

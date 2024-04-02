@@ -42,6 +42,7 @@ public class PalindromeCheckerTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `textArea`, `resultLabel`, and `checkButton`.
     /**
      * Test to check the presence of JTextArea, JLabel, and JButton components.
      */
@@ -56,11 +57,12 @@ public class PalindromeCheckerTest extends AssertJSwingTestngTestCase {
         assertNotNull(checkButton, "No checkButton found.");
     }
 
+    // Description: Should have an empty default value for `textArea` and `resultLabel`.
     /**
      * Test to check if JTextArea and JLabel have default values.
      */
     @Test
-    public void checkTextAreaAndLabelDefaultValue() {
+    public void shouldCheckTextAreaAndLabelDefaultValue() {
         textArea = (JTextArea) TestUtils.findComponent("textArea", true);
         resultLabel = (JLabel) TestUtils.findComponent("resultLabel", true);
 
@@ -68,6 +70,7 @@ public class PalindromeCheckerTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "");
     }
 
+    // Description: Should display the result as "Palindrome" if the text in `textArea` is a palindrome and "Not a Palindrome" if it is not in `resultLabel` when `checkButton` is clicked.
     /**
      * Test to check if the text is correctly identified as a palindrome.
      */

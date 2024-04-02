@@ -27,7 +27,7 @@ public class LabelsAreImportant extends JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         lblDisplayText.setText("Hello World! I love Java!");
-        lblDisplayText.setName("labelHelloWorld");
+        lblDisplayText.setName("helloWorldLabel");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

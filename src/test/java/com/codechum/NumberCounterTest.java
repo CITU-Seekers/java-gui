@@ -29,6 +29,7 @@ public class NumberCounterTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `countLabel`, `increaseButton`, and `decreaseButton`.
     @Test
     public void shouldHaveAllComponents() {
         countLabel = (Label) TestUtils.findComponent("countLabel", true);
@@ -40,12 +41,14 @@ public class NumberCounterTest extends AssertJSwingTestngTestCase {
         assertNotNull(decreaseButton, "No decreaseButton found.");
     }
 
+    // Description: Should have a default value of 0 for `countLabel`.
     @Test
     public void shouldHaveCorrectDefaultValue() {
         countLabel = (Label) TestUtils.findComponent("countLabel", true);
         assertNotNull(countLabel.getText(), "0");
     }
 
+    // Description: Should increase the value of `countLabel` by 1 each time `increaseButton` is clicked.
     @Test
     public void shouldIncreaseCountIfButtonIsClicked() {
         countLabel = (Label) TestUtils.findComponent("countLabel", true);
@@ -61,6 +64,7 @@ public class NumberCounterTest extends AssertJSwingTestngTestCase {
         assertEquals(countLabel.getText(), "4");
     }
     
+    // Description: Should decrease the value of `countLabel` by 1 each time `decreaseButton` is clicked.
     @Test
     public void shouldDecreaseCountIfButtonIsClicked() {
         countLabel = (Label) TestUtils.findComponent("countLabel", true);

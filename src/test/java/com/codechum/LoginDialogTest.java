@@ -48,6 +48,7 @@ public class LoginDialogTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `passwordTextField`, `usernameTextField`, and `loginButton`.
     @Test
     public void shouldHaveAllComponents() {
         passwordTextField = (JPasswordField) TestUtils.findComponent("passwordTextField", true);
@@ -59,6 +60,7 @@ public class LoginDialogTest extends AssertJSwingTestngTestCase {
         assertNotNull(loginButton, "No loginButton found.");
     }
 
+    // Description: Should show JOptionPane with the "Failed!" message if `usernameTextField` and `passwordTextField` is not equal.
     @Test
     public void shouldShowFailedMessage() {
         passwordTextField = (JPasswordField) TestUtils.findComponent("passwordTextField", true);
@@ -89,7 +91,7 @@ public class LoginDialogTest extends AssertJSwingTestngTestCase {
         assertEquals(message, "Failed!");
     }
 
-
+    // Description: Should show JOptionPane with the "Success!" message if `usernameTextField` and `passwordTextField` is equal.
     @Test
     public void shouldShowSuccessMessage() {
         passwordTextField = (JPasswordField) TestUtils.findComponent("passwordTextField", true);
