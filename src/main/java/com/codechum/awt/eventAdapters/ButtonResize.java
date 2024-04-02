@@ -1,131 +1,208 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/AWTForms/Frame.java to edit this template
+ */
 package com.codechum.awt.eventAdapters;
 
-import java.awt.event.*;
-import java.awt.*;
-import javax.swing.border.Border;
-import javax.swing.*;
+/**
+ *
+ * @author AzalithenPC
+ */
+public class ButtonResize extends java.awt.Frame {
 
-public class ButtonResize extends Frame {
-    private Label helperLabel;
-    private Checkbox smallCheckBox, mediumCheckBox, largeCheckBox;
-    private ButtonGroup btnGrp;
-    private Button mainButton;
-    private JPanel pnlMain;
-
+    /**
+     * Creates new form ButtonResizeRevamp
+     */
     public ButtonResize() {
-        setTitle("Event Handling");
-
-        CheckboxGroup group = new CheckboxGroup();
-        helperLabel = new Label("");
-        smallCheckBox = new Checkbox("Small", group, true);
-        mediumCheckBox = new Checkbox("Medium", group, false);
-        largeCheckBox = new Checkbox("Large", group, false);
-        btnGrp = new ButtonGroup();
-        mainButton = new Button("Button");
-
-        helperLabel.setName("helperLabel");
-        smallCheckBox.setName("smallCheckBox");
-        mediumCheckBox.setName("mediumCheckBox");
-        largeCheckBox.setName("largeCheckBox");
-        mainButton.setName("mainButton");
-
-        pnlMain = new JPanel();
-        pnlMain.setLayout(null);
-        Border blackline = BorderFactory.createLineBorder(Color.black);
-        pnlMain.setBorder(blackline);
-        pnlMain.add(mainButton);
-        pnlMain.setPreferredSize(new Dimension( 450, 200));
-        pnlMain.setSize(new Dimension(500, 200));
-        mainButton.setBounds((pnlMain.getWidth() / 2) - (mainButton.getWidth()/2), (pnlMain.getHeight() / 2) - (mainButton.getHeight()/2), 80, 30);
-
-        JPanel pnlRadioButtons = new JPanel();
-        pnlRadioButtons.add(smallCheckBox);
-        pnlRadioButtons.add(mediumCheckBox);
-        pnlRadioButtons.add(largeCheckBox);
-
-        JPanel pnlMessage = new JPanel();
-        pnlMessage.add(helperLabel);
-
-        smallCheckBox.addMouseListener(
-            new MouseAdapter() {
-
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    // TODO Auto-generated method stub
-                    mainButton.setBounds((pnlMain.getWidth() / 2) - (mainButton.getWidth()/2), (pnlMain.getHeight() / 2) - (mainButton.getHeight()/2), 80, 30);
-                }
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-                    // TODO Auto-generated method stub
-                    helperLabel.setText("Set the button's size to small");
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-                    // TODO Auto-generated method stub
-                    helperLabel.setText("");
-                }
-            }
-        );
-
-        mediumCheckBox.addMouseListener(
-            new MouseAdapter() {
-
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    // TODO Auto-generated method stub
-                    mainButton.setBounds((pnlMain.getWidth() / 2) - (mainButton.getWidth()/2), (pnlMain.getHeight() / 2) - (mainButton.getHeight()/2), 160, 60);
-                }
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-                    // TODO Auto-generated method stub
-                    helperLabel.setText("Set the button's size to medium");
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-                    // TODO Auto-generated method stub
-                    helperLabel.setText("");
-                }
-            }
-        );
-
-        largeCheckBox.addMouseListener(
-            new MouseAdapter() {
-
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    // TODO Auto-generated method stub
-                    mainButton.setBounds((pnlMain.getWidth() / 2) - (mainButton.getWidth()/2), (pnlMain.getHeight() / 2) - (mainButton.getHeight()/2), 240, 90);
-                }
-
-                @Override
-                public void mouseEntered(MouseEvent e) {
-                    // TODO Auto-generated method stub
-                    helperLabel.setText("Set the button's size to large");
-                }
-
-                @Override
-                public void mouseExited(MouseEvent e) {
-                    // TODO Auto-generated method stub
-                    helperLabel.setText("");
-                }
-            }
-        );
-        
-        add(pnlMessage, BorderLayout.NORTH);
-        add(pnlMain, BorderLayout.CENTER);
-        add(pnlRadioButtons, BorderLayout.SOUTH);
-        pack();
+        initComponents();
     }
 
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        mainButton = new java.awt.Button();
+        checkbox1 = new java.awt.Checkbox();
+        helperLabel = new java.awt.Label();
+        checkbox2 = new java.awt.Checkbox();
+        checkbox3 = new java.awt.Checkbox();
+
+        setTitle("Button Event Handling");
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                exitForm(evt);
+            }
+        });
+
+        mainButton.setLabel("Button");
+        mainButton.setName("mainButton"); // NOI18N
+
+        checkbox1.setLabel("Small");
+        checkbox1.setName("smallCheckBox"); // NOI18N
+        checkbox1.setState(true);
+        checkbox1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkbox1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                checkbox1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                checkbox1MouseExited(evt);
+            }
+        });
+
+        helperLabel.setAlignment(java.awt.Label.CENTER);
+        helperLabel.setName("helperLabel"); // NOI18N
+
+        checkbox2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        checkbox2.setLabel("Medium");
+        checkbox2.setName("mediumCheckBox"); // NOI18N
+        checkbox2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkbox2MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                checkbox2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                checkbox2MouseExited(evt);
+            }
+        });
+
+        checkbox3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        checkbox3.setLabel("Large");
+        checkbox3.setName("largeCheckBox"); // NOI18N
+        checkbox3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkbox3MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                checkbox3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                checkbox3MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(105, 105, 105)
+                        .addComponent(helperLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(mainButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(checkbox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(checkbox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(checkbox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(helperLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(51, 51, 51)
+                .addComponent(mainButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(checkbox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkbox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(checkbox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    /**
+     * Exit the Application
+     */
+    private void exitForm(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_exitForm
+        System.exit(0);
+    }//GEN-LAST:event_exitForm
+
+    private void checkbox1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkbox1MouseEntered
+        // TODO add your handling code here:
+        helperLabel.setText("Set the button's size to small");
+    }//GEN-LAST:event_checkbox1MouseEntered
+
+    private void checkbox2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkbox2MouseEntered
+        // TODO add your handling code here:
+        helperLabel.setText("Set the button's size to medium");
+    }//GEN-LAST:event_checkbox2MouseEntered
+
+    private void checkbox3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkbox3MouseEntered
+        // TODO add your handling code here:
+        helperLabel.setText("Set the button's size to large");
+    }//GEN-LAST:event_checkbox3MouseEntered
+
+    private void checkbox1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkbox1MouseExited
+        // TODO add your handling code here:
+        helperLabel.setText("");
+    }//GEN-LAST:event_checkbox1MouseExited
+
+    private void checkbox2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkbox2MouseExited
+        // TODO add your handling code here:
+        helperLabel.setText("");
+    }//GEN-LAST:event_checkbox2MouseExited
+
+    private void checkbox3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkbox3MouseExited
+        // TODO add your handling code here:
+        helperLabel.setText("");
+    }//GEN-LAST:event_checkbox3MouseExited
+
+    private void checkbox1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkbox1MouseClicked
+        // TODO add your handling code here:
+        mainButton.setSize(80, 30);
+        checkbox2.setState(false);
+        checkbox3.setState(false);
+    }//GEN-LAST:event_checkbox1MouseClicked
+
+    private void checkbox2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkbox2MouseClicked
+        // TODO add your handling code here:
+        mainButton.setSize(80*2, 30*2);
+        checkbox1.setState(false);
+        checkbox3.setState(false);
+    }//GEN-LAST:event_checkbox2MouseClicked
+
+    private void checkbox3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkbox3MouseClicked
+        // TODO add your handling code here:
+        mainButton.setSize(80*3, 30*3);
+        checkbox1.setState(false);
+        checkbox2.setState(false);
+    }//GEN-LAST:event_checkbox3MouseClicked
+
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String args[]) {
-         java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new ButtonResize().setVisible(true);
             }
         });
     }
+
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.Checkbox checkbox1;
+    private java.awt.Checkbox checkbox2;
+    private java.awt.Checkbox checkbox3;
+    private java.awt.Label helperLabel;
+    private java.awt.Button mainButton;
+    // End of variables declaration//GEN-END:variables
 }
