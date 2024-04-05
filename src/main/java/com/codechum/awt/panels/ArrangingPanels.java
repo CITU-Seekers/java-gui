@@ -15,7 +15,7 @@ public class ArrangingPanels extends Frame {
         this.setTitle("Frame with Position");
         this.setSize(300,220);
 
-        Panel mainPanel = new BorderedPanel2();
+        Panel mainPanel = new ArrangingPanelsBorderedPanel();
         mainPanel.setName("mainPanel");
 
         mainPanel.setForeground(Color.black);
@@ -57,7 +57,7 @@ public class ArrangingPanels extends Frame {
 }
 
 // Custom class to add border to AWT Panels
-class BorderedPanel2 extends Panel {
+class ArrangingPanelsBorderedPanel extends Panel {
   
     private boolean drawBorder = true;
     private int borderOffset = 2;

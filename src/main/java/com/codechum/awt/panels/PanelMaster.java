@@ -16,9 +16,9 @@ public class PanelMaster extends Frame {
         this.setSize(600, 500);
         
 
-        Panel panel1 = new BorderedPanel2();
-        Panel panel2 = new BorderedPanel2();
-        Panel panel3 = new BorderedPanel2();
+        Panel panel1 = new Panel();
+        Panel panel2 = new Panel();
+        Panel panel3 = new Panel();
 
         panel1.setName("panelA");
         panel2.setName("panelB");
@@ -48,52 +48,5 @@ public class PanelMaster extends Frame {
                 new PanelMaster().setVisible(true);
             }
         });
-    }
-}
-
-class BorderedPanel3 extends Panel {
-  
-    private boolean drawBorder = true;
-    private int borderOffset = 2;
-  
-    public void setBorderVisible( boolean b ) {
-        if ( b != drawBorder ) {
-            drawBorder = b;
-            repaint();
-        }
-    }
-  
-    public boolean isBorderVisible() {
-        return drawBorder;
-    }
-  
-    public void setBorderOffset( int i ) {
-        borderOffset = i;
-        repaint();
-    }
-  
-    public int getBorderOffset() {
-        return borderOffset;
-    }
-  
-    protected Rectangle getBorderBounds() {
-        int x = borderOffset;
-        int y = borderOffset;
-        int width = getSize().width - borderOffset * 2;
-        int height = getSize().height - borderOffset * 2;
-        Rectangle bounds = new Rectangle( x, y, width, height );
-        return bounds;
-    }
-  
-    public void update( Graphics g ) {
-        paint( g );
-    }
-  
-    public void paint( Graphics g ) {
-        g.setColor( getBackground() );
-        g.fillRect( 0, 0, getSize().width, getSize().height );
-        g.setColor( getForeground() );
-        Rectangle border = getBorderBounds();
-        g.drawRect( border.x, border.y, border.width, border.height );
     }
 }

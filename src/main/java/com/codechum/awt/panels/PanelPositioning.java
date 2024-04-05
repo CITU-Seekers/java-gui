@@ -17,8 +17,8 @@ public class PanelPositioning extends Frame {
         this.setLayout(null);
         // Using BorderedPanel is optional since adding borders/backgrounds is not required.
 
-        Panel panelA = new BorderedPanel4();
-        Panel panelB = new BorderedPanel4();
+        Panel panelA = new PanelPositioningBorderedPanel();
+        Panel panelB = new PanelPositioningBorderedPanel();
 
         panelA.setName("panelA");
         panelB.setName("panelB");
@@ -38,7 +38,7 @@ public class PanelPositioning extends Frame {
     }
 }
 
-class BorderedPanel4 extends Panel {
+class PanelPositioningBorderedPanel extends Panel {
   
     private boolean drawBorder = true;
     private int borderOffset = 2;

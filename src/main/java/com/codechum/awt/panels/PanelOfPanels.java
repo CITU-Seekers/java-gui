@@ -16,11 +16,11 @@ public class PanelOfPanels extends Frame {
         this.setSize(300,220);
 
         // Using BorderedPanel is optional since adding borders/backgrounds is not required.
-        Panel mainPanel = new BorderedPanel2();
+        Panel mainPanel = new PanelsOfPanelsBorderedPanel();
         mainPanel.setName("mainPanel");
 
-        Panel subPanelA = new BorderedPanel2();
-        Panel subPanelB = new BorderedPanel2();
+        Panel subPanelA = new PanelsOfPanelsBorderedPanel();
+        Panel subPanelB = new PanelsOfPanelsBorderedPanel();
 
         subPanelA.setName("subPanelA");
         subPanelB.setName("subPanelB");
@@ -33,13 +33,7 @@ public class PanelOfPanels extends Frame {
         
         mainPanel.add(subPanelA);
         mainPanel.add(subPanelB);
-
-        // These panels are added just to properly display the main panel.
-        this.add(new Panel(), BorderLayout.NORTH);
-        this.add(new Panel(), BorderLayout.EAST);
-        this.add(new Panel(), BorderLayout.SOUTH);
-        this.add(new Panel(), BorderLayout.WEST);
-        this.add(mainPanel, BorderLayout.CENTER);
+        this.add(mainPanel);
     }
 
     public static void main(String args[]) {
@@ -48,7 +42,7 @@ public class PanelOfPanels extends Frame {
 }
 
 // Custom class to add border to AWT Panels
-class BorderedPanel extends Panel {
+class PanelsOfPanelsBorderedPanel extends Panel {
   
     private boolean drawBorder = true;
     private int borderOffset = 2;
