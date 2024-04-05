@@ -24,6 +24,7 @@ public class CharacterShortenerTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `textLabel` and `shortenButton`.
     @Test
     public void shouldHaveAllComponents() {
         label1 = (Label) TestUtils.findComponent("textLabel", true);
@@ -33,6 +34,7 @@ public class CharacterShortenerTest extends AssertJSwingTestngTestCase {
         assertNotNull(shortenButton, "No shortenButton found.");
     }
 
+    // Description: Should shorten the text of `textLabel` by one character each time `shortenButton` is clicked.
     @Test
     public void shouldShortenTextOnClick() {
         label1 = (Label) TestUtils.findComponent("textLabel", true);

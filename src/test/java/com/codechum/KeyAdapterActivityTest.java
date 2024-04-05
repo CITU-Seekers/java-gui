@@ -21,6 +21,7 @@ public class KeyAdapterActivityTest extends AssertJSwingTestngTestCase {
         application(KeyAdapterActivity.class).start();
     }
 
+    // Description: Should have all components `inputTextField` and `statusLabel`.
     @Test
     public void shouldHaveAllComponents() {
         inputTextField = (TextField) TestUtils.findComponent("inputTextField", true);
@@ -30,6 +31,7 @@ public class KeyAdapterActivityTest extends AssertJSwingTestngTestCase {
         assertNotNull(statusLabel);
     }
 
+    // Description: Should display the key pressed message on the `statusLabel` when a key is pressed in the `inputTextField`.
     @Test
     public void shouldDisplayKeyTypedMessage() {
         inputTextField = (TextField) TestUtils.findComponent("inputTextField", true);
@@ -41,6 +43,7 @@ public class KeyAdapterActivityTest extends AssertJSwingTestngTestCase {
         assertEquals(statusLabel.getText(), "Key Typed: h");
     }
 
+    // Description: Should display the key released message on the `statusLabel` when a key is released in the `inputTextField`.
     @Test
     public void shouldDisplayKeyReleasedMessage() {
         inputTextField = (TextField) TestUtils.findComponent("inputTextField", true);

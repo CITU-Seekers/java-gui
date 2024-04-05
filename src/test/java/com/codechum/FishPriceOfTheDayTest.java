@@ -26,6 +26,7 @@ public class FishPriceOfTheDayTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `dayChoice`, `amountTextField`, `calculateButton`, and `priceLabel`.
     @Test
     public void shouldHaveAllComponents() {
         dayChoice = (Choice) TestUtils.findComponent("dayChoice", true);
@@ -39,36 +40,43 @@ public class FishPriceOfTheDayTest extends AssertJSwingTestngTestCase {
         assertNotNull(priceLabel, "No priceLabel found.");
     }
 
+    // Description: Should calculate the price of fish for "Monday" and display it in `priceLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculatePriceForMonday() {
         calculatePrice("Monday", 5, 1250);
     }
     
+    // Description: Should calculate the price of fish for "Tuesday" and display it in `priceLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculatePriceForTuesday() {
         calculatePrice("Tuesday", 3, 600);
     }
 
+    // Description: Should calculate the price of fish for "Wednesday" and display it in `priceLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculatePriceForWednesday() {
         calculatePrice("Wednesday", 3, 450);
     }
     
+    // Description: Should calculate the price of fish for "Thursday" and display it in `priceLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculatePriceForThursday() {
         calculatePrice("Thursday", 3, 450);
     }
     
+    // Description: Should calculate the price of fish for "Friday" and display it in `priceLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculatePriceForFriday() {
         calculatePrice("Friday", 3, 600);
     }
     
+    // Description: Should calculate the price of fish for "Saturday" and display it in `priceLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculatePriceForSaturday() {
         calculatePrice("Saturday", 3, 900);
     }
 
+    // Description: Should calculate the price of fish for "Sunday" and display it in `priceLabel` when `calculateButton` is clicked.
     @Test
     public void shouldCalculatePriceForSunday() {
         calculatePrice("Sunday", 2, 600);

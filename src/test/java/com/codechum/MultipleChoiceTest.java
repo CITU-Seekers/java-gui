@@ -24,6 +24,7 @@ public class MultipleChoiceTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all components `charCheckBox`, `booleanCheckBox`, `intCheckBox`, `stringCheckBox`, `checkButton`, and `resultLabel`.
     @Test
     public void shouldHaveAllComponents() {
         String[] checkboxes = {"charCheckBox", "booleanCheckBox", "intCheckBox", "stringCheckBox"};
@@ -39,6 +40,7 @@ public class MultipleChoiceTest extends AssertJSwingTestngTestCase {
         assertNotNull(resultLabel, "No resultLabel found.");
     }
     
+    // Description: Should only select one checkbox at a time.
     @Test
     public void shouldOnlySelectOneRadioButton(){
         String[] checkboxes = {"charCheckBox", "booleanCheckBox", "intCheckBox", "stringCheckBox"};
@@ -62,6 +64,7 @@ public class MultipleChoiceTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should display "Correct!" or "Incorrect!" in `resultLabel` depending on what check box is selected when `checkButton` is clicked.
     @Test
     public void shouldDisplayCorrespondingMessagesOnButtonClick() {
         String[] checkboxes = {"charCheckBox", "booleanCheckBox", "intCheckBox", "stringCheckBox"};

@@ -21,6 +21,7 @@ public class LovingJavaTest extends AssertJSwingTestngTestCase {
         application(LovingJava.class).start();
     }
 
+    // Description: Should have all labels named `label1`, `label2`, `label3`, and `label4`.
     @Test
     public void shouldHaveAllLabels() {
         label1 = (Label) TestUtils.findComponent("label1", true);
@@ -33,26 +34,30 @@ public class LovingJavaTest extends AssertJSwingTestngTestCase {
         assertNotNull(label4, "No label4 found.");
     }
 
+    // Description: Should have a text value of "Hello World!" for `label1`.
     @Test
-    public void checkLabel1Value() {
+    public void shouldCheckLabel1Value() {
         label1 = (Label) TestUtils.findComponent("label1", true);
         assertEquals(label1.getText(), "Hello World!");
     }
 
+    // Description: Should have a text value of "I love programming" for `label2`.
     @Test
-    public void checkLabel2Value() {
+    public void shouldCheckLabel2Value() {
         label2 = (Label) TestUtils.findComponent("label2", true);
         assertEquals(label2.getText(), "I love programming");
     }
 
+    // Description: Should have a text value of "I love CodeChum" for `label3`.
     @Test
-    public void checkLabel3Value() {
+    public void shouldCheckLabel3Value() {
         label3 = (Label) TestUtils.findComponent("label3", true);
         assertEquals(label3.getText(), "I love CodeChum");
     }
 
+    // Description: Should have a text value of "I love Java" for `label4`.
     @Test
-    public void checkLabel4Value() {
+    public void shouldCheckLabel4Value() {
         label4 = (Label) TestUtils.findComponent("label4", true);
         assertEquals(label4.getText(), "I love Java");
     }

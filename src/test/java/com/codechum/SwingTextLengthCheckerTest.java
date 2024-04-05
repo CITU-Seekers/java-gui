@@ -34,28 +34,31 @@ public class SwingTextLengthCheckerTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `wordTextField` and `messageLabel`.
     @Test
     public void shouldHaveAllComponents() {
-        assertNotNull(frame.textBox("textField"), "No textField found.");
+        assertNotNull(frame.textBox("wordTextField"), "No wordTextField found.");
         assertNotNull(frame.label("messageLabel"), "No messageLabel found.");
     }
 
+    // Description: Should display the message “The text is short.” in `wordTextField` when the text in `wordTextField` is less than 10 characters.
     @Test
     public void shouldDisplayIsShortMessageIfLengthOfTextIsBelow10() {
-        frame.textBox("textField")
+        frame.textBox("wordTextField")
         .pressAndReleaseKeys(VK_C, VK_O, VK_D, VK_E);
 
         assertEquals(frame.label("messageLabel").text(), "The text is short.");
     }
 
+    // Description: Should display the message “The text is long.” in `wordTextField` when the text in `wordTextField` is more than 10 characters.
     @Test
     public void shouldDisplayTextIsLongMessageIfLengthOfTextIsMoreThan10() {
-        frame.textBox("textField")
+        frame.textBox("wordTextField")
         .pressAndReleaseKeys(VK_H, VK_E, VK_L, VK_L, VK_O, VK_SPACE, VK_W, VK_O, VK_R, VK_L);
 
         assertEquals(frame.label("messageLabel").text(), "The text is short.");
 
-        frame.textBox("textField")
+        frame.textBox("wordTextField")
         .pressAndReleaseKeys(VK_D);
 
         assertEquals(frame.label("messageLabel").text(), "The text is long.");

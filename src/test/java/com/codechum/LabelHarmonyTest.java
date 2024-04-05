@@ -34,6 +34,7 @@ public class LabelHarmonyTest extends AssertJSwingTestngTestCase {
         return (JLabel) TestUtils.findComponent(labelName, true);
     }
 
+    // Description: Should have a label named `passionLabel` with text "Passionate about Code".
     /**
      * Test to check the presence and text value of the "Passionate about Code" label.
      */
@@ -44,6 +45,7 @@ public class LabelHarmonyTest extends AssertJSwingTestngTestCase {
         assertEquals(label.getText(), "Passionate about Code");
     }
 
+    // Description: Should have a label named `techLabel` with text "Tech Enthusiast".
     /**
      * Test to check the presence and text value of the "Tech Enthusiast" label.
      */
@@ -54,6 +56,7 @@ public class LabelHarmonyTest extends AssertJSwingTestngTestCase {
         assertEquals(label.getText(), "Tech Enthusiast");
     }
 
+    // Description: Should have a label named `syntaxLabel` with text "Syntax Perfectionist".
     /**
      * Test to check the presence and text value of the "Syntax Perfectionist" label.
      */
@@ -64,6 +67,7 @@ public class LabelHarmonyTest extends AssertJSwingTestngTestCase {
         assertEquals(label.getText(), "Syntax Perfectionist");
     }
 
+    // Description: Should have a label named `devLabel` with text "Dev by Heart".
     /**
      * Test to check the presence and text value of the "Dev by Heart" label.
      */

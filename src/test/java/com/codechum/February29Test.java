@@ -25,6 +25,7 @@ public class February29Test extends AssertJSwingTestngTestCase {
         application(February29.class).start();
     }
     
+    // Description: Should have all components `yearTextField` and `checkYearButton`.
     @Test
     public void shouldHaveAllComponents() {
         yearTextField = (TextField) TestUtils.findComponent("yearTextField", true);
@@ -34,11 +35,12 @@ public class February29Test extends AssertJSwingTestngTestCase {
         assertNotNull(checkYearButton, "No checkYearButton found.");
     }
     
+    // Description: Should show `leapYearDialog` when year is a leap year and display "Leap year" in `leapYearLabel` on `checkYearButton` click.
     @Test
     public void shouldShowDialogForLeapYearOnBtnCheckYearClick() {
         yearTextField = (TextField) TestUtils.findComponent("yearTextField", true);
         checkYearButton = (Button) TestUtils.findComponent("checkYearButton", true);
-        
+    
         robot().click(yearTextField);
         robot().enterText("2000");
         robot().click(checkYearButton);
@@ -51,6 +53,7 @@ public class February29Test extends AssertJSwingTestngTestCase {
         assertEquals(leapYearLabel.getText(), "Leap year");
     }
     
+    // Description: Should show `notLeapYearDialog` when year is not a leap year and display "Not a leap year" in `notLeapYearLabel` on `checkYearButton` click.
     @Test
     public void shouldShowDialogForNotALeapYearOnBtnCheckYearClick(){
         yearTextField = (TextField) TestUtils.findComponent("yearTextField", true);

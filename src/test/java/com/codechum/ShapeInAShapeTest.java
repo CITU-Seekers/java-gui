@@ -13,6 +13,7 @@ public class ShapeInAShapeTest {
     ShapeInAShape codeChumActivity;
     @Mocked Graphics g;
 
+    // Description: Should override the frame's paint method and display a red circle centered at (200, 200) with a radius of 150 containing a white rectangle with a width of 150 and a height of 50.
     @Test
     public void shouldOverridePaintMethod() {
         codeChumActivity.paint(g);

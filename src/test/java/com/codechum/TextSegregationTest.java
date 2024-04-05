@@ -25,6 +25,7 @@ public class TextSegregationTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
     
+    // Description: Should have all components named `textArea`, `wordCountLabel`, `charCountLabel`, and `countButton`.
     @Test
     public void shouldHaveAllComponents() {
         textArea = (TextArea) TestUtils.findComponent("textArea", true);
@@ -37,6 +38,7 @@ public class TextSegregationTest extends AssertJSwingTestngTestCase {
         assertNotNull(countButton, "No countButton found.");
     }
 
+    // Description: Should check if `textArea`, `wordCountLabel`, and `charCountLabel` display text is empty by default.
     @Test
     public void checkTextAreaAndLabelsDefaultValue() {
         textArea = (TextArea) TestUtils.findComponent("textArea", true);
@@ -47,6 +49,7 @@ public class TextSegregationTest extends AssertJSwingTestngTestCase {
         assertEquals(charCountLabel.getText(), "");
     }
     
+    // Description: Should display the word count of the text in `textArea` in `wordCountLabel` when `countButton` is clicked.
     @Test
     public void shouldDisplayWordCount(){
         textArea = (TextArea) TestUtils.findComponent("textArea", true);
@@ -60,6 +63,7 @@ public class TextSegregationTest extends AssertJSwingTestngTestCase {
         assertEquals(wordCountLabel.getText(), "4");
     }
     
+    // Description: Should display the character count of the text in `textArea` in `charCountLabel` when `countButton` is clicked.
     @Test
     public void shouldDisplayCharacterCount(){
         textArea = (TextArea) TestUtils.findComponent("textArea", true);

@@ -16,8 +16,9 @@ public class DrawingTextTest {
     @Tested DrawingTextMyCanvas canvas;
     @Injectable Graphics g;
     
+    // Description: Should override frame's paint method of MyCanvas class to draw text.
     @Test
-    public void testPaintMethodOfCanvasClass() {
+    public void shouldOverridePaintMethodOfCanvasClass() {
         canvas.paint(g);
         
         new Verifications(){{
@@ -25,6 +26,7 @@ public class DrawingTextTest {
         }};
     }
     
+    // Description: Should have a canvas named `mainCanvas`.
     @Test
     public void shouldHaveCanvasMain() {
         Canvas canvasMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "mainCanvas");

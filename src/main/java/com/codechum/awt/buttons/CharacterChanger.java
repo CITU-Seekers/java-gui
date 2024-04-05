@@ -30,6 +30,7 @@ public class CharacterChanger extends java.awt.Frame {
         button3 = new java.awt.Button();
         label1 = new java.awt.Label();
 
+        setTitle("Case Switch");
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowClosing(java.awt.event.WindowEvent evt) {
                 exitForm(evt);

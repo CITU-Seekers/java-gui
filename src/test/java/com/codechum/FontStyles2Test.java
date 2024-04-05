@@ -66,6 +66,7 @@ public class FontStyles2Test extends AssertJSwingTestngTestCase {
         mainFrame.paint(g);
     }
 
+    // Description: Should have a menu bar with a menu `fontMenu` and its items `arialMenuItem`, `rockwellMenuItem`, and `timesNewRomanMenuItem`.
     @Test
     public void shouldHaveFontMenuAndItsItems() {
         fontMenu = menuBar.getMenu(0);
@@ -79,6 +80,7 @@ public class FontStyles2Test extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should display a text "Hello World" in plain "Arial" font style, with a font size of 48, at coordinates (50, 100) when the `arialMenuItem` is selected.
     @Test
     public void shouldDisplayTextWithArialFontStyle() {
         testMenuItemStyleBehavior("arialMenuItem");
@@ -92,6 +94,7 @@ public class FontStyles2Test extends AssertJSwingTestngTestCase {
         };
     }
 
+    // Description: Should display a text "Hello World" in plain "Rockwell" font style, with a font size of 48, at coordinates (50, 100) when the `rockwellMenuItem` is selected.
     @Test
     public void shouldDisplayTextWithRockwellFontStyle() {
         testMenuItemStyleBehavior("rockwellMenuItem");
@@ -105,6 +108,7 @@ public class FontStyles2Test extends AssertJSwingTestngTestCase {
         };
     }
 
+    // Description: Should display a text "Hello World" in plain "Times New Roman" font style, with a font size of 48, at coordinates (50, 100) when the `timesNewRomanMenuItem` is selected.
     @Test
     public void shouldDisplayTextWithTimesNewRomanFontStyle() {
         testMenuItemStyleBehavior("timesNewRomanMenuItem");

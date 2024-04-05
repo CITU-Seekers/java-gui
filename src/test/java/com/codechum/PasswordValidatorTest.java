@@ -21,6 +21,7 @@ public class PasswordValidatorTest extends AssertJSwingTestngTestCase {
         application(PasswordValidator.class).start();
     }
 
+    // Description: Should have all components `passwordTextField` and `statusLabel`.
     @Test
     public void shouldHaveAllComponents(){
         passwordTextField = (TextField) TestUtils.findComponent("passwordTextField", true);
@@ -30,6 +31,7 @@ public class PasswordValidatorTest extends AssertJSwingTestngTestCase {
         assertNotNull(statusLabel);
     }
 
+    // Description: Should display correct status in `statusLabel` when the password is entered in the `passwordTextField`.
     @Test
     public void shouldDisplayCorrectStatus(){
         passwordTextField = (TextField) TestUtils.findComponent("passwordTextField", true);

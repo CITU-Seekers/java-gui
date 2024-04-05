@@ -43,6 +43,7 @@ public class MyPlaylistButWithFavoritesTest extends AssertJSwingTestngTestCase {
         robot().enterText(title);
     }
     
+    // Description: Should have all components `musicList`, `musicTextField`, `addButton`, and `removeButton`.
     @Test
     public void shouldHaveAllComponents() {
         musicList = (List) TestUtils.findComponent("musicList", true);
@@ -56,6 +57,7 @@ public class MyPlaylistButWithFavoritesTest extends AssertJSwingTestngTestCase {
         assertNotNull(removeButton, "No removeButton found.");
     }
     
+    // Description: Should add music entered in `musicTextField` to `musicList` when `addButton` is clicked.
     @Test
     public void shouldBeAbleToAddMusicToList() {
         musicList = (List) TestUtils.findComponent("musicList", true);
@@ -71,6 +73,7 @@ public class MyPlaylistButWithFavoritesTest extends AssertJSwingTestngTestCase {
         assertEquals(actualMusicListString, "Music Main 1, Music Main 2, New Music");
     }
     
+    // Description: Should remove selected music from `musicList` when `removeButton` is clicked.
     @Test
     public void shouldBeAbleToRemoveMusicFromList() {
         musicList = (List) TestUtils.findComponent("musicList", true);
@@ -85,6 +88,7 @@ public class MyPlaylistButWithFavoritesTest extends AssertJSwingTestngTestCase {
         assertEquals(actualMusicListString, "Music Main 2");
     }
     
+    // Description: Should add selected music from `musicList` to `favoritesList` when `addToFavoritesButton` is clicked.
     @Test
     public void shouldBeAbleToAddToFavorites() {
         musicList = (List) TestUtils.findComponent("musicList", true);
@@ -100,6 +104,7 @@ public class MyPlaylistButWithFavoritesTest extends AssertJSwingTestngTestCase {
         assertEquals(actualFavoritesListString, "Music Main 1");
     }
     
+    // Description: Should remove selected music from `musicList` and in `favoritesList` if it exists when `removeButton` is clicked.
     @Test
     public void shouldDeleteFromBothLists() {
         musicList = (List) TestUtils.findComponent("musicList", true);

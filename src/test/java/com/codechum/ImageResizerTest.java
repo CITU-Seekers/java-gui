@@ -28,6 +28,7 @@ public class ImageResizerTest extends AssertJSwingTestngTestCase {
         application(ImageResizer.class).start();
     }
 
+    // Description: Should have all components `openFileButton`, `resizerScrollBar`, and `imageCanvas`.
     @Test
     public void shouldHaveAllComponents() {
         openButton = (Button) TestUtils.findComponent("openFileButton", true);
@@ -39,6 +40,7 @@ public class ImageResizerTest extends AssertJSwingTestngTestCase {
         assertNotNull(canvas, "No canvas found.");
     }
 
+    // Description: Should load image from `fileDialog` to `imageCanvas` on clicking `openFileButton`.  
     @Test
     public void shouldLoadImage() {
         openButton = (Button) TestUtils.findComponent("openFileButton", true);
@@ -77,6 +79,7 @@ public class ImageResizerTest extends AssertJSwingTestngTestCase {
         assertNotNull(canvas, "Canvas is null.");
     }
 
+    // Description: Should resize image on scrolling `resizerScrollBar`.
     @Test
     public void shouldResizeImageWithScrollbar() {
         openButton = (Button) TestUtils.findComponent("openFileButton", true);

@@ -33,26 +33,31 @@ public class ArrangingFramesInAWTTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have a frame with title "Frame With Position".
     @Test
     public void shouldDisplayCorrectTitle() {
         assertEquals(frame.getTitle(), "Frame With Position");
     }
 
+    // Description: Should have a frame with a width of 600.
     @Test
     public void shouldHaveCorrectWidth() {
         assertEquals(frame.getSize().getWidth(), 600);
     }
 
+    // Description: Should have a frame with a height of 500.
     @Test
     public void shouldHaveCorrectHeight() {
         assertEquals(frame.getSize().getHeight(), 500);
     }
 
+    // Description: Should have a frame with an x position of 750.
     @Test
     public void shouldHaveCorrectXPosition() {
         assertEquals(frame.getLocation().getX(), 750);
     }
 
+    // Description: Should have a frame with a y position of 300.
     @Test
     public void shouldHaveCorrectYPosition() {
         assertEquals(frame.getLocation().getY(), 300);

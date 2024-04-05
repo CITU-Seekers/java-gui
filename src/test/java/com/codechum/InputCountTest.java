@@ -20,6 +20,7 @@ public class InputCountTest extends AssertJSwingTestngTestCase {
         application(InputCount.class).start();
     }
     
+    // Description: Should have all components `contentTextArea` and `textStatisticsLabel`.
     @Test 
     public void shouldHaveAllComponents(){
         contentTextArea = (TextArea) TestUtils.findComponent("contentTextArea", true);
@@ -29,6 +30,7 @@ public class InputCountTest extends AssertJSwingTestngTestCase {
         assertNotNull(textStatisticsLabel);
     }
 
+    // Description: Should display the correct number of characters, words, and lines in the `textStatisticsLabel` when the text is entered in the `contentTextArea`.
     @Test
     public void shouldDisplayCorrectStatus(){
         contentTextArea = (TextArea) TestUtils.findComponent("contentTextArea", true);

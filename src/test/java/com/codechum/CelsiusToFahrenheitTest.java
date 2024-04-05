@@ -22,7 +22,7 @@ public class CelsiusToFahrenheitTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     FrameFixture frame;
 
-    JTextField celsiusField;
+    JTextField celsiusTextField;
     JButton convertButton;
     JLabel resultLabel;
 
@@ -42,30 +42,32 @@ public class CelsiusToFahrenheitTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `celsiusTextField`, `convertButton`, and `resultLabel`.
     /**
      * Test to check the presence of all components including JTextField, JButton, and JLabel.
      */
     @Test
     public void shouldHaveAllComponents() {
-        celsiusField = (JTextField) TestUtils.findComponent("celsiusField", true);
+        celsiusTextField = (JTextField) TestUtils.findComponent("celsiusTextField", true);
         convertButton = (JButton) TestUtils.findComponent("convertButton", true);
         resultLabel = (JLabel) TestUtils.findComponent("resultLabel", true);
 
-        assertNotNull(celsiusField, "No celsiusField found.");
+        assertNotNull(celsiusTextField, "No celsiusTextField found.");
         assertNotNull(convertButton, "No convertButton found.");
         assertNotNull(resultLabel, "No resultLabel found.");
     }
 
+    // Description: Should convert Celsius to Fahrenheit and display the result in `resultLabel` when `convertButton` is clicked.
     /**
      * Test to check the conversion from Celsius to Fahrenheit.
      */
     @Test
     public void shouldConvertCelsiusToFahrenheit() {
-        celsiusField = (JTextField) TestUtils.findComponent("celsiusField", true);
+        celsiusTextField = (JTextField) TestUtils.findComponent("celsiusTextField", true);
         convertButton = (JButton) TestUtils.findComponent("convertButton", true);
         resultLabel = (JLabel) TestUtils.findComponent("resultLabel", true);
 
-        frame.textBox("celsiusField").setText("25");
+        frame.textBox("celsiusTextField").setText("25");
         robot().click(convertButton);
         robot().waitForIdle();
 

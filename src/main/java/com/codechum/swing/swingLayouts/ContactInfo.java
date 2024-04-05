@@ -45,7 +45,7 @@ public class ContactInfo extends javax.swing.JFrame {
         jLabel1.setText("Name:");
         getContentPane().add(jLabel1);
 
-        jTextField1.setName("nameField"); // NOI18N
+        jTextField1.setName("nameTextField"); // NOI18N
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -56,13 +56,13 @@ public class ContactInfo extends javax.swing.JFrame {
         jLabel2.setText("Phone:");
         getContentPane().add(jLabel2);
 
-        jTextField2.setName("phoneField"); // NOI18N
+        jTextField2.setName("phoneTextField"); // NOI18N
         getContentPane().add(jTextField2);
 
         jLabel3.setText("Email:");
         getContentPane().add(jLabel3);
 
-        jTextField3.setName("emailField"); // NOI18N
+        jTextField3.setName("emailTextField"); // NOI18N
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField3ActionPerformed(evt);

@@ -14,7 +14,7 @@ import static org.assertj.swing.launcher.ApplicationLauncher.*;
 public class LabelClassPracticeProblemITest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
 
-    JLabel labelHelloWorld;
+    JLabel helloWorldLabel;
 
     @Override
     protected void onSetUp() {
@@ -22,16 +22,18 @@ public class LabelClassPracticeProblemITest extends AssertJSwingTestngTestCase {
         application(LabelClassPracticeProblemI.class).start();
     }
 
+    // Description: Should have a label named `helloWorldLabel`.
     @Test
     public void shouldHaveLabelHelloWorld() {
-        labelHelloWorld = (JLabel) TestUtils.findComponent("labelHelloWorld", true);
-        assertNotNull(labelHelloWorld, "No labelHelloWorld found.");
+        helloWorldLabel = (JLabel) TestUtils.findComponent("helloWorldLabel", true);
+        assertNotNull(helloWorldLabel, "No helloWorldLabel found.");
     }
 
+    // Description: Should have a text value of "Hello World! I love Java!" in `helloWorldLabel`.
     @Test
     public void shouldHaveCorrectTextValue() {
-        labelHelloWorld = (JLabel) TestUtils.findComponent("labelHelloWorld", true);
-        assertEquals(labelHelloWorld.getText(), "Hello World! I love Java!");
+        helloWorldLabel = (JLabel) TestUtils.findComponent("helloWorldLabel", true);
+        assertEquals(helloWorldLabel.getText(), "Hello World! I love Java!");
     }
 
     @AfterMethod

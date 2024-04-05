@@ -33,16 +33,19 @@ public class MakingAFrameInSwingTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have a frame with title "Frame".
     @Test
     public void shouldDisplayCorrectTitle() {
         assertEquals(frame.getTitle(), "Frame");
     }
 
+    // Description: Should set the frame's width to 500.
     @Test
     public void shouldHaveCorrectWidth() {
         assertEquals(frame.getSize().getWidth(), 500);
     }
 
+    // Description: Should set the frame's height to 400.
     @Test
     public void shouldHaveCorrectHeight() {
         assertEquals(frame.getSize().getHeight(), 400);

@@ -24,6 +24,7 @@ public class CharacterRemoverTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `vowelCheckbox`, `consonantCheckbox`, `numberCheckbox`, `removeButton`, `restoreButton`, and `textLabel`.
     @Test
     public void shouldHaveAllComponents() {
         vowelCheckbox = (Checkbox) TestUtils.findComponent("vowelCheckbox", true);
@@ -41,6 +42,7 @@ public class CharacterRemoverTest extends AssertJSwingTestngTestCase {
         assertNotNull(label, "No label found.");
     }
 
+    // Description: Should remove vowels from the text in `textLabel` when `vowelCheckbox` is selected and `removeButton` is clicked.
     @Test
     public void shouldRemoveVowels() {
         vowelCheckbox = (Checkbox) TestUtils.findComponent("vowelCheckbox", true);
@@ -54,6 +56,7 @@ public class CharacterRemoverTest extends AssertJSwingTestngTestCase {
         assertEquals(label.getText(), "BCDFGHJKLMNPQRSTVWXYZ0123456789");
     }
     
+    // Description: Should remove consonants from the text in `textLabel` when `consonantCheckbox` is selected and `removeButton` is clicked.
     @Test
     public void shouldRemoveConsonants() {
         consonantCheckbox = (Checkbox) TestUtils.findComponent("consonantCheckbox", true);
@@ -67,6 +70,7 @@ public class CharacterRemoverTest extends AssertJSwingTestngTestCase {
         assertEquals(label.getText(), "AEIOU0123456789");
     }
     
+    // Description: Should remove numbers from the text in `textLabel` when `numberCheckbox` is selected and `removeButton` is clicked.
     @Test
     public void shouldRemoveNumbers() {
         numberCheckbox = (Checkbox) TestUtils.findComponent("numberCheckbox", true);
@@ -80,6 +84,7 @@ public class CharacterRemoverTest extends AssertJSwingTestngTestCase {
         assertEquals(label.getText(), "ABCDEFGHIJKLMNOPQRSTUVWXYZ");
     }
 
+    // Description: Should restore the original text in `textLabel` when `restoreButton` is clicked.
     @Test
     public void shouldRestoreOriginalText() {
         restoreButton = (Button) TestUtils.findComponent("restoreButton", true);

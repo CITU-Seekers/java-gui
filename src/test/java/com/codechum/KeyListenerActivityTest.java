@@ -34,12 +34,14 @@ public class KeyListenerActivityTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `textField` and `feedbackLabel`.
     @Test
     public void shouldHaveAllComponents() {
         assertNotNull(frame.textBox("textField"), "No textField found.");
         assertNotNull(frame.label("feedbackLabel"), "No feedbackLabel found.");
     }
 
+    // Description: Should update the text value of the `feedbackLabel` depending on the key pressed in the `textField`.
     @Test
     public void shouldUpdateFeedbackLabelOnKeyPress() {
         frame.textBox("textField").pressKey(VK_A);
@@ -47,6 +49,7 @@ public class KeyListenerActivityTest extends AssertJSwingTestngTestCase {
         assertEquals(frame.label("feedbackLabel").text(), "Key pressed: a");
     }
 
+    // Description: Should update the text value of the `feedbackLabel` depending on the key released in the `textField`.
     @Test
     public void shouldUpdateFeedbackLabelOnKeyRelease() {
         frame.textBox("textField").pressAndReleaseKeys(VK_B);

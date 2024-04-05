@@ -22,6 +22,7 @@ public class ThreeColumnsTest extends AssertJSwingTestngTestCase {
         application(ThreeColumns.class).start();
     }
 
+    // Description: Should have all components named `label1`, `label2`, and `label3`.
     @Test
     public void shouldHaveAllComponents() {
         label1 = (Label) TestUtils.findComponent("label1", true);
@@ -33,6 +34,7 @@ public class ThreeColumnsTest extends AssertJSwingTestngTestCase {
         assertNotNull(label3, "No label1 found.");
     }
 
+    // Description: Should have a text value of "This is the first column" for `label1`, "This is the second column" for `label2`, and "This is the third column" for `label3`.
     @Test
     public void shouldHaveCorrectTextValue() {
         label1 = (Label) TestUtils.findComponent("label1", true);
@@ -44,6 +46,7 @@ public class ThreeColumnsTest extends AssertJSwingTestngTestCase {
         assertEquals(label3.getText(), "This is the third column");
     }
     
+    // Description: Should have a background color of light gray for `label1`, default color for `label2`, and light gray for `label3`.
     @Test
     public void shouldHaveCorrectBackgroundColor() {
         label1 = (Label) TestUtils.findComponent("label1", true);

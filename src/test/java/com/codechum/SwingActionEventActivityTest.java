@@ -44,7 +44,8 @@ public class SwingActionEventActivityTest extends AssertJSwingTestngTestCase {
         });
     }
     
-     @Test
+    // Description: Should have all components `textField`, `countLabel`, `button1`, and `button2`.
+    @Test
     public void shouldHaveAllComponents() {
         textField = (JTextField) TestUtils.findComponent("textField", true);
         countLabel = (JLabel) TestUtils.findComponent("countLabel", true);
@@ -57,6 +58,7 @@ public class SwingActionEventActivityTest extends AssertJSwingTestngTestCase {
         assertNotNull(button2, "No button2 found.");
     }
 
+    // Description: Should update `textField` text value to "Button 1 is Clicked!" and increment `countLabel` by 1 on `button1` click.
     @Test
     public void shouldUpdateTextFieldAndLabelOnButton1Click() {
         textField = (JTextField) TestUtils.getChildNamed(frame, "textField");
@@ -69,6 +71,7 @@ public class SwingActionEventActivityTest extends AssertJSwingTestngTestCase {
        assertEquals(countLabel.getText(), "1");
     }
 
+    // Description: Should update `textField` text value to "Button 2 is Clicked!" and increment `countLabel` by 1 on `button2` click.
     @Test
     public void shouldUpdateTextFieldAndLabelOnButton2Click() {
         textField = (JTextField) TestUtils.getChildNamed(frame, "textField");
@@ -84,6 +87,7 @@ public class SwingActionEventActivityTest extends AssertJSwingTestngTestCase {
     
     @Mocked JOptionPane jOptionPane;
     
+    // Description: Should show message dialog "Button 1 is Clicked!" on `button1` click.
     @Test
     public void shouldShowMessageDialogOnButton1Click() {
         button1 = (JButton) TestUtils.getChildNamed(frame, "button1");
@@ -95,6 +99,7 @@ public class SwingActionEventActivityTest extends AssertJSwingTestngTestCase {
         }};
     }
     
+    // Description: Should show message dialog "Button 2 is Clicked!" on `button2` click.
      @Test
      public void shouldShowMessageDialogOnButton2Click() {
          button2 = (JButton) TestUtils.getChildNamed(frame, "button2");

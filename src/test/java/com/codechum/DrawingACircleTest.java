@@ -11,6 +11,7 @@ public class DrawingACircleTest {
     DrawingACircle codeChumActivity;
     @Mocked Graphics g;
 
+    // Description: Should override the frame's paint method and display a circle.
     @Test
     public void shouldOverridePaintMethod() {
         codeChumActivity.paint(g);

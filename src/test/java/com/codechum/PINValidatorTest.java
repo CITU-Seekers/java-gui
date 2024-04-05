@@ -22,7 +22,7 @@ public class PINValidatorTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     Frame frame;
    
-    JPasswordField pinField;
+    JPasswordField pinTextField;
     JButton validateButton;
 
     @Override
@@ -40,20 +40,22 @@ public class PINValidatorTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have all components `pinTextField` and `validateButton`.
     @Test
     public void shouldHaveAllComponents() {
-        pinField = (JPasswordField) TestUtils.findComponent("pinField", true);
+        pinTextField = (JPasswordField) TestUtils.findComponent("pinTextField", true);
         validateButton = (JButton) TestUtils.findComponent("validateButton", true);
 
-        assertNotNull(pinField, "No pinField found.");
+        assertNotNull(pinTextField, "No pinTextField found.");
         assertNotNull(validateButton, "No validateButton found.");
     }
 
+    // Description: Should show dialog with message "Valid PIN" when `pinTextField` is valid and `validateButton` is clicked.
     @Test
     public void shouldShowValidPINMessage(){
-        pinField = (JPasswordField) TestUtils.getChildNamed(frame, "pinField");
+        pinTextField = (JPasswordField) TestUtils.getChildNamed(frame, "pinTextField");
         validateButton = (JButton) TestUtils.getChildNamed(frame, "validateButton");
-        robot().click(pinField);
+        robot().click(pinTextField);
         robot().enterText("1234");
         robot().click(validateButton);
 
@@ -62,11 +64,12 @@ public class PINValidatorTest extends AssertJSwingTestngTestCase {
         assertEquals(message, "Valid PIN");
     }
     
+    // Description: Should show dialog with message "Invalid PIN" when `pinTextField` is invalid and `validateButton` is clicked.
     @Test
     public void shouldShowInvalidPINMessage(){
-        pinField = (JPasswordField) TestUtils.getChildNamed(frame, "pinField");
+        pinTextField = (JPasswordField) TestUtils.getChildNamed(frame, "pinTextField");
         validateButton = (JButton) TestUtils.getChildNamed(frame, "validateButton");
-        robot().click(pinField);
+        robot().click(pinTextField);
         robot().enterText("abcd");
         robot().click(validateButton);
 

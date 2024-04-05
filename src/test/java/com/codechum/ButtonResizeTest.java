@@ -34,6 +34,7 @@ public class ButtonResizeTest extends AssertJSwingTestngTestCase {
         assertEquals(buttonSize, "height: " +  expectedBtnHeight + ", width: " + expectedBtnWidth);
     }
 
+    // Description: Should have all components `smallCheckBox`, `mediumCheckBox`, `largeCheckBox`, `mainButton`, and `helperLabel`.
     @Test
     public void shouldHaveAllComponents() {
         String[] checkBoxioButtons = {"smallCheckBox", "mediumCheckBox", "largeCheckBox"};
@@ -49,14 +50,16 @@ public class ButtonResizeTest extends AssertJSwingTestngTestCase {
         assertNotNull(helperLabel, "No helperLabel found.");
     }
 
+    // Description: Should have the `smallCheckBox` selected by default.
     @Test
-    public void checkBoxSmallShouldBeSelectedByDefault() {
+    public void shouldBeSelectedByDefaultCheckBoxSmall() {
         smallCheckBox = (Checkbox) TestUtils.findComponent("smallCheckBox", true);
         assertTrue(smallCheckBox.getState(), "smallCheckBox should be selected by default");
     }
 
+    // Description: Should display a helper message on `helperLabel` when mouse pointer is hovered on any check box.
     @Test
-    public void helperMessageShouldBeDisplayedOnHover() {
+    public void shouldBeDisplayedOnHoverHelperMessage() {
         smallCheckBox = (Checkbox) TestUtils.findComponent("smallCheckBox", true);
         mediumCheckBox = (Checkbox) TestUtils.findComponent("mediumCheckBox", true);
         largeCheckBox = (Checkbox) TestUtils.findComponent("largeCheckBox", true);
@@ -75,16 +78,19 @@ public class ButtonResizeTest extends AssertJSwingTestngTestCase {
         assertTrue(helperLabel.getText().length() > 0, "There should be a message when mouse is hovered on largeCheckBox");
     }
 
+    // Description: Should change the size of the `mainButton` to 30x80 when `smallCheckBox` is clicked.
     @Test
     public void shouldChangeSizeOnRadSmallClick() {
         simulateRadioButtonClick("smallCheckBox", 30, 80);
     }
 
+    // Description: Should change the size of the `mainButton` to 60x160 when `mediumCheckBox` is clicked.
     @Test
     public void shouldChangeSizeOnRadMediumClick() {
         simulateRadioButtonClick("mediumCheckBox", 60, 160);
     }
-
+    
+    // Description: Should change the size of the `mainButton` to 90x240 when `largeCheckBox` is clicked.
     @Test
     public void shouldChangeSizeOnRadLargeClick() {
         simulateRadioButtonClick("largeCheckBox", 90, 240);

@@ -22,6 +22,7 @@ public class FocusAdapterActivityTest extends AssertJSwingTestngTestCase {
         application(FocusAdapterActivity.class).start();
     }
 
+    // Description: Should have all components `list1`, `list2`, `statusLabel`, and `focusTestButton`.
     @Test
     public void shouldHaveAllComponents() {
         list1 = (List) TestUtils.findComponent("list1", true);
@@ -35,6 +36,7 @@ public class FocusAdapterActivityTest extends AssertJSwingTestngTestCase {
         assertNotNull(focusTestButton);
     }
 
+    // Description: Should display "List 1 has focus." in the `statusLabel` when the `list1` is clicked.
     @Test
     public void shouldDisplayFocusGainedMessage() {
         list1 = (List) TestUtils.findComponent("list1", true);
@@ -46,6 +48,7 @@ public class FocusAdapterActivityTest extends AssertJSwingTestngTestCase {
         assertEquals(statusLabel.getText(), "List 1 has focus.");
     }
 
+    // Description: Should display "List 1 has lost focus." in the `statusLabel` when the `focusTestButton` is clicked after the `list1` is clicked.
     @Test
     public void shouldDisplayFocusLostMessage() {
         list1 = (List) TestUtils.findComponent("list1", true);

@@ -38,6 +38,7 @@ public class ColorSelectorTest extends AssertJSwingTestngTestCase {
         resultLabel = (JLabel) TestUtils.findComponent("resultLabel", true);
     }
 
+    // Description: Should only select one radio button at a time between `redRadioButton`, `blueRadioButton`, and `greenRadioButton`.
     @Test
     public void shouldOnlySelectOneRadioButton() {
         robot().click(redRadioButton);
@@ -56,6 +57,7 @@ public class ColorSelectorTest extends AssertJSwingTestngTestCase {
         assertFalse(blueRadioButton.isSelected());
     }
 
+    // Description: Should display "Red" in `resultLabel` when `redRadioButton` is selected and `submitButton` is clicked.
     @Test
     public void shouldDisplayRedColor() {
         robot().click(redRadioButton);
@@ -63,6 +65,7 @@ public class ColorSelectorTest extends AssertJSwingTestngTestCase {
         assertEquals(resultLabel.getText(), "Red");
     }
     
+    // Description: Should display "Blue" in `resultLabel` when `blueRadioButton` is selected and `submitButton` is clicked.
     @Test
     public void shouldDisplayBlueColor() {
 
@@ -72,6 +75,7 @@ public class ColorSelectorTest extends AssertJSwingTestngTestCase {
 
     }
     
+    // Description: Should display "Green" in `resultLabel` when `greenRadioButton` is selected and `submitButton` is clicked.
     @Test
     public void shouldDisplayGreenColor() {
 

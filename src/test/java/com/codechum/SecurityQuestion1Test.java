@@ -42,6 +42,7 @@ public class SecurityQuestion1Test extends AssertJSwingTestngTestCase {
         assertEquals(displayLabel.getText(), expectedResult);
     }
     
+    // Description: Should have all components named `petNameTextField`, `petTypeChoice`, `generateTextButton`, and `displayLabel`.
     @Test
     public void shouldHaveAllComponents() {
         petNameTextField = (TextField) TestUtils.findComponent("petNameTextField", true);
@@ -55,21 +56,25 @@ public class SecurityQuestion1Test extends AssertJSwingTestngTestCase {
         assertNotNull(displayLabel, "No displayLabelText found.");
     }
     
+    // Description: Should display "The pet is a dog named Pero" when "Pero" is entered in `petNameTextField` and "Dog" is selected in `petTypeChoice`.
     @Test
     public void shouldDisplayCorrectTextForChoiceDog() {
         checkLabel("Pero", "Dog", "The pet is a dog named Pero");
     }
 
+    // Description: Should display "The pet is a cat named Ming" when "Ming" is entered in `petNameTextField` and "Cat" is selected in `petTypeChoice`.
     @Test
     public void shouldDisplayCorrectTextForChoiceCat() {
         checkLabel("Ming", "Cat", "The pet is a cat named Ming");
     }
 
+    // Description: Should display "The pet is a rabbit named Pekora" when "Pekora" is entered in `petNameTextField` and "Rabbit" is selected in `petTypeChoice`.
     @Test
     public void shouldDisplayCorrectTextForChoiceRabbit() {
         checkLabel("Pekora", "Rabbit", "The pet is a rabbit named Pekora");
     }
 
+    // Description: Should display "The pet is a parrot named Birdie" when "Birdie" is entered in `petNameTextField` and "Parrot" is selected in `petTypeChoice`.
     @Test
     public void shouldDisplayCorrectTextForChoiceParrot() {
         checkLabel("Birdie", "Parrot", "The pet is a parrot named Birdie");

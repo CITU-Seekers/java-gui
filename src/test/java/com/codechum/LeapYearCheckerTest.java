@@ -27,8 +27,8 @@ import static java.awt.event.KeyEvent.*;
 public class LeapYearCheckerTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     FrameFixture frame;
-    JTextField tfYear;
-    JButton btnCheckYear;
+    JTextField yearTextField;
+    JButton checkYearButton;
 
     @Override
     protected void onSetUp() {
@@ -42,8 +42,9 @@ public class LeapYearCheckerTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should set the title of the app to "Leap Year Checker".
     @Test
-    public void checkAppTitleValue() {
+    public void shouldCheckAppTitleValue() {
         ComponentFinder finder = BasicComponentFinder.finderWithCurrentAwtHierarchy();
         Frame swingFrame = finder.find(new GenericTypeMatcher<Frame>(Frame.class) {
             protected boolean isMatching(Frame frame) {
@@ -53,52 +54,57 @@ public class LeapYearCheckerTest extends AssertJSwingTestngTestCase {
         assertEquals(swingFrame.getTitle(), "Leap Year Checker");
     }
 
+    // Description: Should have a text field named `yearTextField`.
     @Test
-    public void hasTfYear(){
-        tfYear = (JTextField) TestUtils.findComponent("tfYear", true);
-        assertNotNull(tfYear, "No tfYear found.");
+    public void shouldHaveTextFieldYear(){
+        yearTextField = (JTextField) TestUtils.findComponent("yearTextField", true);
+        assertNotNull(yearTextField, "No yearTextField found.");
     }
 
+    // Description: Should have a button named `checkYearButton`.
     @Test
-    public void hasBtnCheckYear(){
-        btnCheckYear = (JButton) TestUtils.findComponent("btnCheckYear", true);
-        assertNotNull(btnCheckYear, "No btnCheckYear found.");
+    public void shouldHaveBtnCheckYear(){
+        checkYearButton = (JButton) TestUtils.findComponent("checkYearButton", true);
+        assertNotNull(checkYearButton, "No checkYearButton found.");
     }
 
+    // Description: Should have an empty default value for `yearTextField`.
     @Test
-    public void checkTfYearDefaultValue(){
-        tfYear = (JTextField) TestUtils.findComponent("tfYear", true);
-        assertEquals(tfYear.getText(), "", "The tfYear text field should be empty by default");
+    public void shouldcheckTextFieldYearDefaultValue(){
+        yearTextField = (JTextField) TestUtils.findComponent("yearTextField", true);
+        assertEquals(yearTextField.getText(), "", "The yearTextField text field should be empty by default");
     }
 
+    // Description: Should show dialog with message "Leap year" when a leap year is entered in `yearTextField` and `checkYearButton` is clicked.
     @Test
     public void shouldShowDialogForLeapYearOnButtonClick(){
-        btnCheckYear = (JButton) TestUtils.findComponent("btnCheckYear", true);
-        tfYear = (JTextField) TestUtils.findComponent("tfYear", true);
-        robot().click(tfYear);
+        checkYearButton = (JButton) TestUtils.findComponent("checkYearButton", true);
+        yearTextField = (JTextField) TestUtils.findComponent("yearTextField", true);
+        robot().click(yearTextField);
         robot().pressAndReleaseKeys(VK_2, VK_0, VK_0, VK_0);
-        robot().click(btnCheckYear);
+        robot().click(checkYearButton);
 
-        robot().click(tfYear);
+        robot().click(yearTextField);
         robot().pressAndReleaseKeys(VK_2, VK_0, VK_0, VK_4);
-        robot().click(btnCheckYear);
+        robot().click(checkYearButton);
 
         String message = TestUtils.getJOptionPaneMessage();
         
         assertEquals(message, "Leap year");
     }   
 
+    // Description: Should show dialog with message "Not a leap year" when a non-leap year is entered in `yearTextField` and `checkYearButton` is clicked.
     @Test
     public void shouldShowDialogForNotALeapYearOnButtonClick(){
-        btnCheckYear = (JButton) TestUtils.findComponent("btnCheckYear", true);
-        tfYear = (JTextField) TestUtils.findComponent("tfYear", true);
-        robot().click(tfYear);
+        checkYearButton = (JButton) TestUtils.findComponent("checkYearButton", true);
+        yearTextField = (JTextField) TestUtils.findComponent("yearTextField", true);
+        robot().click(yearTextField);
         robot().pressAndReleaseKeys(VK_1, VK_9, VK_9, VK_9);
-        robot().click(btnCheckYear);
+        robot().click(checkYearButton);
 
-        robot().click(tfYear);
+        robot().click(yearTextField);
         robot().pressAndReleaseKeys(VK_2, VK_0, VK_0, VK_1);
-        robot().click(btnCheckYear);
+        robot().click(checkYearButton);
 
         String message = TestUtils.getJOptionPaneMessage();
         

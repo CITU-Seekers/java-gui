@@ -15,44 +15,46 @@ import static org.assertj.swing.launcher.ApplicationLauncher.*;
 public class SwingKeyEventActivityTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     
-    JTextArea textArea1, textArea2;
+    JTextArea editableTextArea, nonEditableTextArea;
     
     @Override
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
         application(KeyEventActivity.class).start();
     }
-    
+
+    // Description: Should have all components `editableTextArea` and `nonEditableTextArea`.
     @Test
     public void shouldHaveAllComponents() {
-        textArea1 = (JTextArea) TestUtils.findComponent("textArea1", true);
-        textArea2 = (JTextArea) TestUtils.findComponent("textArea2", true);
+        editableTextArea = (JTextArea) TestUtils.findComponent("editableTextArea", true);
+        nonEditableTextArea = (JTextArea) TestUtils.findComponent("nonEditableTextArea", true);
         
-        assertNotNull(textArea1, "No textArea1 found.");
-        assertNotNull(textArea2, "No textArea2 found.");
+        assertNotNull(editableTextArea, "No editableTextArea found.");
+        assertNotNull(nonEditableTextArea, "No nonEditableTextArea found.");
     }
     
+    // Description: Should display vowel letters in uppercase in `nonEditableTextArea` based on the text typed in `editableTextArea`.
     @Test
     public void shouldDisplayTextInNonEditable() {
-        textArea1 = (JTextArea) TestUtils.findComponent("textArea1", true);
-        textArea2 = (JTextArea) TestUtils.findComponent("textArea2", true);
+        editableTextArea = (JTextArea) TestUtils.findComponent("editableTextArea", true);
+        nonEditableTextArea = (JTextArea) TestUtils.findComponent("nonEditableTextArea", true);
         
-        robot().click(textArea1);
+        robot().click(editableTextArea);
         robot().pressAndReleaseKey(VK_C);
         
-        assertEquals(textArea2.getText(), "c");
+        assertEquals(nonEditableTextArea.getText(), "c");
         
         robot().pressAndReleaseKey(VK_O);
         
-        assertEquals(textArea2.getText(), "cO");
+        assertEquals(nonEditableTextArea.getText(), "cO");
         
         robot().pressAndReleaseKey(VK_D);
         
-        assertEquals(textArea2.getText(), "cOd");
+        assertEquals(nonEditableTextArea.getText(), "cOd");
         
         robot().pressAndReleaseKey(VK_E);
         
-        assertEquals(textArea2.getText(), "cOdE");
+        assertEquals(nonEditableTextArea.getText(), "cOdE");
        
     }
     

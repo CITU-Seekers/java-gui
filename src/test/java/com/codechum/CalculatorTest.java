@@ -44,12 +44,14 @@ public class CalculatorTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should use BorderLayout for the frame.
     @Test
     public void shouldUseBorderLayout() {
         BorderLayout layout = (BorderLayout) frame.getLayout();
         assertTrue(layout.toString().contains("BorderLayout"), "should use BorderLayout.");
     }
 
+    // Description: Should have `resultLabel` at the NORTH location of the frame.
     @Test
     public void shouldContainLblResultInNorth() {
         BorderLayout layout = (BorderLayout) frame.getContentPane().getLayout();
@@ -58,6 +60,7 @@ public class CalculatorTest extends AssertJSwingTestngTestCase {
         assertNotNull(comp, "No resultLabel found.");
     }
     
+    // Description: Should have `buttonsPanel` at the CENTER location of the frame.
     @Test
     public void shouldContainPnlButtonsWithGridLayoutInCenter() {
         BorderLayout layout = (BorderLayout) frame.getContentPane().getLayout();
@@ -68,6 +71,7 @@ public class CalculatorTest extends AssertJSwingTestngTestCase {
         assertTrue(compLayout.toString().contains("GridLayout"), "buttonsPanel should have GridLayout");
     }
 
+    // Description: Should have the number buttons contained inside `buttonsPanel` named `button0` to `button9`.
     @Test
     public void shouldContainNumberButtonsInPnlButtons() {
         buttonsPanel = (JPanel) TestUtils.getChildNamed(frame, "buttonsPanel");
@@ -78,6 +82,7 @@ public class CalculatorTest extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should have the operation buttons contained inside `buttonsPanel` named `addButton`, `subtractButton`, `multiplyButton`, `divideButton`, `clearButton`, `computeButton`.
     @Test
     public void shouldContainBtnOperationsInPnlButtons() {
         String[] operations = {"addButton", "subtractButton", "multiplyButton", "divideButton", "clearButton", "computeButton"};
@@ -89,6 +94,7 @@ public class CalculatorTest extends AssertJSwingTestngTestCase {
         }
     }
 
+    // Description: Should perform addition operation and display the result in `resultLabel` when `addButton` is clicked.
     @Test
     public void shouldPerformAddition() {
         frameFixture.button("button5").click();
@@ -99,6 +105,7 @@ public class CalculatorTest extends AssertJSwingTestngTestCase {
         assertEquals(frameFixture.label("resultLabel").text(), "8");
     }
 
+    // Description: Should perform subtraction operation and display the result in `resultLabel` when `subtractButton` is clicked.
     @Test
     public void shouldPerformSubtraction() {
         frameFixture.button("button5").click();
@@ -109,6 +116,7 @@ public class CalculatorTest extends AssertJSwingTestngTestCase {
         assertEquals(frameFixture.label("resultLabel").text(), "3");
     }
 
+    // Description: Should perform multiplication operation and display the result in `resultLabel` when `multiplyButton` is clicked.
     @Test
     public void shouldPerformMultiplication() {
         frameFixture.button("button7").click();
@@ -119,6 +127,7 @@ public class CalculatorTest extends AssertJSwingTestngTestCase {
         assertEquals(frameFixture.label("resultLabel").text(), "49");
     }
 
+    // Description: Should perform division operation and display the result in `resultLabel` when `divideButton` is clicked.
     @Test
     public void shouldPerformDivision() {
         frameFixture.button("button6").click();
@@ -129,6 +138,7 @@ public class CalculatorTest extends AssertJSwingTestngTestCase {
         assertEquals(frameFixture.label("resultLabel").text(), "2");
     }
 
+    // Description: Should clear the result in `resultLabel` when `clearButton` is clicked.
     @Test
     public void shouldPerformClear() {
         frameFixture.button("button6").click();

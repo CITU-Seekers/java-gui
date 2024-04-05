@@ -26,6 +26,7 @@ public class TaskTrackerTest extends AssertJSwingTestngTestCase {
         application(TaskTracker.class).start();
     }
     
+    // Description: Should have all components `toDoList`, `finishedList`, `nameTextField`, `priorityCheckButton`, `addButton`, `removeButton`, `clearButton`, and `doneButton`.
     @Test
     public void shouldHaveAllComponents() {
         robot().waitForIdle(); 
@@ -49,6 +50,7 @@ public class TaskTrackerTest extends AssertJSwingTestngTestCase {
         assertNotNull(doneButton, "No doneButton found.");
     }
 
+    // Description: Should add task entered in `nameTextField` to `toDoList` when `addButton` is clicked.
     @Test
     public void shouldAddTaskToTodoList(){
         robot().waitForIdle(); 
@@ -65,6 +67,7 @@ public class TaskTrackerTest extends AssertJSwingTestngTestCase {
         assertEquals(toDoList.getItemCount(), 1);
     }
 
+    // Description: Should transfer selected task from `toDoList` to `finishedList` when `doneButton` is clicked.
     @Test
     public void shouldTransferTaskToFinishedList(){
         robot().waitForIdle(); 
@@ -87,6 +90,7 @@ public class TaskTrackerTest extends AssertJSwingTestngTestCase {
         assertEquals(finishedList.getItemCount(), 1);
     }
 
+    // Description: Should remove selected task from `toDoList` when `removeButton` is clicked.
     @Test
     public void shouldRemoveTaskFromTodoList(){
         robot().waitForIdle(); 
@@ -108,6 +112,7 @@ public class TaskTrackerTest extends AssertJSwingTestngTestCase {
         assertEquals(toDoList.getItemCount(), 0);
     }
 
+    // Description: Should remove selected task from `finishedList` when `removeButton` is clicked.
     @Test
     public void shouldRemoveTaskFromFinishedList(){
         robot().waitForIdle(); 
@@ -133,6 +138,7 @@ public class TaskTrackerTest extends AssertJSwingTestngTestCase {
         assertEquals(finishedList.getItemCount(), 0);
     }
 
+    // Description: Should clear `toDoList` and ` when `clearButton` is clicked.
     @Test
     public void shouldClearTodoList(){
         robot().waitForIdle(); 
@@ -160,6 +166,7 @@ public class TaskTrackerTest extends AssertJSwingTestngTestCase {
         assertEquals(toDoList.getItemCount(), 0);
     }
 
+    // Description: Should clear `finishedList` when `clearButton` is clicked.
     @Test
     public void shouldClearFinishedList(){
         robot().waitForIdle(); 

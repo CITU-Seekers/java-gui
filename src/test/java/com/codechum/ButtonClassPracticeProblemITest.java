@@ -29,6 +29,7 @@ public class ButtonClassPracticeProblemITest extends AssertJSwingTestngTestCase 
         robot().waitForIdle();
     }
 
+    // Description: Should have all components `counterLabel` and `incrementButton`.
     @Test
     public void shouldHaveAllComponents() {
         counterLabel = (JLabel) TestUtils.findComponent("counterLabel", true);
@@ -38,12 +39,14 @@ public class ButtonClassPracticeProblemITest extends AssertJSwingTestngTestCase 
         assertNotNull(incrementButton, "No incrementButton found.");
     }
 
+    // Description: Should have a default value of 0 in `counterLabel`.
     @Test
     public void shouldHaveCorrectDefaultValue() {
         counterLabel = (JLabel) TestUtils.findComponent("counterLabel", true);
         assertNotNull(counterLabel.getText(), "0");
     }
 
+    // Description: Should increment the value of `counterLabel` by 1 when `incrementButton` is clicked.
     @Test
     public void shouldIncrementCounterIfButtonIsClicked() {
         counterLabel = (JLabel) TestUtils.findComponent("counterLabel", true);

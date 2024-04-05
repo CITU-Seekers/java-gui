@@ -42,6 +42,7 @@ public class SwingItemEventActivityTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
     
+    // Description: Should have all components `comboBox`, `uppercaseCheckBox`, and `selectedItemLabel`.
      @Test
     public void shouldHaveAllComponents() {
        comboBox = (JComboBox<String>) TestUtils.findComponent("comboBox", true);
@@ -53,6 +54,7 @@ public class SwingItemEventActivityTest extends AssertJSwingTestngTestCase {
         assertNotNull(selectedItemLabel, "No selectedItemLabel found.");
     }
 
+    // Description: Should update the text value of the `selectedItemLabel` depending on the selected item in the `comboBox`.
     @Test
     public void shouldUpdateLabelOnComboBoxSelection() {
         comboBox = (JComboBox<String>) TestUtils.findComponent("comboBox", true);
@@ -68,6 +70,7 @@ public class SwingItemEventActivityTest extends AssertJSwingTestngTestCase {
         assertEquals(selectedItemLabel.getText(), "Spaghetti");
     }
 
+    // Description: Should update the `selectedItemLabel` to uppercase when the `uppercaseCheckBox` is selected.
     @Test
     public void shouldUpdateLabelToUppercaseOnCheckBoxSelection() {
         comboBox = (JComboBox<String>) TestUtils.findComponent("comboBox", true);
@@ -81,6 +84,7 @@ public class SwingItemEventActivityTest extends AssertJSwingTestngTestCase {
         assertEquals(selectedItemLabel.getText(), "SPAGHETTI");
     }
 
+    // Description: Should update the `selectedItemLabel` to original case when the `uppercaseCheckBox` is deselected.
     @Test
     public void shouldUpdateLabelToOriginalCaseOnCheckBoxDeselection() {
         comboBox = (JComboBox<String>) TestUtils.findComponent("comboBox", true);

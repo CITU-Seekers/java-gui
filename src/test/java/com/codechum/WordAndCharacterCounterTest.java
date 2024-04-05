@@ -37,6 +37,7 @@ public class WordAndCharacterCounterTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
     
+    // Description: Should have all components `textArea`, `wordCountLabel`, `charCountLabel`, and `countButton`.
     @Test    
     public void shouldHaveAllComponents() {
         textArea = (JTextArea) TestUtils.findComponent("textArea", true);
@@ -49,8 +50,9 @@ public class WordAndCharacterCounterTest extends AssertJSwingTestngTestCase {
         assertNotNull(countButton, "No countButton found.");
     }
 
+    // Description: Should check if the default value of the `textArea`, `wordCountLabel`, and `charCountLabel` is empty.
     @Test
-    public void checkTextAreaAndLabelsDefaultValue() {
+    public void shouldCheckTextAreaAndLabelsDefaultValue() {
         textArea = (JTextArea) TestUtils.findComponent("textArea", true);
         wordCountLabel = (JLabel) TestUtils.findComponent("wordCountLabel", true);
         charCountLabel = (JLabel) TestUtils.findComponent("charCountLabel", true);;
@@ -59,6 +61,7 @@ public class WordAndCharacterCounterTest extends AssertJSwingTestngTestCase {
         assertEquals(charCountLabel.getText(), "");
     }
     
+    // Description: Should display the word count of the text entered in the `textArea` and display it in the `wordCountLabel` when the `countButton` is clicked.
     @Test
     public void shouldDisplayWordCount(){
         textArea = (JTextArea) TestUtils.findComponent("textArea", true);
@@ -78,6 +81,7 @@ public class WordAndCharacterCounterTest extends AssertJSwingTestngTestCase {
         assertEquals(wordCountLabel.getText(), "4");
     }
     
+    // Description: Should display the character count of the text entered in the `textArea` and display it in the `charCountLabel` when the `countButton` is clicked.
     @Test
     public void shouldDisplayCharacterCount(){
         textArea = (JTextArea) TestUtils.findComponent("textArea", true);

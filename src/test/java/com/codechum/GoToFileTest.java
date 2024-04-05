@@ -61,6 +61,7 @@ public class GoToFileTest extends AssertJSwingTestngTestCase {
         assertEquals(statusLabel.getText(), expectedResult);
     }
     
+    // Description: Should have a `fileMenu` and its items `newMenuItem`, `openMenuItem`, `saveMenuItem`, and `exitMenuItem`.
     @Test
     public void shouldHaveMenuFileAndItsItems() {
         fileMenu = menuBar.getMenu(0);
@@ -74,27 +75,32 @@ public class GoToFileTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should have a label named `statusLabel`.
     @Test
     public void shouldHaveLabelStatus() {
         statusLabel = (Label) TestUtils.findComponent("statusLabel", true);
         assertNotNull(statusLabel, "No statusLabel found.");
     }
     
+    // Description: Should display "Creating new file..." in `statusLabel` when `newMenuItem` is clicked.
     @Test
     public void shouldDisplayCorrectMessageOnNewClick() {
         testMenuItemBehavior("newMenuItem", "Creating new file...");
     }
     
+    // Description: Should display "Opening file..." in `statusLabel` when `openMenuItem` is clicked.
     @Test
     public void shouldDisplayCorrectMessageOnOpenClick() {
         testMenuItemBehavior("openMenuItem", "Opening file...");
     }
     
+    // Description: Should display "Saving file..." in `statusLabel` when `saveMenuItem` is clicked.
     @Test
     public void shouldDisplayCorrectMessageOnSaveClick() {
         testMenuItemBehavior("saveMenuItem", "Saving file...");
     }
     
+    // Description: Should close the app when `exitMenuItem` is clicked.
     @Test
     public void shouldCloseAppOnExitClick() {
         MenuItem item = retrieveMenuItemByName("exitMenuItem");

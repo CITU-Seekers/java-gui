@@ -20,6 +20,7 @@ public class ExclusiveCheckingTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `firstCheckbox`, `secondCheckbox`, and `thirdCheckbox`.
     @Test
     public void shouldHaveAllComponents() {
         firstCheckbox = (Checkbox) TestUtils.findComponent("firstCheckbox", true);
@@ -31,6 +32,7 @@ public class ExclusiveCheckingTest extends AssertJSwingTestngTestCase {
         assertNotNull(thirdCheckbox, "No thirdCheckbox found.");
     }
 
+    // Description: Should handle only one checkbox to be checked at a time.
     @Test
     public void shouldHandleCheckboxExclusiveChecking() {
         firstCheckbox = (Checkbox) TestUtils.findComponent("firstCheckbox", true);

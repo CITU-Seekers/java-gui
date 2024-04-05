@@ -31,8 +31,9 @@ public class ImageCaptionGeneratorTest extends AssertJSwingTestngTestCase {
         codeChumActivity = GuiActionRunner.execute(() -> new ImageCaptionGenerator());
     }
     
+    // Description: Should override frame's paint method of MyCanvas class to display an image.
     @Test
-    public void testPaintMethodOfCanvasClass() {
+    public void shouldOverridePaintMethodOfCanvasClass() {
         canvas.paint(g);
         
         new Verifications(){{
@@ -40,12 +41,14 @@ public class ImageCaptionGeneratorTest extends AssertJSwingTestngTestCase {
         }};
     }
     
+    // Description: Should have a canvas named `mainCanvas`.
     @Test
     public void shouldHaveCanvasMain() {
         ImageCaptionGeneratorCanvas mainCanvas = (ImageCaptionGeneratorCanvas) TestUtils.getChildNamed(codeChumActivity, "mainCanvas");
         assertNotNull(mainCanvas, "No mainCanvas found");
     }
     
+    // Description: Should have a button named `addCaptionButton` and a text field named `captionTextField`.
     @Test
     public void shouldHaveButtonAndTextField() {
         captionTextField = (TextField) TestUtils.getChildNamed(codeChumActivity, "captionTextField");
@@ -55,6 +58,7 @@ public class ImageCaptionGeneratorTest extends AssertJSwingTestngTestCase {
         assertNotNull(addCaptionButton, "No addCaptionButton found");
     }
     
+    // Description: Should add caption in `captionTextField` to the image on clicking `addCaptionButton`.
     @Test
     public void shouldAddCaptionOnButtonClick() {
         addCaptionButton = (Button) TestUtils.getChildNamed(codeChumActivity, "addCaptionButton");

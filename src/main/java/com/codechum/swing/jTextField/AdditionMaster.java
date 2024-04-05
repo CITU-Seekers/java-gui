@@ -38,9 +38,9 @@ public class AdditionMaster extends javax.swing.JFrame {
         jLabel1.setText("0");
         jLabel1.setName("resultLabel"); // NOI18N
 
-        jTextField1.setName("operand1Field"); // NOI18N
+        jTextField1.setName("operand1TextField"); // NOI18N
 
-        jTextField2.setName("operand2Field"); // NOI18N
+        jTextField2.setName("operand2TextField"); // NOI18N
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);

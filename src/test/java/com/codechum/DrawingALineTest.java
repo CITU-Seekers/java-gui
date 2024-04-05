@@ -12,6 +12,7 @@ public class DrawingALineTest {
     DrawingALine codeChumActivity;
     @Mocked Graphics g;
 
+    // Description: Should override the frame's paint method and display a line.
     @Test
     public void shouldOverridePaintMethod() {
         codeChumActivity.paint(g);

@@ -10,6 +10,7 @@ public class FontsTest {
     @Tested Fonts codeChumActivity;
     @Injectable Graphics g;
     
+    // Description: Should display a text "There's" in bold font with a font family of "Courier" and size of 20.
     @Test
     public void shouldDisplayThereCorrectly() {
         codeChumActivity.paint(g);
@@ -20,6 +21,7 @@ public class FontsTest {
         }};
     }
     
+    // Description: Should display a text "nothing" in italic font with a font family of "Default" and size of 20.
     @Test
     public void shouldDisplayNothingCorrectly() {
         codeChumActivity.paint(g);
@@ -30,6 +32,7 @@ public class FontsTest {
         }};
     }
     
+    // Description: Should display a text "stronger" in bold italic font with a font family of "Monospaced" and size of 24.
     @Test
     public void shouldDisplayStrongerCorrectly() {
         codeChumActivity.paint(g);
@@ -40,6 +43,7 @@ public class FontsTest {
         }};
     }
     
+    // Description: Should display a text "than" in bold font with a font family of "Serif" and size of 20.
     @Test
     public void shouldDisplayThanCorrectly() {
         codeChumActivity.paint(g);
@@ -50,6 +54,7 @@ public class FontsTest {
         }};
     }
     
+    // Description: Should display a text "FAMILY" in bold italic font with a font family of "Monospaced" and size of 24.
     @Test
     public void shouldDisplayFamilyCorrectly() {
         codeChumActivity.paint(g);

@@ -52,6 +52,7 @@ public class MultiPagePersonalInformationRecorderTest extends AssertJSwingTestng
         robot().waitForIdle();
     }
 
+    // Description: Should have `cardPanel` with CENTER alignment.
     @Test
     public void shouldHaveCardPanelInCenter() {
         BorderLayout layout = (BorderLayout) frame.getContentPane().getLayout();
@@ -59,6 +60,7 @@ public class MultiPagePersonalInformationRecorderTest extends AssertJSwingTestng
         assertNotNull(comp, "No cardPanel found.");
     }
     
+    // Description: Should have all buttons and panels `prevButton`, `firstPanel`, `secondPanel`, and `thirdPanel`.
     @Test
     public void shouldHaveAllButtonsAndPanels() {
         prevButton = (JButton) TestUtils.getChildNamed(frame, "prevButton");
@@ -73,25 +75,28 @@ public class MultiPagePersonalInformationRecorderTest extends AssertJSwingTestng
         assertNotNull(thirdPanel, "No thirdPanel found.");
     }
 
+    // Description: Should have `secondPanel` and `thirdPanel` not visible by default.    
     @Test
-    public void secondAndThirdPanelShouldNotBeVisibleByDefault() {
+    public void shouldNotBeVisibleByDefaultSecondAndThirdPanel() {
         secondPanel = (JPanel) TestUtils.getChildNamed(frame, "secondPanel");
         thirdPanel = (JPanel) TestUtils.getChildNamed(frame, "thirdPanel");
         
         assertFalse(secondPanel.isVisible(), "secondPanel is visible.");
-        assertFalse(thirdPanel.isVisible(), "secondPanel is visible.");
+        assertFalse(thirdPanel.isVisible(), "thirdPanel is visible.");
     }
     
+    // Description: Should have `cardPanel` with CardLayout.
     @Test
-    public void cardPanelShouldHaveCardLayout() {
+    public void shouldHaveCardLayoutCardPanel() {
         cardPanel = (JPanel) TestUtils.findComponent("cardPanel", true);
         CardLayout layout = (CardLayout) cardPanel.getLayout();
         
         assertTrue(layout.toString().contains("CardLayout"), "cardPanel should have CardLayout");
     }
 
+    // Description: Should have `firstPanel` with GridLayout containing `nameTextField` and `ageTextField`.
     @Test
-    public void firstPanelShouldContainCorrectComponentsAndLayout() {
+    public void shouldContainCorrectComponentsAndLayoutFirstPanel() {
         firstPanel = (JPanel) TestUtils.findComponent("firstPanel", true);
         GridLayout layout = (GridLayout) firstPanel.getLayout();
         nameTextField = (JTextField) TestUtils.getChildNamed(firstPanel, "nameTextField");
@@ -102,8 +107,9 @@ public class MultiPagePersonalInformationRecorderTest extends AssertJSwingTestng
         assertNotNull(ageTextField, "No ageTextField found in firstPanel.");
     }
 
+    // Description: Should have `secondPanel` with BoxLayout containing `quoteTextArea`.
     @Test
-    public void secondPanelShouldContainCorrectComponentsAndLayout() {
+    public void shouldContainCorrectComponentsAndLayoutSecondPanel() {
         secondPanel = (JPanel) TestUtils.getChildNamed(frame, "secondPanel");
         BoxLayout layout = (BoxLayout) secondPanel.getLayout();
         quoteTextArea = (JTextArea) TestUtils.getChildNamed(secondPanel, "quoteTextArea");
@@ -112,8 +118,9 @@ public class MultiPagePersonalInformationRecorderTest extends AssertJSwingTestng
         assertNotNull(quoteTextArea, "No quoteTextArea found in secondPanel.");
     }
 
+    // Description: Should have `thirdPanel` with GridLayout containing `nameLabel`, `ageLabel`, and `quoteLabel`.
     @Test
-    public void thirdPanelShouldContainCorrectComponentsAndLayout() {
+    public void shouldContainCorrectComponentsAndLayoutThirdPanel() {
         thirdPanel = (JPanel) TestUtils.getChildNamed(frame, "thirdPanel");
         GridLayout layout = (GridLayout) thirdPanel.getLayout();
         nameLabel = (JLabel) TestUtils.getChildNamed(thirdPanel, "nameLabel");
@@ -126,12 +133,14 @@ public class MultiPagePersonalInformationRecorderTest extends AssertJSwingTestng
         assertNotNull(quoteLabel,"No quoteLabel found in thirdPanel.");
     }
 
+    // Description: Should not display `prevButton` on first page.
     @Test
     public void shouldNotDisplayPrevButtonOnFirstPage() {
         prevButton = (JButton) TestUtils.getChildNamed(frame, "prevButton");
         assertFalse(prevButton.isVisible(),"prevButton is visible.");
     }
 
+    // Description: Should not display `nextButton` on last page.
     @Test
     public void shouldNotDisplayNextButtonOnLastPage() {
         frameFixture.button("nextButton").click().click();
@@ -141,6 +150,7 @@ public class MultiPagePersonalInformationRecorderTest extends AssertJSwingTestng
         assertFalse(nextButton.isVisible(),"nextButton should not be visible on last page.");
     }
 
+    // Description: Should display values in `nameLabel`, `ageLabel`, and `quoteLabel` on last page.
     @Test
     public void shouldBeAbleToDisplayValuesInLastPage() {
         frameFixture
@@ -169,6 +179,7 @@ public class MultiPagePersonalInformationRecorderTest extends AssertJSwingTestng
         assertEquals(quoteLabel.getText(), "a quote");
     }
 
+    // Description: Should display `secondPanel` on clicking `nextButton` from `firstPanel`, and `thirdPanel` on clicking `nextButton` from `secondPanel`.
     @Test
     public void shouldProperlyDisplayPanelsOnNextButtonClick() {
         firstPanel = (JPanel) TestUtils.findComponent("firstPanel", true);
@@ -192,6 +203,7 @@ public class MultiPagePersonalInformationRecorderTest extends AssertJSwingTestng
         assertTrue(thirdPanel.isVisible(), "thirdPanel is not visible");
     }
 
+    // Description: Should display `firstPanel` on clicking `prevButton` from `secondPanel`, and `secondPanel` on clicking `prevButton` from `thirdPanel`.
     @Test
     public void shouldProperlyDisplayPanelsOnPrevButtonClick() {
         frameFixture.button("nextButton").click().click();

@@ -49,6 +49,7 @@ public class SwingMyPlaylistButWithFavoritesTest extends AssertJSwingTestngTestC
         return listString;
     }
     
+    // Description: Should have all components `musicList`, `musicTextField`, `addButton`, and `removeButton`.
     @Test
     public void shouldHaveAllComponents() {
         musicList = (JList) TestUtils.findComponent("musicList", true);
@@ -62,6 +63,7 @@ public class SwingMyPlaylistButWithFavoritesTest extends AssertJSwingTestngTestC
         assertNotNull(removeButton, "No removeButton found.");
     }
     
+    // Description: Should add new entered music from `musicTextField` to `musicList` when `addButton` is clicked.
     @Test
     public void shouldBeAbleToAddMusicToList() {
         addButton = (JButton) TestUtils.findComponent("addButton", true);
@@ -76,6 +78,7 @@ public class SwingMyPlaylistButWithFavoritesTest extends AssertJSwingTestngTestC
         assertEquals(actualMusicJListString, "Music Main 1, Music Main 2, New Music");
     }
     
+    // Description: Should remove selected music from `musicList` when `removeButton` is clicked.
     @Test
     public void shouldBeAbleToRemoveMusicFromList() {
         removeButton = (JButton) TestUtils.findComponent("removeButton", true);
@@ -90,6 +93,7 @@ public class SwingMyPlaylistButWithFavoritesTest extends AssertJSwingTestngTestC
         assertEquals(actualMusicJListString, "Music Main 2");
     }
     
+    // Description: Should add selected music from `musicList` to `favoritesList` when `addToFavoritesButton` is clicked.
     @Test
     public void shouldBeAbleToAddToFavorites() {
         addToFavoritesButton = (JButton) TestUtils.findComponent("addToFavoritesButton", true);
@@ -104,6 +108,7 @@ public class SwingMyPlaylistButWithFavoritesTest extends AssertJSwingTestngTestC
         assertEquals(actualMusicJListString, "Music Main 1");
     }
     
+    // Description: Should remove selected music from `musicList` and in `favoritesList` if it exists when `removeButton` is clicked.
     @Test
     public void shouldDeleteFromBothLists() {
         musicList = (JList) TestUtils.findComponent("musicList", true);

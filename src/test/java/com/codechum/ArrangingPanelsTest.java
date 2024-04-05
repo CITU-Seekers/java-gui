@@ -34,12 +34,14 @@ public class ArrangingPanelsTest extends AssertJSwingTestngTestCase {
         });
     }
 
+    // Description: Should have a panel named `mainPanel`.
     @Test
     public void shouldHavePanelMain() {
         mainPanel = (Panel) TestUtils.getChildNamed(frame, "mainPanel");
         assertNotNull(mainPanel, "No mainPanel found.");
     }
 
+    // Description: Should have a panel named `subPanelA` in `mainPanel`.
     @Test
     public void shouldHavePanelSubAInPanelMain() {
         mainPanel = (Panel) TestUtils.getChildNamed(frame, "mainPanel");
@@ -47,6 +49,7 @@ public class ArrangingPanelsTest extends AssertJSwingTestngTestCase {
         assertNotNull(subPanelA, "No subPanelA found.");
     }
 
+    // Description: Should have a panel named `subPanelB` in `mainPanel`.
     @Test
     public void shouldHavePanelSubBInPanelMain() {
         mainPanel = (Panel) TestUtils.getChildNamed(frame, "mainPanel");
@@ -54,6 +57,7 @@ public class ArrangingPanelsTest extends AssertJSwingTestngTestCase {
         assertNotNull(subPanelB, "No subPanelB found.");
     }
 
+    // Description: Should have an x position of 10 for `subPanelA`
     @Test
     public void subPanelAShouldBeInCorrectXPosition() {
         mainPanel = (Panel) TestUtils.getChildNamed(frame, "mainPanel");
@@ -61,6 +65,7 @@ public class ArrangingPanelsTest extends AssertJSwingTestngTestCase {
         assertEquals(subPanelA.getLocation().getX(), 10);
     }
 
+    // Description: Should have a y position of 10 for `subPanelA`
     @Test
     public void subPanelAShouldBeInCorrectYPosition() {
         mainPanel = (Panel) TestUtils.getChildNamed(frame, "mainPanel");
@@ -68,6 +73,7 @@ public class ArrangingPanelsTest extends AssertJSwingTestngTestCase {
         assertEquals(subPanelA.getLocation().getY(), 10);
     }
 
+    // Description: Should have an x position of 200 for `subPanelB`
     @Test
     public void subPanelBShouldBeInCorrectXPosition() {
         mainPanel = (Panel) TestUtils.getChildNamed(frame, "mainPanel");
@@ -75,6 +81,7 @@ public class ArrangingPanelsTest extends AssertJSwingTestngTestCase {
         assertEquals(subPanelB.getLocation().getX(), 200);
     }
 
+    // Description: Should have a y position of 90 for `subPanelB`
     @Test
     public void subPanelBShouldBeInCorrectYPosition() {
         mainPanel = (Panel) TestUtils.getChildNamed(frame, "mainPanel");

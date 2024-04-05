@@ -26,6 +26,7 @@ public class CharacterCounterTest extends AssertJSwingTestngTestCase {
         robot().waitForIdle();
     }
 
+    // Description: Should have all components named `messageTextArea`, `characterTextField`, `countButton`, and `countLabel`.
     @Test
     public void shouldHaveAllComponents() {
         messageTextArea = (TextArea) TestUtils.findComponent("messageTextArea", true);
@@ -39,6 +40,7 @@ public class CharacterCounterTest extends AssertJSwingTestngTestCase {
         assertNotNull(countLabel, "No countLabel found.");
     }
 
+    // Description: Should count the number of occurrence of a character entered in `characterTextField` in the text of `messageTextArea` when `countButton` is clicked.
     @Test
     public void shouldCountOccurrencesOfCharacter() {
         messageTextArea = (TextArea) TestUtils.findComponent("messageTextArea", true);

@@ -33,18 +33,21 @@ public class FocusListenerActivityTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `inputField` and `focusLabel`.
     @Test
     public void shouldHaveAllComponents() {
         assertNotNull(frame.textBox("inputField"), "No inputField found.");
         assertNotNull(frame.label("focusLabel"), "No focusLabel found.");
     }
     
+    // Description: Should display "Input field has focus." in `focusLabel` when focus is gained in the `inputField`.
     @Test
     public void shouldUpdateFocusLabelOnFocusGained() {
         frame.textBox("inputField").focus();
         assertEquals(frame.label("focusLabel").text(), "Input field has focus.");
     }
 
+    // Description: Should display "Input field lost focus." in `focusLabel` when focus is lost in the `inputField`.
     @Test
     public void shouldUpdateFocusLabelOnFocusLost() {
         frame.textBox("inputField").focus();

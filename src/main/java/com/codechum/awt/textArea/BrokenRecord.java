@@ -32,7 +32,7 @@ public class BrokenRecord extends javax.swing.JFrame {
         this.setTitle("Text Repeater");
         this.setName("textRepeater");
         
-        tfText.setName("textField");
+        tfText.setName("stringTextField");
         tfNumber.setName("numberTextField");
         txtResult.setName("resultTextArea");
         btnDisplayText.setName("displayTextButton");

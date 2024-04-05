@@ -29,8 +29,8 @@ public class TextFieldPracticeProblemI extends javax.swing.JFrame {
         this.setTitle("Text Display");
         this.setName("textDisplay");
 
-        textField.setName("textField");
-        label.setName("label");
+        textField.setName("inputTextField");
+        label.setName("displayLabel");
         displayButton.setName("displayButton");
 
         displayButton.setText("Display Text");

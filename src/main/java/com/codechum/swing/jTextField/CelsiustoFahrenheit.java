@@ -34,7 +34,7 @@ public class CelsiusToFahrenheit extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Celsius to Fahrenheit");
 
-        jTextField1.setName("celsiusField"); // NOI18N
+        jTextField1.setName("celsiusTextField"); // NOI18N
 
         jButton1.setText("Convert");
         jButton1.setName("convertButton"); // NOI18N

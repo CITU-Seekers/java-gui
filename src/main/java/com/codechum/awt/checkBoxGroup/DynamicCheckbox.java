@@ -56,8 +56,8 @@ public class DynamicCheckbox extends java.awt.Frame {
         add(checkbox2);
 
         // Name the components
-        checkbox1.setName("checkbox1");
-        checkbox2.setName("checkbox2");
+        checkbox1.setName("firstCheckBox");
+        checkbox2.setName("secondCheckBox");
         categoryComboBox.setName("categoryComboBox");
 
         updateCheckboxes();  // Initialize checkboxes based on default selection

@@ -30,6 +30,7 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
         application(OpenTheMessage.class).start();
     }
     
+    // Description: Should have all components `openFileDialogButton` and `fileContentLabel`.
     @Test
     public void shouldHaveAllComponents() {
         openFileDialogButton = (Button) TestUtils.findComponent("openFileDialogButton", true);
@@ -39,6 +40,7 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
         assertNotNull(fileContentLabel, "No fileContentLabel found.");
     }
     
+    // Description: Should have created file named `activity.txt`.
     @Test
     public void shouldHaveCreatedFile() {
         String fileNameToFind = "activity.txt";
@@ -66,6 +68,7 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
         assertTrue(activityFile.isFile(), "There should be a manually created file named activity.txt");
     }
     
+    // Description: Should show the `fileDialog` on `openFileDialogButton` click.
     @Test
     public void shouldShowFileDialogOnButtonClick() {
         openFileDialogButton = (Button) TestUtils.findComponent("openFileDialogButton", true);
@@ -79,6 +82,7 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
         assertTrue(fd.isVisible(), "The file dialog shoud be visible on button click.");
     }
     
+    // Description: Should display the content of the file `activity.txt` in `fileContentLabel`.
     @Test
     public void shouldDisplayFileContentInLabel() {
         // openFileDialogButton = (Button) TestUtils.findComponent("openFileDialogButton", true);

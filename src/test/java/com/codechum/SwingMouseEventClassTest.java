@@ -23,6 +23,7 @@ public class SwingMouseEventClassTest extends AssertJSwingTestngTestCase {
         application(SwingMouseEventClass.class).start();
     }
 
+    // Description: Should have all components `textLabel` and `button1`, `button2`, ..., `button20`.
     @Test
     public void shouldHaveAllComponents() {
         lblText = (JLabel) TestUtils.findComponent("textLabel", true);
@@ -34,6 +35,7 @@ public class SwingMouseEventClassTest extends AssertJSwingTestngTestCase {
         }
     }
     
+    // Description: Should display text correctly in `textLabel` based on the button clicked.
     @Test
     public void shouldDisplayTextCorrectly() {
         lblText = (JLabel) TestUtils.findComponent("textLabel", true);

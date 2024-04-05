@@ -22,8 +22,8 @@ public class AdditionMasterTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
     FrameFixture frame;
 
-    JTextField operand1Field;
-    JTextField operand2Field;
+    JTextField operand1TextField;
+    JTextField operand2TextField;
     JButton addButton;
     JLabel resultLabel;
 
@@ -43,34 +43,36 @@ public class AdditionMasterTest extends AssertJSwingTestngTestCase {
         }).withTimeout(10000).using(robot());
     }
 
+    // Description: Should have all components `operand1TextField`, `operand2TextField`, `addButton`, and `resultLabel`.
     /**
      * Test to check the presence of all components including JTextField, JButton, and JLabel.
      */
     @Test
     public void shouldHaveAllComponents() {
-        operand1Field = (JTextField) TestUtils.findComponent("operand1Field", true);
-        operand2Field = (JTextField) TestUtils.findComponent("operand2Field", true);
+        operand1TextField = (JTextField) TestUtils.findComponent("operand1TextField", true);
+        operand2TextField = (JTextField) TestUtils.findComponent("operand2TextField", true);
         addButton = (JButton) TestUtils.findComponent("addButton", true);
         resultLabel = (JLabel) TestUtils.findComponent("resultLabel", true);
 
-        assertNotNull(operand1Field, "No operand1Field found.");
-        assertNotNull(operand2Field, "No operand2Field found.");
+        assertNotNull(operand1TextField, "No operand1TextField found.");
+        assertNotNull(operand2TextField, "No operand2TextField found.");
         assertNotNull(addButton, "No addButton found.");
         assertNotNull(resultLabel, "No resultLabel found.");
     }
 
+    // Description: Should perform addition between `operand1TextField` and `operand2TextField` and display the result in `resultLabel` when `addButton` is clicked.
     /**
      * Test to check the addition operation on button click.
      */
     @Test
     public void shouldPerformAddition() {
-        operand1Field = (JTextField) TestUtils.findComponent("operand1Field", true);
-        operand2Field = (JTextField) TestUtils.findComponent("operand2Field", true);
+        operand1TextField = (JTextField) TestUtils.findComponent("operand1TextField", true);
+        operand2TextField = (JTextField) TestUtils.findComponent("operand2TextField", true);
         addButton = (JButton) TestUtils.findComponent("addButton", true);
         resultLabel = (JLabel) TestUtils.findComponent("resultLabel", true);
 
-        frame.textBox("operand1Field").setText("5");
-        frame.textBox("operand2Field").setText("10");
+        frame.textBox("operand1TextField").setText("5");
+        frame.textBox("operand2TextField").setText("10");
         robot().click(addButton);
         robot().waitForIdle();
 
