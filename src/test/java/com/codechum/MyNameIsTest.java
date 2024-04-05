@@ -1,6 +1,6 @@
 package com.codechum;
 
-import com.codechum.awt.nameTextField.MyNameIs;
+import com.codechum.awt.textField.MyNameIs;
 import static org.testng.Assert.*;
 
 import java.awt.*;
