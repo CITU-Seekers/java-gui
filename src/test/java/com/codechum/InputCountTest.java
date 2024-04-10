@@ -22,38 +22,50 @@ public class InputCountTest extends AssertJSwingTestngTestCase {
     
     // Description: Should have all components `contentTextArea` and `textStatisticsLabel`.
     @Test 
-    public void shouldHaveAllComponents(){
-        contentTextArea = (TextArea) TestUtils.findComponent("contentTextArea", true);
-        textStatisticsLabel = (Label) TestUtils.findComponent("textStatisticsLabel", true);
-        
+    public void shouldHaveAllComponents() {
+        findComponents();
         assertNotNull(contentTextArea);
         assertNotNull(textStatisticsLabel);
     }
 
-    // Description: Should display the correct number of characters, words, and lines in the `textStatisticsLabel` when the text is entered in the `contentTextArea`.
+    // Description: Should display 'Characters: 11 | Words: 2 | Ln: 1' for 'Hello World'.
     @Test
-    public void shouldDisplayCorrectStatus(){
-        contentTextArea = (TextArea) TestUtils.findComponent("contentTextArea", true);
-        textStatisticsLabel = (Label) TestUtils.findComponent("textStatisticsLabel", true);
-        
-        robot().click(contentTextArea);
-        robot().enterText("Hello World");
+    public void shouldDisplayCorrectStatusForSingleLine() {
+        prepareForTest();
+        robot().enterText("Hello");
+        robot().enterText(" ");
+        robot().enterText("World");
         robot().waitForIdle();
         assertEquals(textStatisticsLabel.getText(), "Characters: 11 | Words: 2 | Ln: 1");
-        
-        contentTextArea.setText("");
-        robot().waitForIdle();
-        
+    }
+
+    // Description: Should display 'Characters: 23 | Words: 4 | Ln: 2' for 'Hello World\nHello World'.
+    @Test
+    public void shouldDisplayCorrectStatusForTwoLines() {
+        prepareForTest();
         robot().enterText("Hello World\nHello World");
         robot().waitForIdle();
         assertEquals(textStatisticsLabel.getText(), "Characters: 23 | Words: 4 | Ln: 2");
-        
-        contentTextArea.setText("");
-        robot().waitForIdle();
-        
+    }
+
+    // Description: Should display 'Characters: 35 | Words: 6 | Ln: 3' for 'Hello World\nHello World\nHello World'.
+    @Test
+    public void shouldDisplayCorrectStatusForThreeLines() {
+        prepareForTest();
         robot().enterText("Hello World\nHello World\nHello World");
         robot().waitForIdle();
         assertEquals(textStatisticsLabel.getText(), "Characters: 35 | Words: 6 | Ln: 3");
     }
-    
+
+    private void findComponents() {
+        contentTextArea = (TextArea) TestUtils.findComponent("contentTextArea", true);
+        textStatisticsLabel = (Label) TestUtils.findComponent("textStatisticsLabel", true);
+    }
+
+    private void prepareForTest() {
+        findComponents();
+        robot().click(contentTextArea);
+        contentTextArea.setText("");
+        robot().waitForIdle();
+    }
 }

@@ -70,29 +70,29 @@ public class SwingSecurityQuestion1Test extends AssertJSwingTestngTestCase {
     // Description: Should display in `displayLabel` "The pet is a dog named Pero" when "Pero" is entered in `petNameTextField` and "Dog" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
     @Test
     public void shouldDisplayCorrectTextForDog() {
-        int[] keys ={VK_CAPS_LOCK, VK_P, VK_CAPS_LOCK, VK_E, VK_R, VK_O};
-        checkLabel(keys, "Dog", "The pet is a dog named Pero");
+        int[] keys ={ VK_P,  VK_E, VK_R, VK_O};
+        checkLabel(keys, "Dog", "The pet is a dog named pero");
     }
 
-    // Description: Should display in `displayLabel` "The pet is a cat named Ming" when "Ming" is entered in `petNameTextField` and "Cat" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
+    // Description: Should display in `displayLabel` "The pet is a cat named ming" when "ming" is entered in `petNameTextField` and "Cat" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
     @Test
     public void shouldDisplayCorrectTextForCat() {
-        int[] keys ={VK_CAPS_LOCK, VK_M, VK_CAPS_LOCK, VK_I, VK_N, VK_G};
-        checkLabel(keys, "Cat", "The pet is a cat named Ming");
+        int[] keys ={ VK_M,  VK_I, VK_N, VK_G};
+        checkLabel(keys, "Cat", "The pet is a cat named ming");
     }
 
-    // Description: Should display in `displayLabel` "The pet is a rabbit named Pekora" when "Pekora" is entered in `petNameTextField` and "Rabbit" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
+    // Description: Should display in `displayLabel` "The pet is a rabbit named pekora" when "pekora" is entered in `petNameTextField` and "Rabbit" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
     @Test
     public void shouldDisplayCorrectTextForRabbit() {
-        int[] keys ={VK_CAPS_LOCK, VK_P, VK_CAPS_LOCK, VK_E, VK_K, VK_O, VK_R, VK_A};
-        checkLabel(keys, "Rabbit", "The pet is a rabbit named Pekora");
+        int[] keys ={ VK_P,  VK_E, VK_K, VK_O, VK_R, VK_A};
+        checkLabel(keys, "Rabbit", "The pet is a rabbit named pekora");
     }
 
-    // Description: Should display in `displayLabel` "The pet is a parrot named Birdie" when "Birdie" is entered in `petNameTextField` and "Parrot" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
+    // Description: Should display in `displayLabel` "The pet is a parrot named birdie" when "birdie" is entered in `petNameTextField` and "Parrot" is selected in `petTypeComboBox` and `generateTextButton` is clicked.
     @Test
     public void shouldDisplayCorrectTextForParrot() {
-        int[] keys ={VK_CAPS_LOCK, VK_B, VK_CAPS_LOCK, VK_I, VK_R, VK_D, VK_I, VK_E};
-        checkLabel(keys, "Parrot", "The pet is a parrot named Birdie");
+        int[] keys ={ VK_B,  VK_I, VK_R, VK_D, VK_I, VK_E};
+        checkLabel(keys, "Parrot", "The pet is a parrot named birdie");
     }
     
     @AfterMethod

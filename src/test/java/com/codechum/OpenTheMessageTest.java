@@ -6,6 +6,7 @@ import static org.testng.Assert.*;
 import java.awt.*;
 import static java.awt.event.KeyEvent.*;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.*;
@@ -16,6 +17,8 @@ import org.testng.annotations.*;
 
 import org.assertj.swing.core.EmergencyAbortListener;
 import org.assertj.swing.testng.testcase.AssertJSwingTestngTestCase;
+import org.checkerframework.checker.units.qual.A;
+
 import static org.assertj.swing.launcher.ApplicationLauncher.*;
 
 public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
@@ -28,6 +31,7 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
         application(OpenTheMessage.class).start();
+        createFile();
     }
     
     // Description: Should have all components `openFileDialogButton` and `fileContentLabel`.
@@ -41,8 +45,7 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
     }
     
     // Description: Should have created file named `activity.txt`.
-    @Test
-    public void shouldHaveCreatedFile() {
+    public void createFile() {
         String fileNameToFind = "activity.txt";
 
         String dir = System.getProperty("user.dir");
@@ -85,59 +88,75 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
     // Description: Should display the content of the file `activity.txt` in `fileContentLabel`.
     @Test
     public void shouldDisplayFileContentInLabel() {
-        // openFileDialogButton = (Button) TestUtils.findComponent("openFileDialogButton", true);
-        // fileContentLabel = (Label) TestUtils.findComponent("fileContentLabel", true);
+        openFileDialogButton = (Button) TestUtils.findComponent("openFileDialogButton", true);
+        fileContentLabel = (Label) TestUtils.findComponent("fileContentLabel", true);
         
-        // robot().click(openFileDialogButton);
-        // robot().waitForIdle();
+        robot().click(openFileDialogButton);
+        robot().waitForIdle();
         
-        // FileDialog fd = (FileDialog) TestUtils.findComponent("fileDialog", true);
-        // String fileNameToFind = "activity.txt";
+        FileDialog fd = (FileDialog) TestUtils.findComponent("fileDialog", true);
 
-        // String dir = System.getProperty("user.dir");
-        // final List<File> foundFiles = new ArrayList<>();
+        String dir = System.getProperty("user.dir");
+        String fileNameToFind = "activity.txt";
+        final List<File> foundFiles = new ArrayList<>();
 
-        // File activityFile = null;
-        // File rootDirectory = new File(dir);
-        // try {
-        //     try (Stream<Path> walkStream = Files.walk(rootDirectory.toPath())) {
-        //         walkStream.filter(p -> p.toFile().isFile())
-        //             .forEach(f -> {
-        //                 if (f.toString().endsWith(fileNameToFind)) {
-        //                     foundFiles.add(f.toFile());
-        //                 }
-        //             });
-        //     }
-        // } catch(Exception e) {
-        //     System.out.println(e);
-        // }
+        File activityFile = null;
+        File rootDirectory = new File(dir);
+        try {
+            try (Stream<Path> walkStream = Files.walk(rootDirectory.toPath())) {
+                walkStream.filter(p -> p.toFile().isFile())
+                    .forEach(f -> {
+                        if (f.toString().endsWith(fileNameToFind)) {
+                            foundFiles.add(f.toFile());
+                        }
+                    });
+            }
+        } catch(Exception e) {
+            System.out.println(e);
+        }
 
-        // activityFile = foundFiles.get(0);
-        // String fileName = activityFile.getPath();
+        activityFile = foundFiles.get(0);
+
+        String filePath = activityFile.getAbsolutePath();
+
+        String fileText = "";
+        try {
+            fileText = Files.readString(activityFile.toPath());
+        } catch (IOException e) {
+          
+            e.printStackTrace();
+        }
+
+        if (fd != null) {
+            fd.setMultipleMode(true);
+
+            for (int i = 0; i < filePath.length(); i++) {
+                if (filePath.charAt(i) == '.') {
+                    robot().pressAndReleaseKeys(VK_PERIOD);
+                } else if (filePath.charAt(i) == ':') {
+                    robot().pressKey(VK_SHIFT);   // Press the Shift key
+                    robot().pressKey(VK_SEMICOLON); 
+                    robot().releaseKey(VK_SHIFT);  // Release the semicolon key
+                    robot().releaseKey(VK_SEMICOLON);  // Release the semicolon key  
+                } else if (filePath.charAt(i) == '/') {
+                    robot().pressAndReleaseKeys(VK_SLASH);
+                } else if (filePath.charAt(i) == '\\') {
+                    robot().pressAndReleaseKeys(VK_BACK_SLASH);
+                } else {
+                    robot().pressKey(String.valueOf(filePath.charAt(i)).toUpperCase().charAt(0));
+                    robot().releaseKey(String.valueOf(filePath.charAt(i)).toUpperCase().charAt(0));
+                }
+            }
+
+            robot().waitForIdle();
+            robot().pressAndReleaseKeys(VK_ENTER);
+            robot().waitForIdle();
+        }
         
-        // if (fd != null) {
-        //     for(int i = 1; fileName.length() > i; i++) {
-        //         char c = fileName.charAt(i);
-
-        //         if (Character.toString(c).equals("/") || Character.toString(c).equals("\\")) {
-        //             robot().pressAndReleaseKeys(
-        //                 VK_BACK_SLASH
-        //             );
-        //         } else {
-        //             robot().pressAndReleaseKeys(
-        //                 java.awt.event.KeyEvent.getExtendedKeyCodeForChar(c)
-        //             );
-        //         }
-        //     }
-        //     robot().pressAndReleaseKeys(
-        //         VK_ENTER
-        //     );
-        //     robot().waitForIdle();
-        // }
-
-        // assertEquals(fileContentLabel.getText(), "Hello World");
+        assertEquals(fileText, "Hello World", "The content of the file should be 'Hello World'.");
+        assertEquals(fileContentLabel.getText(), "Hello World", filePath + " should be displayed in fileContentLabel.");
     }
-    
+
     @AfterMethod
     public void tearDownAbortListener() {
         listener.unregister();

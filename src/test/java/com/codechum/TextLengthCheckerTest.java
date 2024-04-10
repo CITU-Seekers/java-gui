@@ -58,6 +58,7 @@ public class TextLengthCheckerTest extends AssertJSwingTestngTestCase {
         assertEquals(messageLabel.getText(), "The text is short.");
         
         robot().pressAndReleaseKeys(VK_D);
+        robot().waitForIdle();
         
         assertEquals(messageLabel.getText(), "The text is long.");
     }

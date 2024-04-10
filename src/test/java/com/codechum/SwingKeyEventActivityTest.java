@@ -14,48 +14,61 @@ import static org.assertj.swing.launcher.ApplicationLauncher.*;
 
 public class SwingKeyEventActivityTest extends AssertJSwingTestngTestCase {
     EmergencyAbortListener listener;
-    
     JTextArea editableTextArea, nonEditableTextArea;
     
     @Override
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
         application(KeyEventActivity.class).start();
-    }
-
-    // Description: Should have all components `editableTextArea` and `nonEditableTextArea`.
-    @Test
-    public void shouldHaveAllComponents() {
+        
         editableTextArea = (JTextArea) TestUtils.findComponent("editableTextArea", true);
         nonEditableTextArea = (JTextArea) TestUtils.findComponent("nonEditableTextArea", true);
-        
+    }
+
+    @Test
+    public void shouldHaveAllComponents() {
         assertNotNull(editableTextArea, "No editableTextArea found.");
         assertNotNull(nonEditableTextArea, "No nonEditableTextArea found.");
     }
     
-    // Description: Should display vowel letters in uppercase in `nonEditableTextArea` based on the text typed in `editableTextArea`.
+    // Should display the character 'c' in the non-editable text area when the 'c' key is pressed.
     @Test
-    public void shouldDisplayTextInNonEditable() {
-        editableTextArea = (JTextArea) TestUtils.findComponent("editableTextArea", true);
-        nonEditableTextArea = (JTextArea) TestUtils.findComponent("nonEditableTextArea", true);
-        
+    public void shouldDisplayCharCInNonEditable() {
         robot().click(editableTextArea);
         robot().pressAndReleaseKey(VK_C);
-        
+        robot().waitForIdle();
         assertEquals(nonEditableTextArea.getText(), "c");
-        
+    }
+
+    // Should display the character 'o' in the non-editable text area when the 'o' key is pressed.
+    @Test
+    public void shouldDisplayCharCOInNonEditable() {
+        robot().click(editableTextArea);
+        robot().pressAndReleaseKey(VK_C);
         robot().pressAndReleaseKey(VK_O);
-        
+        robot().waitForIdle();
         assertEquals(nonEditableTextArea.getText(), "cO");
-        
+    }
+
+    @Test
+    public void shouldDisplayCharCOdInNonEditable() {
+        robot().click(editableTextArea);
+        robot().pressAndReleaseKey(VK_C);
+        robot().pressAndReleaseKey(VK_O);
         robot().pressAndReleaseKey(VK_D);
-        
+        robot().waitForIdle();
         assertEquals(nonEditableTextArea.getText(), "cOd");
-        
+    }
+
+    @Test
+    public void shouldDisplayCharCOdEInNonEditable() {
+        robot().click(editableTextArea);
+        robot().pressAndReleaseKey(VK_C);
+        robot().pressAndReleaseKey(VK_O);
+        robot().pressAndReleaseKey(VK_D);
         robot().pressAndReleaseKey(VK_E);
-        
+        robot().waitForIdle();
         assertEquals(nonEditableTextArea.getText(), "cOdE");
-       
     }
     
     @AfterMethod

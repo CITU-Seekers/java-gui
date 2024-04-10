@@ -1,6 +1,5 @@
 package com.codechum;
 
-
 import com.codechum.awt.eventListeners.PasswordValidator;
 import static org.testng.Assert.*;
 import java.awt.*;
@@ -23,7 +22,7 @@ public class PasswordValidatorTest extends AssertJSwingTestngTestCase {
 
     // Description: Should have all components `passwordTextField` and `statusLabel`.
     @Test
-    public void shouldHaveAllComponents(){
+    public void shouldHaveAllComponents() {
         passwordTextField = (TextField) TestUtils.findComponent("passwordTextField", true);
         statusLabel = (Label) TestUtils.findComponent("statusLabel", true);
 
@@ -31,37 +30,47 @@ public class PasswordValidatorTest extends AssertJSwingTestngTestCase {
         assertNotNull(statusLabel);
     }
 
-    // Description: Should display correct status in `statusLabel` when the password is entered in the `passwordTextField`.
+    // Description: Should display 'Password must be 8 characters long' when password is less than 8 characters.
     @Test
-    public void shouldDisplayCorrectStatus(){
-        passwordTextField = (TextField) TestUtils.findComponent("passwordTextField", true);
-        statusLabel = (Label) TestUtils.findComponent("statusLabel", true);
-
-        robot().click(passwordTextField);   
+    public void shouldDisplayLengthErrorForShortPassword() {
+        prepareForTest();
         robot().enterText("adm23");
         robot().waitForIdle();
         assertEquals(statusLabel.getText(), "Password must be 8 characters long");
+    }
 
-        robot().click(passwordTextField);   
-        passwordTextField.setText("");
-        robot().waitForIdle();
-
-        robot().enterText("adminqwe");
+    // Description: Should display 'Password must contain at least one digit' when password does not contain any digits.
+    @Test
+    public void shouldDisplayDigitErrorForPasswordWithoutDigits() {
+        prepareForTest();
+        robot().enterText("adminqwer");
         robot().waitForIdle();
         assertEquals(statusLabel.getText(), "Password must contain at least one digit");
+    }
 
-        passwordTextField.setText("");
-        robot().waitForIdle();
-
+    // Description: Should display 'Password must contain at least one special character' when password does not contain any special characters.
+    @Test
+    public void shouldDisplaySpecialCharErrorForPasswordWithoutSpecialChars() {
+        prepareForTest();
         robot().enterText("admin123");
         robot().waitForIdle();
         assertEquals(statusLabel.getText(), "Password must contain at least one special character");
+    }
 
-        passwordTextField.setText("");
-        robot().waitForIdle();
-
+    // Description: Should display 'Password is valid' when password is valid.
+    @Test
+    public void shouldDisplayValidPasswordMessage() {
+        prepareForTest();
         robot().enterText("admin123@");
         robot().waitForIdle();
         assertEquals(statusLabel.getText(), "Password is valid");
+    }
+
+    private void prepareForTest() {
+        passwordTextField = (TextField) TestUtils.findComponent("passwordTextField", true);
+        statusLabel = (Label) TestUtils.findComponent("statusLabel", true);
+        robot().click(passwordTextField);   
+        passwordTextField.setText("");
+        robot().waitForIdle();
     }
 }

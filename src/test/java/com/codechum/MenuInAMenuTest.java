@@ -112,7 +112,7 @@ public class MenuInAMenuTest extends AssertJSwingTestngTestCase {
     // Description: Should have a `formatMenu` and its item `fontColorMenu` that contains `redColorMenuItem`, `greenColorMenuItem`, and `blueColorMenuItem`.
     @Test
     public void shouldHaveMenuFormatAndItsItems() {
-        String[] menuItemNames = {"redColorMenuItem ", "greenColorMenuItem ", "blueColorMenuItem "};
+        String[] menuItemNames = {"redColorMenuItem", "greenColorMenuItem", "blueColorMenuItem"};
         formatMenu = menuBar.getMenu(1);
 
         assertNotNull(formatMenu, "No formatMenu found.");
@@ -122,7 +122,7 @@ public class MenuInAMenuTest extends AssertJSwingTestngTestCase {
         assertNotNull(fontColorMenu, "No fontColorMenu found in formatMenu.");
         
         for (String menuItemName : menuItemNames) {
-            MenuItem item = retrieveMenuItemByName(menuItemName);
+            MenuItem item = retrieveMenuItemFromFontColor(menuItemName);
             assertNotNull(item, "No " + menuItemName + " found.");
         }
     }

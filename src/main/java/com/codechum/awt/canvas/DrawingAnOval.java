@@ -3,7 +3,7 @@ package com.codechum.awt.canvas;
 import java.awt.*;
 import javax.swing.*;
 
-public class DrawingAnOval extends JFrame {
+public class DrawingAnOval extends Frame {
     public DrawingAnOval() {    
         setTitle("Text");
 
@@ -21,6 +21,10 @@ public class DrawingAnOval extends JFrame {
   
     // main method  
     public static void main(String args[]) {    
-        new DrawingAnOval();    
+     java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new DrawingAnOval();
+            }
+        });
     }    
 }

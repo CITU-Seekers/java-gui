@@ -8,12 +8,12 @@ package com.codechum.awt.choice;
  *
  * @author AzalithenPC
  */
-public class GUICalculatorRevamp extends java.awt.Frame {
+public class GUICalculator extends java.awt.Frame {
 
     /**
      * Creates new form GUICalculatorRevamp
      */
-    public GUICalculatorRevamp() {
+    public GUICalculator() {
         initComponents();
         choice1.addItem("+");
         choice1.addItem("-");
@@ -162,7 +162,7 @@ public class GUICalculatorRevamp extends java.awt.Frame {
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GUICalculatorRevamp().setVisible(true);
+                new GUICalculator().setVisible(true);
             }
         });
     }
