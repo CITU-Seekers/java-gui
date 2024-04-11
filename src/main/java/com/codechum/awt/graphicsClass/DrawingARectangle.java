@@ -11,7 +11,7 @@ public class DrawingARectangle extends java.awt.Frame {
     public DrawingARectangle() {
         initComponents();
         setSize(200, 400);
-        setTitle("Graphics");
+        setTitle("Drawing a Rectangle");
     }
     
     @Override

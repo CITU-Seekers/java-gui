@@ -12,7 +12,7 @@ public class ColoredShapesAndWords extends java.awt.Frame {
     public ColoredShapesAndWords() {
         initComponents();
         setSize(200, 400);
-        setTitle("Graphics");
+        setTitle("Colored Shapes and Words");
     }
     
     @Override

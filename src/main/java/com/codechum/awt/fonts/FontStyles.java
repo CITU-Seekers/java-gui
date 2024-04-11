@@ -12,7 +12,7 @@ public class FontStyles extends java.awt.Frame {
     public FontStyles() {
         initComponents();
         setSize(200, 400);
-        setTitle("Graphics");
+        setTitle("Font Styles");
     }
     
     @Override

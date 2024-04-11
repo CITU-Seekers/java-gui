@@ -12,7 +12,7 @@ public class ColoredTexts extends java.awt.Frame {
     public ColoredTexts() {
         initComponents();
         setSize(200, 400);
-        setTitle("Graphics");
+        setTitle("Colored Texts");
     }
     
     @Override
