@@ -9,7 +9,6 @@ package com.codechum.awt.canvas;
  * @author alysa
  */
 
-import com.codechum.awt.canvas.LinesBrightLikeADiamondMyCanvas;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Graphics;
@@ -29,7 +28,8 @@ public class LinesBrightLikeADiamond extends java.awt.Frame {
         add(canvas);
         
         // Set the size of the frame
-        setSize(400, 400);
+        setSize(500, 500);
+        pack();
         
         // Make the frame visible
         setVisible(true);

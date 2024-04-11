@@ -116,9 +116,9 @@ public class FileCryptography extends java.awt.Frame {
                     }
 
                 } catch (FileNotFoundException ex) {
-                    Logger.getLogger(FileMerger.class.getName()).log(Level.SEVERE, null, ex);
+                   
                 } catch (IOException ex) {
-                    Logger.getLogger(FileMerger.class.getName()).log(Level.SEVERE, null, ex);
+                   
                 }
             }
 

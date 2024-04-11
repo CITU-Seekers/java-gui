@@ -2,51 +2,47 @@ package com.codechum;
 
 import com.codechum.awt.canvas.LinesBrightLikeADiamond;
 import com.codechum.awt.canvas.LinesBrightLikeADiamondMyCanvas;
+
+import static org.assertj.swing.launcher.ApplicationLauncher.application;
 import static org.testng.Assert.*;
 
 import java.awt.*;
+
+import org.assertj.swing.core.EmergencyAbortListener;
+import org.assertj.swing.testng.testcase.AssertJSwingTestngTestCase;
 import org.testng.annotations.*;
 
-import mockit.Tested;
-import mockit.Injectable;
-import mockit.Verifications;
+public class LinesBrightLikeADiamondTest extends AssertJSwingTestngTestCase {
+    EmergencyAbortListener listener;
 
-public class LinesBrightLikeADiamondTest {
-    @Tested LinesBrightLikeADiamond codeChumActivity;
-    @Tested LinesBrightLikeADiamondMyCanvas canvas;
-    @Injectable Graphics g;
+    Canvas canvas;
+
+    @Override
+    public void onSetUp() {
+        listener = EmergencyAbortListener.registerInToolkit();
+        application(LinesBrightLikeADiamond.class).start();
+        robot().waitForIdle();
+    }
 
     // Description: Should override frame's paint method of MyCanvas class to draw a diamond.
     @Test
     public void shouldDrawDiamond() {
-        canvas.paint(g);
+        Canvas canvasMain = (Canvas) TestUtils.findComponent("mainCanvas", true);
 
-        new Verifications() {
-            {
-                canvas.setBackground (Color.black);    
-                canvas.setSize(400, 400);
-                int width = 400;
-                int height = 400;
-
-                // Calculate the coordinates of the diamond based on the canvas size
-                int[] xPoints = {width / 2, width, width / 2, 0};
-                int[] yPoints = {0, height / 2, height, height / 2};
-
-                g.setColor(Color.YELLOW);
-
-                // Draw the diamond using lines
-                g.drawPolygon(xPoints, yPoints, 4);
-
-                // Fill the diamond with yellow color
-                g.fillPolygon(xPoints, yPoints, 4);
-            }
-        };
+        Dimension size = canvasMain.getSize();
+        
+        Graphics graphics = canvasMain.getGraphics();
+        canvasMain.paint(graphics);
+        assertEquals(graphics.getColor(), Color.yellow, "Color should be yellow");
+        // should be 400 x 400
+        assertEquals(size.width, 400, "Width should be 400");
+        assertEquals(size.height, 400, "Height should be 400");
     }
 
     // Description: Should have a canvas named `mainCanvas`.
     @Test
-    public void shouldHaveCanvas() {
-        Canvas cnvMain = (Canvas) TestUtils.getChildNamed(codeChumActivity, "mainCanvas");
-        assertNotNull(cnvMain, "No mainCanvas found");
+    public void shouldHaveCanvasMain() {
+        Canvas canvasMain = (Canvas) TestUtils.findComponent("mainCanvas", true);
+        assertNotNull(canvasMain, "No mainCanvas found");
     }
 }

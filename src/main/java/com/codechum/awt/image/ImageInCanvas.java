@@ -18,8 +18,11 @@ public class ImageInCanvas extends Frame {
     }    
   
     // main method  
-    public static void main(String args[])    
-    {    
-        new ImageInCanvas();    
+    public static void main(String args[]) {  
+        java.awt.EventQueue.invokeLater(new Runnable() {
+        public void run() {
+            new ImageInCanvas();    
+        }
+    });
     }    
 }

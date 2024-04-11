@@ -21,6 +21,10 @@ public class DrawingText extends JFrame {
   
     // main method  
     public static void main(String args[]) {    
-        new DrawingText();    
+        java.awt.EventQueue.invokeLater(new Runnable() {
+                public void run() {
+                    new DrawingText();
+                }
+            });    
     }    
 }

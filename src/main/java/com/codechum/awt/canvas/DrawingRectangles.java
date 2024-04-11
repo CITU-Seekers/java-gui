@@ -9,10 +9,7 @@ package com.codechum.awt.canvas;
  * @author alysa
  */
 
-import com.codechum.awt.canvas.MyCanvasRectangle;
 import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Graphics;
 
 public class DrawingRectangles extends java.awt.Frame {
 

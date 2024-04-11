@@ -10,6 +10,7 @@ public class ImageInCanvasMyCanvas extends Canvas {
     setSize(1920, 800);    
   }    
 
+  @Override
   public void paint(Graphics g) {
     BufferedImage img = null;
 

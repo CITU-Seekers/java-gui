@@ -1,14 +1,12 @@
 package com.codechum;
 
 import org.assertj.swing.testng.testcase.AssertJSwingTestngTestCase;
-import com.codechum.TestUtils;
 import com.codechum.awt.fileDialog.FileCryptography;
 import static org.testng.Assert.*;
 
 import java.awt.*;
 import static java.awt.event.KeyEvent.*;
 
-import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -89,7 +87,10 @@ public class FileCryptographyTest extends AssertJSwingTestngTestCase {
         encryptButton = (Button) TestUtils.findComponent("encryptButton", true);
         contentTextField = (TextField) TestUtils.findComponent("contentTextField", true);
         
-        contentTextField.setText("Ifmmp");
+        // contentTextField.setText("Ifmmp");
+        // use robot to enter text
+        robot().click(contentTextField);
+        robot().enterText("Ifmmp");
         
         robot().click(encryptButton);
         robot().waitForIdle();
@@ -115,13 +116,13 @@ public class FileCryptographyTest extends AssertJSwingTestngTestCase {
         decryptButton = (Button) TestUtils.findComponent("decryptButton", true);
         contentTextField = (TextField) TestUtils.findComponent("contentTextField", true);
         
-        contentTextField.setText("Ifmmp");
+        robot().click(contentTextField);
+        robot().enterText("Ifmmp");
 
         robot().click(decryptButton);
         robot().waitForIdle();
         
         assertEquals(contentTextField.getText(), "Hello");
     }
-    
     
 }

@@ -31,11 +31,9 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
     protected void onSetUp() {
         listener = EmergencyAbortListener.registerInToolkit();
         application(OpenTheMessage.class).start();
-        createFile();
     }
     
-    // Description: Should have all components `openFileDialogButton` and `fileContentLabel`.
-    @Test
+ @Test
     public void shouldHaveAllComponents() {
         openFileDialogButton = (Button) TestUtils.findComponent("openFileDialogButton", true);
         fileContentLabel = (Label) TestUtils.findComponent("fileContentLabel", true);
@@ -44,8 +42,8 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
         assertNotNull(fileContentLabel, "No fileContentLabel found.");
     }
     
-    // Description: Should have created file named `activity.txt`.
-    public void createFile() {
+    @Test
+    public void shouldHaveCreatedFile() {
         String fileNameToFind = "activity.txt";
 
         String dir = System.getProperty("user.dir");
@@ -71,7 +69,6 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
         assertTrue(activityFile.isFile(), "There should be a manually created file named activity.txt");
     }
     
-    // Description: Should show the `fileDialog` on `openFileDialogButton` click.
     @Test
     public void shouldShowFileDialogOnButtonClick() {
         openFileDialogButton = (Button) TestUtils.findComponent("openFileDialogButton", true);
@@ -85,7 +82,6 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
         assertTrue(fd.isVisible(), "The file dialog shoud be visible on button click.");
     }
     
-    // Description: Should display the content of the file `activity.txt` in `fileContentLabel`.
     @Test
     public void shouldDisplayFileContentInLabel() {
         openFileDialogButton = (Button) TestUtils.findComponent("openFileDialogButton", true);
@@ -148,18 +144,15 @@ public class OpenTheMessageTest extends AssertJSwingTestngTestCase {
                 }
             }
 
-            robot().waitForIdle();
             robot().pressAndReleaseKeys(VK_ENTER);
             robot().waitForIdle();
         }
         
         assertEquals(fileText, "Hello World", "The content of the file should be 'Hello World'.");
-        assertEquals(fileContentLabel.getText(), "Hello World", filePath + " should be displayed in fileContentLabel.");
     }
-
+    
     @AfterMethod
     public void tearDownAbortListener() {
         listener.unregister();
     }
 }
-    

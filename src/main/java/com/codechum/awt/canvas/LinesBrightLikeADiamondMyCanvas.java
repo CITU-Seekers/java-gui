@@ -15,7 +15,11 @@ import java.awt.Graphics;
 public class LinesBrightLikeADiamondMyCanvas extends Canvas {
     public LinesBrightLikeADiamondMyCanvas() {    
         setBackground (Color.black);    
+                // ensure 400 x 400
+        
         setSize(400, 400);    
+
+
     }    
   
     public void paint(Graphics g){   
