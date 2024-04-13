@@ -40,7 +40,7 @@ public class GoToFile extends java.awt.Frame implements ActionListener {
      */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+        this.setTitle("Go To File");
         statusLabel = new java.awt.Label();
         menuBar1 = new java.awt.MenuBar();
         fileMenu = new java.awt.Menu();

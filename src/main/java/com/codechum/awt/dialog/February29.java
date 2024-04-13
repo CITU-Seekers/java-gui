@@ -46,6 +46,7 @@ public class February29 extends java.awt.Frame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        this.setTitle("February 29");
         yearTextField = new java.awt.TextField();
         checkYearButton = new java.awt.Button();
 
